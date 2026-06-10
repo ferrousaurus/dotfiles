@@ -1,0 +1,68 @@
+[env]
+TERM = "xterm-256color"
+
+[settings]
+color_theme = "catppuccin"
+experimental = true
+idiomatic_version_file_enable_tools = ["dotnet", "node", "npm", "pnpm", "python"]
+lockfile = true
+minimum_release_age = "7d"
+pin = true
+
+[settings.npm]
+package_manager = "pnpm"
+
+[shell_alias]
+brew86 = "arch -x86_64 /usr/local/bin/brew"
+cat = "bat --color=always"
+cd = "z"
+fzf = "fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+grep = "batgrep"
+ls = "eza -aghl --show-symlinks --icons=always --hyperlink"
+vi = "nvim"
+vim = "nvim"
+
+[tools]
+age = "latest"
+ast-grep = "latest"
+bat = "latest"
+bat-extras = "latest"
+bottom = "latest"
+bitwarden = "latest"
+bun = "latest"
+chezmoi = "latest"
+colima = "latest"
+docker-cli = "latest"
+docker-compose = "latest"
+dotnet = ["10", "8"]
+eza = "latest"
+fd = "latest"
+fzf = "latest"
+gemini-cli = "latest"
+github-cli = "latest"
+go = "latest"
+imagemagick = "latest"
+julia = "latest"
+lazygit = "latest"
+"vfox:mise-plugins/vfox-neovim" = "latest"
+node = "26"
+opencode = "latest"
+oxker = "latest"
+pnpm = "latest"
+python = "3.14"
+ripgrep = "latest"
+starship = "latest"
+sops = "latest"
+tree-sitter = "latest"
+usage = "latest"
+uv = "latest"
+viteplus = "latest"
+watchexec = "latest"
+zellij = "latest"
+zoxide = "latest"
+
+"dotnet:Aspire.Cli" = "13"
+
+"npm:node-gyp" = "latest"
+"npm:ocx" = "latest"
+"npm:skills" = "latest"
