@@ -6,7 +6,7 @@ color_theme = "catppuccin"
 experimental = true
 idiomatic_version_file_enable_tools = ["dotnet", "node", "npm", "pnpm", "python"]
 lockfile = true
-minimum_release_age = "7d"
+minimum_release_age = "3d"
 pin = true
 
 [settings.npm]
@@ -25,35 +25,34 @@ vim = "nvim"
 [tools]
 age = "latest"
 ast-grep = "latest"
-bat = "latest"
+bat = "latest" # cat replcaement
 bat-extras = "latest"
-bottom = "latest"
-bun = "latest"
-colima = "latest"
+bottom = "latest" # Process TUI
+colima = "latest" # MacOS Docker Desktop replacement
 docker-cli = "latest"
 docker-compose = "latest"
 dotnet = ["10", "8"]
-eza = "latest"
-fd = "latest"
+eza = "latest" # ls replacement
+fd = "latest" # find replacement
 fzf = "latest"
 github-cli = "latest"
 lazygit = "latest"
 "vfox:mise-plugins/vfox-neovim" = "latest"
-node = "26"
+node = ["26", "24"]
 opencode = "latest"
-oxker = "latest"
+oxker = "latest" # Containerization TUI
 pnpm = "latest"
-python = "3.14"
-ripgrep = "latest"
+python = ["3.14", "3.12"]
+ripgrep = "latest" # grep replacement
 starship = "latest"
 sops = "latest"
 tree-sitter = "latest"
 usage = "latest"
-uv = "latest"
+uv = "latest" # Python dependency manager
 viteplus = "latest"
 watchexec = "latest"
-zellij = "latest"
-zoxide = "latest"
+zellij = "latest" # tmux replacement
+zoxide = "latest" # cd replacement
 
 "dotnet:Aspire.Cli" = "13"
 

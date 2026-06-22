@@ -1,0 +1,84 @@
+{
+  "keymap": {
+    "cancel": ["escape"],
+    "confirm": ["return"],
+    "delete": ["d"],
+    "down": ["j", "down"],
+    "move": ["m"],
+    "new": ["n"],
+    "refresh": ["r"],
+    "scrollDown": ["]"],
+    "scrollUp": "[",
+    "up": ["k", "up"],
+    "write": ["w"],
+  },
+  "theme": {
+    "inactive": "orange",
+    "active": "cyan",
+    "success": "green",
+    "info": "blue",
+    "warning": "yellow",
+    "error": "red",
+  },
+  "configs": {
+    "feo": {
+      "targets": {
+        "~/.config/feo/config.jsonc": {
+          "sources": [
+            { "path": "~/.config/feo/feo/config.jsonc" },
+            { "path": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/feo/config.jsonc" },
+          ],
+        },
+      },
+    },
+    "hunk": {
+      "targets": {
+        "~/.config/hunk/config.toml": {
+          "sources": [
+            { "path": "~/.config/feo/hunk/config.toml" },
+            { "path": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/hunk/config.toml" },
+          ],
+        },
+      },
+    },
+    "mise": {
+      "targets": {
+        "~/.config/mise/config.toml": {
+          "sources": [
+            { "path": "~/.config/feo/mise/config.toml" },
+            { "path": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/mise/config.toml" },
+          ],
+        },
+      },
+    },
+    "opencode": {
+      "targets": {
+        "~/.config/opencode/opencode.jsonc": {
+          "sources": [
+            { "path": "~/.config/feo/opencode/opencode.jsonc" },
+            {
+              "path": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/opencode.jsonc",
+            },
+          ],
+        },
+      },
+    },
+    "zed": {
+      "targets": {
+        "~/.config/zed/settings.json": {
+          "sources": [
+            { "path": "~/.config/feo/zed/settings.jsonc" },
+            { "path": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/zed/settings.json" },
+          ],
+        },
+        "~/.config/zed/themes/catppuccin-sky.json": {
+          "sources": [
+            {
+              "path": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/zed/themes/catppuccin-sky.json",
+            },
+          ],
+        },
+      },
+    },
+  },
+}

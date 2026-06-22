@@ -25,6 +25,7 @@
   "document_folding_ranges": "on",
   "document_symbols": "on",
   "git_panel": {
+    "button": false, // The git panel has not been updating recently, as of 2026-06-22. Gonna use LazyGit til it's fixed
     "commit_title_max_length": 120,
     "file_icons": true,
     "tree_view": true,
