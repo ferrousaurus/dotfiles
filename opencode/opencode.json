@@ -1,0 +1,8 @@
+{
+  "data": {
+    "$schema": "https://opencode.ai/config.json",
+    "default_agent": "plan",
+    "plugin": ["envsitter-guard@latest"],
+    "lsp": true
+  }
+}

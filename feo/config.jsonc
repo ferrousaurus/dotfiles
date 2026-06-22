@@ -36,13 +36,8 @@
         "config": {
           "path": "~/.config/hunk/config.toml",
           "sources": [
-            {
-              "data": {
-                "theme": "auto",
-                "mode": "split",
-                "vcs": "git",
-              },
-            },
+            { "path": "~/.config/feo/hunk/config.toml" },
+
             { "url": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/hunk/config.toml" },
           ],
         },
@@ -64,14 +59,7 @@
         "config": {
           "path": "~/.config/opencode/opencode.jsonc",
           "sources": [
-            {
-              "data": {
-                "$schema": "https://opencode.ai/config.json",
-                "default_agent": "plan",
-                "plugin": ["envsitter-guard@latest"],
-                "lsp": true,
-              },
-            },
+            { "path": "~/.config/feo/opencode/opencode.jsonc" },
             {
               "url": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/opencode.jsonc",
             },
