@@ -6,7 +6,6 @@
     "down": ["j", "down"],
     "move": ["m"],
     "new": ["n"],
-    "refresh": ["r"],
     "scrollDown": ["]"],
     "scrollUp": "[",
     "up": ["k", "up"],
@@ -20,44 +19,61 @@
     "warning": "yellow",
     "error": "red",
   },
-  "configs": {
+  "applications": {
     "feo": {
       "targets": {
-        "~/.config/feo/config.jsonc": {
+        "config": {
+          "path": "~/.config/feo/config.jsonc",
           "sources": [
             { "path": "~/.config/feo/feo/config.jsonc" },
-            { "path": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/feo/config.jsonc" },
+            { "url": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/feo/config.jsonc" },
           ],
         },
       },
     },
     "hunk": {
       "targets": {
-        "~/.config/hunk/config.toml": {
+        "config": {
+          "path": "~/.config/hunk/config.toml",
           "sources": [
-            { "path": "~/.config/feo/hunk/config.toml" },
-            { "path": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/hunk/config.toml" },
+            {
+              "data": {
+                "theme": "auto",
+                "mode": "split",
+                "vcs": "git",
+              },
+            },
+            { "url": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/hunk/config.toml" },
           ],
         },
       },
     },
     "mise": {
       "targets": {
-        "~/.config/mise/config.toml": {
+        "config": {
+          "path": "~/.config/mise/config.toml",
           "sources": [
             { "path": "~/.config/feo/mise/config.toml" },
-            { "path": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/mise/config.toml" },
+            { "url": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/mise/config.toml" },
           ],
         },
       },
     },
     "opencode": {
       "targets": {
-        "~/.config/opencode/opencode.jsonc": {
+        "config": {
+          "path": "~/.config/opencode/opencode.jsonc",
           "sources": [
-            { "path": "~/.config/feo/opencode/opencode.jsonc" },
             {
-              "path": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/opencode.jsonc",
+              "data": {
+                "$schema": "https://opencode.ai/config.json",
+                "default_agent": "plan",
+                "plugin": ["envsitter-guard@latest"],
+                "lsp": true,
+              },
+            },
+            {
+              "url": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/opencode.jsonc",
             },
           ],
         },
@@ -65,16 +81,18 @@
     },
     "zed": {
       "targets": {
-        "~/.config/zed/settings.json": {
+        "settings": {
+          "path": "~/.config/zed/settings.json",
           "sources": [
             { "path": "~/.config/feo/zed/settings.jsonc" },
-            { "path": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/zed/settings.json" },
+            { "url": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/zed/settings.json" },
           ],
         },
-        "~/.config/zed/themes/catppuccin-sky.json": {
+        "theme-catppuccin-sky": {
+          "path": "~/.config/zed/themes/catppuccin-sky.json",
           "sources": [
             {
-              "path": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/zed/themes/catppuccin-sky.json",
+              "url": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/zed/themes/catppuccin-sky.json",
             },
           ],
         },
