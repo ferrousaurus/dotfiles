@@ -23,21 +23,21 @@ applications:
         path: "~/.config/feo/config.jsonc"
         sources:
           - path: "~/.config/feo/feo/config.jsonc"
-          - url: "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/feo/config.jsonc"
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/feo/config.jsonc"
   hunk:
     targets:
       config:
         path: "~/.config/hunk/config.toml"
         sources:
           - path: "~/.config/feo/hunk/config.toml"
-          - url: "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/hunk/config.toml"
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/hunk/config.toml"
   mise:
     targets:
       config:
         path: "~/.config/mise/config.toml"
         sources:
           - path: "~/.config/feo/mise/config.toml"
-          - url: "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/mise/config.toml"
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/mise/config.toml"
   opencode:
     template:
       vars:
@@ -47,57 +47,57 @@ applications:
         path: "~/.config/opencode/opencode.jsonc"
         sources:
           - path: "~/.config/feo/opencode/opencode.jsonc"
-          - url: "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/opencode.jsonc"
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/opencode.jsonc"
       agent-plan:
         path: "~/.config/opencode/agents/plan.md"
         sources:
-          - url: "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/agents/plan.md"
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/agents/plan.md"
       agent-build:
         path: "~/.config/opencode/agents/build.md"
         sources:
-          - url: "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/agents/build.md"
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/agents/build.md"
       agent-review:
         path: "~/.config/opencode/agents/reviewer.md"
         sources:
-          - url: "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/agents/reviewer.md"
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/agents/reviewer.md"
             template:
               language: liquid
       agent-debugger:
         path: "~/.config/opencode/agents/debugger.md"
         sources:
-          - url: "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/agents/debugger.md"
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/agents/debugger.md"
       agent-documenter:
         path: "~/.config/opencode/agents/documenter.md"
         sources:
-          - url: "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/agents/documenter.md"
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/agents/documenter.md"
       agent-teacher:
         path: "~/.config/opencode/agents/teacher.md"
         sources:
-          - url: "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/agents/teacher.md"
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/agents/teacher.md"
       command-debug:
         path: "~/.config/opencode/commands/debug.md"
         sources:
-          - url: "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/commands/debug.md"
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/commands/debug.md"
       command-grill:
         path: "~/.config/opencode/commands/grill.md"
         sources:
-          - url: "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/commands/grill.md"
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/commands/grill.md"
       command-handoff:
         path: "~/.config/opencode/commands/handoff.md"
         sources:
-          - url: "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/commands/handoff.md"
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/commands/handoff.md"
       command-review:
         path: "~/.config/opencode/commands/review.md"
         sources:
-          - url: "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/commands/review.md"
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/commands/review.md"
   zed:
     targets:
       settings:
         path: "~/.config/zed/settings.json"
         sources:
           - path: "~/.config/feo/zed/settings.jsonc"
-          - url: "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/zed/settings.jsonc"
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/zed/settings.jsonc"
       theme-catppuccin-sky:
         path: "~/.config/zed/themes/catppuccin-sky.json"
         sources:
-          - url: "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/zed/themes/catppuccin-sky.json"
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/zed/themes/catppuccin-sky.json"
