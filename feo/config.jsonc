@@ -65,6 +65,50 @@
             },
           ],
         },
+        "agent-plan": {
+          "path": "~/.config/opencode/agents/plan.md",
+          "sources": [
+            { "url": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/agents/plan.md" },
+          ],
+        },
+        "agent-build": {
+          "path": "~/.config/opencode/agents/build.md",
+          "sources": [
+            {
+              "url": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/agents/build.md",
+            },
+          ],
+        },
+        "agent-review": {
+          "path": "~/.config/opencode/agents/reviewer.md",
+          "sources": [
+            {
+              "url": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/agents/review.md",
+              "template": {
+                "language": "liquid",
+                "vars": {
+                  "expertise": "TypeScript",
+                },
+              },
+            },
+          ],
+        },
+        "agent-documenter": {
+          "path": "~/.config/opencode/agents/documenter.md",
+          "sources": [
+            {
+              "url": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/agents/documenter.md",
+            },
+          ],
+        },
+        "command-review": {
+          "path": "~/.config/opencode/commands/review.md",
+          "sources": [
+            {
+              "url": "http://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/opencode/commands/review.md",
+            },
+          ],
+        },
       },
     },
     "zed": {
