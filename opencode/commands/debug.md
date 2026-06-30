@@ -3,7 +3,6 @@ agent: debugger
 name: debug
 description: Provide a root cause analysis of some error, exception, or bug.
 ---
-
 # Debug Command
 
 Accept a stack trace, error message, or bug description from the user and perform a thorough root cause analysis.

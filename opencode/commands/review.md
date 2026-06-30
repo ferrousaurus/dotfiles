@@ -2,7 +2,6 @@
 description: Review the changes between the current branch and the trunk.
 agent: reviewer
 ---
-
 Provide a review of the changes between the current code and `origin/develop`.
 
 If available, load the `hunk-review` skill and use it for this review. The skill path is "!`hunk skill path`".
