@@ -1,3 +1,14 @@
+[settings]
+color_theme = "catppuccin"
+experimental = true
+idiomatic_version_file_enable_tools = ["dotnet", "node", "npm", "pnpm", "python"]
+lockfile = true
+minimum_release_age = "3d"
+pin = true
+
+[settings.npm]
+package_manager = "pnpm"
+
 [bootstrap.macos.dock]
 autohide = true
 show_recents = false
@@ -13,19 +24,11 @@ tap_to_click = true
 [bootstrap.macos.defaults]
 "com.app.finder" = { AppleShowAllFiles = true }
 
+[dotfiles]
+"~/.zshrc" = {}
+
 [env]
 TERM = "xterm-256color"
-
-[settings]
-color_theme = "catppuccin"
-experimental = true
-idiomatic_version_file_enable_tools = ["dotnet", "node", "npm", "pnpm", "python"]
-lockfile = true
-minimum_release_age = "3d"
-pin = true
-
-[settings.npm]
-package_manager = "pnpm"
 
 [shell_alias]
 brew86 = "arch -x86_64 /usr/local/bin/brew"
