@@ -63,12 +63,11 @@ applications:
           - path: "~/.config/feo/mise/config.toml"
           - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/mise/config.toml"
       zshrc:
-        config:
-          mediaType: "text/plain"
-          path: "~/.dotfiles/.zshrc"
-          sources:
-            - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/.zshrc"
-              mediaType: "text/plain"
+        mediaType: "text/plain"
+        path: "~/.dotfiles/.zshrc"
+        sources:
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/.zshrc"
+            mediaType: "text/plain"
   opencode:
     template:
       vars:
