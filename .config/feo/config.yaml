@@ -23,8 +23,8 @@ applications:
         path: "~/.config/feo/config.jsonc"
         sources:
           - path: "~/.config/feo/feo/config.jsonc"
-          - mediaType: "application/yaml"
-            url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/feo/config.yaml"
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/feo/config.yaml"
+            mediaType: "application/yaml"
   homebrew:
     targets:
       brewfile:
@@ -56,7 +56,7 @@ applications:
         sources:
           - path: "~/.config/feo/hunk/config.toml"
           - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/hunk/config.toml"
-          - mediaType: "application/toml"
+            mediaType: "application/toml"
   mise:
     targets:
       config:
@@ -64,7 +64,7 @@ applications:
         sources:
           - path: "~/.config/feo/mise/config.toml"
           - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/mise/config.toml"
-          - mediaType: "application/toml"
+            mediaType: "application/toml"
       zshrc:
         mediaType: "text/plain"
         path: "~/.dotfiles/.zshrc"
@@ -81,76 +81,80 @@ applications:
         sources:
           - path: "~/.config/feo/opencode/opencode.jsonc"
           - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/opencode/opencode.jsonc"
-          - mediaType: "application/json"
+            mediaType: "application/json"
       agent-plan:
         path: "~/.config/opencode/agents/plan.md"
         sources:
           - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/opencode/agents/plan.md"
-          - mediaType: "text/markdown"
+            mediaType: "text/markdown"
       agent-build:
         path: "~/.config/opencode/agents/build.md"
         sources:
           - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/opencode/agents/build.md"
-          - mediaType: "text/markdown"
+            mediaType: "text/markdown"
       agent-review:
         path: "~/.config/opencode/agents/reviewer.md"
         sources:
           - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/opencode/agents/reviewer.md"
-          - mediaType: "text/markdown"
+            mediaType: "text/markdown"
             template:
               language: liquid
       agent-debugger:
         path: "~/.config/opencode/agents/debugger.md"
         sources:
           - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/opencode/agents/debugger.md"
-          - mediaType: "text/markdown"
+            mediaType: "text/markdown"
       agent-documenter:
         path: "~/.config/opencode/agents/documenter.md"
         sources:
           - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/opencode/agents/documenter.md"
-          - mediaType: "text/markdown"
+            mediaType: "text/markdown"
       agent-teacher:
         path: "~/.config/opencode/agents/teacher.md"
         sources:
           - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/opencode/agents/teacher.md"
-          - mediaType: "text/markdown"
+            mediaType: "text/markdown"
       command-debug:
         path: "~/.config/opencode/commands/debug.md"
         sources:
           - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/opencode/commands/debug.md"
-          - mediaType: "text/markdown"
+            mediaType: "text/markdown"
       command-grill:
         path: "~/.config/opencode/commands/grill.md"
         sources:
           - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/opencode/commands/grill.md"
-          - mediaType: "text/markdown"
+            mediaType: "text/markdown"
       command-handoff:
         path: "~/.config/opencode/commands/handoff.md"
         sources:
           - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/opencode/commands/handoff.md"
-          - mediaType: "text/markdown"
+            mediaType: "text/markdown"
       command-review:
         path: "~/.config/opencode/commands/review.md"
         sources:
           - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/opencode/commands/review.md"
-          - mediaType: "text/markdown"
+            mediaType: "text/markdown"
   starship:
     targets:
       config:
         path: "~/.config/starship.toml"
         sources:
           - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/starship.toml"
-          - mediaType: "application/toml"
+            mediaType: "application/toml"
   zed:
     targets:
+      keymap:
+        path: "~/.config/zed/keymap.json"
+        sources:
+          - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/zed/keymap.jsonc"
       settings:
         path: "~/.config/zed/settings.json"
         sources:
           - path: "~/.config/feo/zed/settings.jsonc"
           - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/zed/settings.jsonc"
-          - mediaType: "application/json"
+            mediaType: "application/json"
       theme-catppuccin-sky:
         path: "~/.config/zed/themes/catppuccin-sky.json"
         sources:
           - url: "https://raw.githubusercontent.com/ferrousaurus/dotfiles/refs/heads/main/.config/zed/themes/catppuccin-sky.json"
-          - mediaType: "application/json"
+            mediaType: "application/json"
