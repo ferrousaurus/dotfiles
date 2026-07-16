@@ -55,7 +55,6 @@ applications:
       config:
         path: "~/.config/mise/config.toml"
         sources:
-          - path: ".config/mise/config.local.toml"
           - path: ".config/mise/config.toml"
       zshrc:
         mediaType: "text/plain"
