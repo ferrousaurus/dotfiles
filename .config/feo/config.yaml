@@ -19,6 +19,13 @@ settings:
     warning: yellow
     error: red
 applications:
+  feo:
+    targets:
+      config:
+        path: "~/.config/feo/config.yaml"
+        sources:
+          - path: "~/.config/feo/.config/feo/config.local.yaml"
+          - path: "~/.config/feo/.config/feo/config.yaml"
   homebrew:
     targets:
       brewfile:
@@ -55,7 +62,6 @@ applications:
       config:
         path: "~/.config/mise/config.toml"
         sources:
-          - path: ".config/mise/config.local.toml"
           - path: ".config/mise/config.toml"
       zshrc:
         mediaType: "text/plain"
@@ -78,11 +84,15 @@ applications:
         sources:
           - path: ".config/opencode/agents/plan.local.yaml"
           - path: ".config/opencode/agents/plan.md"
+            template:
+              language: liquid
       agent-build:
         path: "~/.config/opencode/agents/build.md"
         sources:
           - path: ".config/opencode/agents/build.local.yaml"
           - path: ".config/opencode/agents/build.md"
+            template:
+              language: liquid
       agent-review:
         path: "~/.config/opencode/agents/reviewer.md"
         sources:
@@ -95,16 +105,22 @@ applications:
         sources:
           - path: ".config/opencode/agents/debugger.local.yaml"
           - path: ".config/opencode/agents/debugger.md"
+            template:
+              language: liquid
       agent-documenter:
         path: "~/.config/opencode/agents/documenter.md"
         sources:
           - path: ".config/opencode/agents/documenter.local.yaml"
           - path: ".config/opencode/agents/documenter.md"
+            template:
+              language: liquid
       agent-teacher:
         path: "~/.config/opencode/agents/teacher.md"
         sources:
           - path: ".config/opencode/agents/teacher.local.yaml"
           - path: ".config/opencode/agents/teacher.md"
+            template:
+              language: liquid
       command-debug:
         path: "~/.config/opencode/commands/debug.md"
         sources:

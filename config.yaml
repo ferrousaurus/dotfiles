@@ -19,6 +19,13 @@ settings:
     warning: yellow
     error: red
 applications:
+  feo:
+    targets:
+      config:
+        path: "~/.config/feo/config.yaml"
+        sources:
+          - path: "~/.config/feo/.config/feo/config.local.yaml"
+          - path: "~/.config/feo/.config/feo/config.yaml"
   homebrew:
     targets:
       brewfile:
