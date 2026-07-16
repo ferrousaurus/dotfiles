@@ -24,6 +24,9 @@
   },
   "document_folding_ranges": "on",
   "document_symbols": "on",
+  "edit_predictions": {
+    "allow_data_collection": "no",
+  },
   "git_panel": {
     "commit_title_max_length": 120,
     "file_icons": true,
