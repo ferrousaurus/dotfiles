@@ -24,8 +24,8 @@ applications:
       config:
         path: "~/.config/feo/config.yaml"
         sources:
-          - path: "~/.config/feo/.config/feo/config.local.yaml"
-          - path: "~/.config/feo/.config/feo/config.yaml"
+          - path: ".config/feo/config.local.yaml"
+          - path: ".config/feo/config.yaml"
   homebrew:
     targets:
       brewfile:
