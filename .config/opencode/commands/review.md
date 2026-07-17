@@ -2,19 +2,20 @@
 description: Review the changes between the current branch and the trunk.
 agent: reviewer
 ---
-Provide a review of the changes between the current code and `origin/develop`.
 
-If available, load the `hunk-review` skill and use it for this review. The skill path is "!`hunk skill path`".
+Provide a review of the changes between the current code and `origin/develop`.
 
 Use the below format to provide a comprehensive summary of the review:
 
 <template>
 
 ## Summary
+
 - **Overall assessment**: [ready / ready with minor changes / needs changes]
 - **Primary purpose of this branch:** [1-2 sentence summary]
 
 ## What Changed
+
 - [High level change 1]
 - [High level change 2]
 - ...
@@ -22,8 +23,10 @@ Use the below format to provide a comprehensive summary of the review:
 ## Findings
 
 ### Blocking Issues
+
 // Issues that will be flagged by CICD to block merge
 // These include, but are not limited to:
+
 - [Test Failure 1]
 - [Test Failure 2]
 - ...
@@ -45,6 +48,7 @@ Use the below format to provide a comprehensive summary of the review:
 // Issues that _must_ be addressed, but do not block CICD. These are typically
 // missed functional requirements.
 // These include, but are not limited to:
+
 - [Inadvertent Breaking Change 1]
 - [Inadvertent Breaking Change 2]
 - ...
@@ -53,9 +57,11 @@ Use the below format to provide a comprehensive summary of the review:
 - ...
 
 ### Major Concerns
+
 // Issues that should ideally be addressed, but may be skipped when deemed not
 // necessary. These are typically missed non-functional requirements.
 // These include, but are not limited to:
+
 - [Missing Validation 1]
 - [Missing Validation 2]
 - ...
@@ -64,8 +70,10 @@ Use the below format to provide a comprehensive summary of the review:
 - ...
 
 ### Minor Concerns
+
 // Issues with implementation details that span more than a few lines.
 // These include, but are not limited to:
+
 - [Code Clarity Issue 1]
 - [Code Clarity Issue 2]
 - ...
@@ -77,9 +85,11 @@ Use the below format to provide a comprehensive summary of the review:
 - ...
 
 ### Nitpicks
+
 // Issues regarding inconsequential items, or small concerns that may be
 // resolved by changing only a few adjacent lines.
 // These include, but are not limited to:
+
 - [Variable Name 1]
 - [Variable Name 2]
 - ...
@@ -90,25 +100,33 @@ Use the below format to provide a comprehensive summary of the review:
 ## Correctness Review
 
 ### Logic Issues
+
 [adequate / needs work]
+
 - [Issue 1]
 - [Issue 2]
 - ...
 
 ### Edge Cases
+
 [adequate / needs work]
+
 - [Case 1]
 - [Case 2]
 - ...
 
 ### Potential Regressions
+
 [adequate / needs work]
+
 - [Regression 1]
 - [Regression 2]
 - ...
 
 ### Error Handling
+
 [adequate / needs work]
+
 - [Unhandled Error 1]
 - [Unhandled Error 2]
 - ...
@@ -120,32 +138,41 @@ Use the below format to provide a comprehensive summary of the review:
 - **Test Coverage Quality**: [good/partial/missing key paths]
 
 ### Manual test scenarios to verify
+
 - [Scenario 1]
 - [Scenario 2]
 - ...
 
 ## Performance
+
 // Performance concerns. If none, do not include the Performance section.
+
 - [Performance Concern 1]
 - [Performance Concern 2]
 - ...
 
 ## Security
+
 // Security concerns. If none, do not include the Security section.
+
 - [Security Concern 1]
 - [Security Concern 2]
 
 ## Questions
+
 // Anything to clarify unclear intent
 // Anything to confirm with the author
 
 ## Suggested Next Steps
+
 // May include, but are not limited to:
+
 - [Fix blocking item]
 - [Add/update test]
 - [Clean up follow-up item]
 
 ## Final Recommendation
+
 **Recommendation**: [approve / request changes / comment only]
 **Why**: [1-3 sentence closing summary]
 
