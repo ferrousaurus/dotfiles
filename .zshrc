@@ -17,3 +17,12 @@ source "$(brew --prefix)/share/zsh-history-substring-search/zsh-history-substrin
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+export PATH="$HOME/.local/bin:$PATH"
+
+if [[ -n "$KITTY_INSTALLATION_BIN" ]]; then
+    export KITTY_SHELL_INTEGRATION="enabled"
+    autoload -Uz -- "$KITTY_INSTALLATION_BIN/shell-integration/zsh/kitty-integration"
+    kitty-integration
+    unfunction kitty-integration
+fi

@@ -26,6 +26,13 @@ applications:
         sources:
           - path: ".config/feo/config.local.yaml"
           - path: ".config/feo/config.yaml"
+  herdr:
+    targets:
+      config:
+        path: "~/.config/herdr/config.toml"
+        sources:
+          - path: ".config/herdr/config.local.toml"
+          - path: ".config/herdr/config.toml"
   homebrew:
     targets:
       brewfile:

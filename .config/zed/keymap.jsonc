@@ -30,4 +30,10 @@
       "cmd-alt-p": "text_finder::Toggle",
     },
   },
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd-;": "editor::ToggleRelativeLineNumbers",
+    },
+  },
 ]

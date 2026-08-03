@@ -24,7 +24,7 @@
   "edit_predictions": {
     "allow_data_collection": "no",
   },
-  "format_on_save": "on",
+  "format_on_save": "modifications",
   "git_panel": {
     "commit_title_max_length": 120,
     "file_icons": true,
@@ -92,9 +92,6 @@
   },
   "ui_font_family": ".SystemUIFont",
   "use_system_window_tabs": true,
-  "vim": {
-    "toggle_relative_line_numbers": true,
-  },
   "vim_mode": true,
   "which_key": {
     "delay_ms": 200,
