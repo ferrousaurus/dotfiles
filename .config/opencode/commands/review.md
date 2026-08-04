@@ -1,6 +1,6 @@
 ---
-description: Review the changes between the current branch and the trunk.
 agent: reviewer
+description: Review the changes between the current branch and the trunk.
 ---
 
 Provide a review of the changes between the current code and `origin/develop`.

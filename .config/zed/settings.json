@@ -1,7 +1,7 @@
 {
   "agent": {
     "default_profile": "ask",
-    "limit_content_width": false,
+    "limit_content_width": false
   },
   "buffer_font_family": "FiraMono Nerd Font Mono",
   "buffer_font_size": 13.0,
@@ -9,93 +9,93 @@
   "cli_default_open_behavior": "new_window",
   "collaboration_panel": {
     "button": false,
-    "dock": "left",
+    "dock": "left"
   },
   "colorize_brackets": true,
   "context_servers": {
     "memory": {
       "enabled": true,
       "remote": false,
-      "settings": {},
-    },
+      "settings": {}
+    }
   },
   "document_folding_ranges": "on",
   "document_symbols": "on",
   "edit_predictions": {
-    "allow_data_collection": "no",
+    "allow_data_collection": "no"
   },
   "format_on_save": "modifications",
   "git_panel": {
     "commit_title_max_length": 120,
     "file_icons": true,
-    "tree_view": true,
+    "tree_view": true
   },
   "gutter": {
-    "min_line_number_digits": 3,
+    "min_line_number_digits": 3
   },
   "icon_theme": {
     "dark": "Catppuccin Macchiato",
     "light": "Catppuccin Macchiato",
-    "mode": "dark",
+    "mode": "dark"
   },
   "inlay_hints": {
     "show_background": true,
     "toggle_on_modifiers_press": {
-      "control": true,
-    },
+      "control": true
+    }
   },
   "languages": {
     "TypeScript": {
       "code_actions_on_format": {
-        "source.organizeImports": true,
-      },
-    },
+        "source.organizeImports": true
+      }
+    }
   },
   "preferred_line_length": 120,
   "project_panel": {
     "bold_folder_labels": true,
     "diagnostic_badges": true,
     "entry_spacing": "standard",
-    "git_status_indicator": true,
+    "git_status_indicator": true
   },
   "search": {
-    "button": false,
+    "button": false
   },
   "semantic_tokens": "combined",
   "status_bar": {
     "active_encoding_button": "enabled",
     "line_endings_button": true,
-    "show_active_file": true,
+    "show_active_file": true
   },
   "tab_bar": {
-    "show_nav_history_buttons": false,
+    "show_nav_history_buttons": false
   },
   "tabs": {
     "file_icons": true,
     "git_status": true,
-    "show_diagnostics": "errors",
+    "show_diagnostics": "errors"
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false,
+    "metrics": false
   },
   "terminal": {
-    "button": false,
+    "button": false
   },
   "theme": {
     "dark": "Catppuccin Macchiato (sky)",
     "light": "Catppuccin Latte (sky)",
-    "mode": "dark",
+    "mode": "dark"
   },
   "title_bar": {
-    "show_branch_status_icon": true,
+    "show_branch_status_icon": true
   },
   "ui_font_family": ".SystemUIFont",
   "use_system_window_tabs": true,
   "vim_mode": true,
   "which_key": {
     "delay_ms": 200,
-    "enabled": true,
+    "enabled": true
   },
-  "wrap_guides": [80, 120],
+  "wrap_guides": [80, 120]
 }

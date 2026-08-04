@@ -1,0 +1,11 @@
+[
+  {
+    "label": "mlx",
+    "command": "mlx_lm.server --model mlx-community/Qwen2.5-Coder-1.5B-Instruct-4bit --port 11434",
+    "use_new_terminal": true,
+    "reveal": "never",
+    "hide": "always",
+    "show_summary": false,
+    "show_command": false,
+  },
+]

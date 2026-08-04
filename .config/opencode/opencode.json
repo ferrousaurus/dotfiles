@@ -1,0 +1,26 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agent": {
+    "build": {
+      "color": "#a6e3a1",
+      "system": "You are an expert Software Engineer."
+    },
+    "plan": {
+      "color": "#cba6f7",
+      "system": "You are an expert Software Engineer."
+    },
+    "compaction": {},
+    "explore": {},
+    "general": {},
+    "summary": {},
+    "title": {}
+  },
+  "default_agent": "plan",
+  "formatter": {},
+  "lsp": {},
+  "plugin": ["envsitter-guard@latest"],
+  "share": "disabled",
+  "theme": {
+    "name": "catppuccin"
+  }
+}

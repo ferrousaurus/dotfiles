@@ -24,10 +24,46 @@ tap_to_click = true
 [bootstrap.macos.defaults]
 "com.app.finder" = { AppleShowAllFiles = true }
 
+[bootstrap.packages]
+"brew:colima" = "latest"
+"brew:docker" = "latest"
+"brew:docker-buildx" = "latest"
+"brew:docker-compose" = "latest"
+"brew:docker-credential-helper" = "latest"
+"brew:git" = "latest"
+"brew:mise" = "latest"
+"brew:wget" = "latest"
+"brew:zsh-autosuggestions" = "latest"
+"brew:zsh-history-substring-search" = "latest"
+"brew:zsh-syntax-highlighting" = "latest"
+
 [dotfiles]
 "~/.zshrc" = {}
+"~/.config/ghostty/config.ghostty" = {}
+"~/.config/git/ignore" = {}
+"~/.config/herdr/config.toml" = {}
+"~/.config/hunk/config.toml" = {}
+"~/.config/mise/config.toml" = {}
+"~/.config/starship.toml" = {}
+"~/.config/zed/keymap.jsonc" = {}
+"~/.config/zed/tasks.json" = {}
+"~/.config/zed/themes/catppuccin-sky.json" = {}
+
+"~/.config/opencode/commands" = {}
+"~/.config/opencode/AGENTS.md" = {}
+
+[dotfiles."~/.config/opencode/opencode.json"]
+source = "~/.dotfiles/.config/opencode/opencode.json.tmpl"
+mode = "template"
+template = "tmpl"
+
+[dotfiles."~/.config/zed/settings.json"]
+source = "~/.dotfiles/.config/zed/settings.json.tmpl"
+mode = "template"
+template = "tmpl"
 
 [env]
+OPENCODE_EXPERIMENTAL_OXFMT = true
 TERM = "xterm-256color"
 
 [shell_alias]
@@ -74,6 +110,7 @@ uv = "0.12" # Python dependency manager
 viteplus = "latest"
 watchexec = "latest"
 zoxide = "latest" # cd replacement
+yq = "latest" # jq replacement
 
 "dotnet:Aspire.Cli" = "13"
 

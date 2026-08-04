@@ -1,6 +1,5 @@
 ---
 agent: debugger
-name: debug
 description: Provide a root cause analysis of some error, exception, or bug.
 ---
 # Debug Command
