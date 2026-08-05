@@ -123,6 +123,7 @@ docker-compose = "latest"
 eza = "latest" # ls replacement
 fd = "latest" # find replacement
 fzf = "latest"
+herdr = "latest" # harness-friendly multiplexer
 lazygit = "latest"
 neovim = "latest"
 opencode = "latest"
