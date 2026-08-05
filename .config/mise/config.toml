@@ -1,6 +1,6 @@
 
 [bootstrap.hooks.pre-packages]
-run = "softwareupdate --install-rosetta --agree-to-license"
+run = "test -d /usr/libexec/rosetta || softwareupdate --install-rosetta --agree-to-license"
 
 [bootstrap.hooks.final]
 run = '''
