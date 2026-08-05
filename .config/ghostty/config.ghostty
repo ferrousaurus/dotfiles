@@ -4,6 +4,6 @@ theme = Catppuccin Macchiato
 cursor-style = bar
 cursor-style-blink = false
 mouse-hide-while-typing = true
-macos-titlebar-style = tabs
+macos-titlebar-style = "transparent"
 window-save-state = always
 unfocused-split-opacity = 0.85
