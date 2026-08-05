@@ -1,3 +1,18 @@
+
+[bootstrap.hooks.pre-packages]
+run = "softwareupdate --install-rosetta --agree-to-license"
+
+[bootstrap.hooks.final]
+run = '''
+f="$HOME/.docker/config.json"
+mkdir -p "$HOME/.docker"
+test -f "$f" || echo '{}' > "$f"
+jq -M '(.cliPluginsExtraDirs // []) as $existing | .credsStore = (.credsStore // "osxkeychain") | .currentContext = (.currentContext // "colima") | .cliPluginsExtraDirs = ($existing + (["/opt/homebrew/lib/docker/cli-plugins", (env.HOME + "/.docker/cli-plugins"), (env.HOME + "/.local/share/mise/installs/docker-compose/latest")] - $existing))' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+'''
+
+[bootstrap.hooks.post-defaults]
+run = "killall Dock || true"
+
 [bootstrap.macos.dock]
 autohide = true
 orientation = "bottom"
@@ -48,6 +63,7 @@ login_shell = "/bin/zsh"
 
 [dotfiles]
 "~/.agents/.skill-lock.json" = {}
+
 "~/.config/ghostty/config.ghostty" = {}
 "~/.config/git/ignore" = {}
 "~/.config/herdr/config.toml" = {}
@@ -64,6 +80,7 @@ login_shell = "/bin/zsh"
 "~/.config/zed/tasks.json" = {}
 "~/.config/nvim" = {}
 "~/.config/zed/themes/catppuccin-sky.json" = {}
+
 "~/.zshrc" = {}
 
 [env]
