@@ -26,7 +26,6 @@ three_finger_drag = true
 "com.app.finder" = { AppleShowAllFiles = true }
 
 [bootstrap.packages]
-"brew:docker-buildx" = "latest"
 "brew:docker-credential-helper" = "latest"
 "brew:git" = "latest"
 "brew:mise" = "latest"
@@ -37,6 +36,7 @@ three_finger_drag = true
 # These are commented out because they are expected to be installed, but may not
 # function with a mirror. Add them to the config.local.toml, or install them
 # manually with `brew install ${PACKAGE}`
+# "brew:docker-buildx" = "latest"
 # "brew:lima" = "latest"
 # "brew:luarocks" = "latest"
 
