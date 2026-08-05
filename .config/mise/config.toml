@@ -25,6 +25,17 @@ three_finger_drag = true
 [bootstrap.macos.defaults]
 "com.app.finder" = { AppleShowAllFiles = true }
 
+[bootstrap.packages]
+"brew:docker-buildx" = "latest"
+"brew:docker-credential-helper" = "latest"
+"brew:git" = "latest"
+"brew:lima" = "latest"
+"brew:luarocks" = "latest"
+"brew:mise" = "latest"
+"brew:zsh-autosuggestions" = "latest"
+"brew:zsh-history-substring-search" = "latest"
+"brew:zsh-syntax-highlighting" = "latest"
+
 [bootstrap.repos]
 #"~/.dotfiles" = { url = "git@github.com:ferrousaurus/dotfiles.git", ref = "main" }
 
