@@ -9,7 +9,13 @@ permission:
     rg *: allow
     npm test: allow
     npm run lint: allow
-    npm run check: allow
+    npm run check: allo
+    nub test: allow
+    nub run format:check: allow
+    nub run lint: allow
+    nub run lint:check: allow
+    nub run check: allow
+    nub run build: alloww
     dotnet test: allow
   edit: deny
   grep: allow

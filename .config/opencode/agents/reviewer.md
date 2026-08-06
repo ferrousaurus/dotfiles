@@ -11,9 +11,12 @@ permission:
     grep *: allow
     rg *: allow
     dotnet test: allow
-    npm test: allow
-    npm run lint: allow
-    npm run check: allow
+    nub test: allow
+    nub run format:check: allow
+    nub run lint: allow
+    nub run lint:check: allow
+    nub run check: allow
+    nub run build: allow
   edit: deny
   grep: allow
   read: allow
