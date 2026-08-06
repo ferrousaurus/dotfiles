@@ -1,9 +1,21 @@
+[bootstrap.hooks.pre-dotfiles]
+run = '''
+#!/usr/bin/env zsh
+[[ -f ~/.dotfiles/.config/opencode/opencode.local.json ]] || echo "{}" > ~/.dotfiles/.config/opencode/opencode.local.json
+jq -s '.[0] * .[1]' ~/.dotfiles/.config/opencode/opencode.git.json ~/.dotfiles/.config/opencode/opencode.local.json >> ~/.dotfiles/.config/opencode/opencode.json
+[[ -f ~/.dotfiles/.config/zed/settings.local.json ]] || echo "{}" > ~/.dotfiles/.config/zed/settings.local.json
+jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.config/zed/settings.local.json >> ~/.dotfiles/.config/zed/settings.json
+'''
 
 [bootstrap.hooks.pre-packages]
-run = "test -d /usr/libexec/rosetta || softwareupdate --install-rosetta --agree-to-license"
+run = '''
+#!/usr/bin/env zsh
+test -d /usr/libexec/rosetta || softwareupdate --install-rosetta --agree-to-license
+'''
 
 [bootstrap.hooks.final]
 run = '''
+#!/usr/bin/env zsh
 f="$HOME/.docker/config.json"
 mkdir -p "$HOME/.docker"
 test -f "$f" || echo '{}' > "$f"
@@ -71,12 +83,12 @@ login_shell = "/bin/zsh"
 "~/.config/kitty/kitty.conf" = {}
 "~/.config/kitty/catppuccin-macchiato.conf" = {}
 "~/.config/mise/config.toml" = {}
-"~/.config/opencode/commands" = {}
 "~/.config/opencode/AGENTS.md" = {}
-"~/.config/opencode/opencode.json" = { source = "~/.dotfiles/.config/opencode/opencode.json.tmpl", mode = "template" }
+"~/.config/opencode/commands" = {}
+"~/.config/opencode/opencode.json" = {  }
 "~/.config/starship.toml" = {}
 "~/.config/zed/keymap.jsonc" = {}
-"~/.config/zed/settings.json" = { source = "~/.dotfiles/.config/zed/settings.json.tmpl", mode = "template" }
+"~/.config/zed/settings.json" = {  }
 "~/.config/zed/tasks.json" = {}
 "~/.config/nvim" = {}
 "~/.config/zed/themes/catppuccin-sky.json" = {}
