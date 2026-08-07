@@ -3,11 +3,11 @@
   "agent": {
     "build": {
       "color": "#a6e3a1",
-      "system": "You are an expert Software Engineer."
+      "prompt": "You are an expert Software Engineer."
     },
     "plan": {
       "color": "#cba6f7",
-      "system": "You are an expert Software Engineer."
+      "prompt": "You are an expert Software Engineer."
     },
     "compaction": {},
     "explore": {},
