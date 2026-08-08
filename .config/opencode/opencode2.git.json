@@ -1,13 +1,12 @@
 {
-  "$schema": "https://opencode.ai/config.json",
-  "agent": {
+  "agents": {
     "build": {
       "color": "#a6e3a1",
-      "prompt": "You are an expert Software Engineer."
+      "system": "You are an expert Software Engineer."
     },
     "plan": {
       "color": "#cba6f7",
-      "prompt": "You are an expert Software Engineer."
+      "system": "You are an expert Software Engineer."
     },
     "compaction": {},
     "explore": {},
@@ -18,6 +17,8 @@
   "default_agent": "plan",
   "formatter": {},
   "lsp": {},
-  "plugin": ["envsitter-guard@latest"],
+  "mcp": { "servers": {} },
+  "media": { "image": { "auto_resize": true } },
+  "plugins": ["envsitter-guard@latest"],
   "share": "disabled"
 }
