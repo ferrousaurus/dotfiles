@@ -159,4 +159,3 @@ zoxide = "latest" # cd replacement
 yq = "latest" # jq replacement
 
 "npm:skills" = "latest"
-"npm:@opencode-ai/cli" = "next"
