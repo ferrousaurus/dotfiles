@@ -136,6 +136,7 @@ vim = "nvim"
 [tools]
 age = "latest"
 ast-grep = "latest"
+aube = "latest"
 bat = "latest" # cat replcaement
 bat-extras = "latest"
 bottom = "latest" # Process TUI
@@ -149,6 +150,7 @@ github-cli = "latest"
 herdr = "latest" # harness-friendly multiplexer
 lazygit = "latest"
 neovim = "latest"
+nub = "latest"
 opencode = "latest"
 oxker = "latest" # Containerization TUI
 ripgrep = "latest" # grep replacement
