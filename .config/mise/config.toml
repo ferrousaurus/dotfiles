@@ -56,7 +56,7 @@ fn_state = false
 
 [bootstrap.macos.trackpad]
 tap_to_click = true
-three_finger_drag = true
+three_finger_drag = false
 
 [bootstrap.macos.defaults]
 "com.app.finder" = { AppleShowAllFiles = true }
