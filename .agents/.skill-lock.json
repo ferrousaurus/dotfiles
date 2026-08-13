@@ -8,7 +8,7 @@
       "skillPath": "skills/caveman/SKILL.md",
       "skillFolderHash": "3e4386ca694c65a65ba84024f0fe2646a8c9076a",
       "installedAt": "2026-08-04T19:56:26.200Z",
-      "updatedAt": "2026-08-04T19:56:26.200Z"
+      "updatedAt": "2026-08-13T20:41:42.325Z"
     },
     "caveman-commit": {
       "source": "JuliusBrussee/caveman",
@@ -17,25 +17,25 @@
       "skillPath": "skills/caveman-commit/SKILL.md",
       "skillFolderHash": "6ba13fa3503e9607eed8f94828b524510d83b7ef",
       "installedAt": "2026-08-04T19:56:26.202Z",
-      "updatedAt": "2026-08-04T19:56:26.202Z"
+      "updatedAt": "2026-08-13T20:41:42.330Z"
     },
     "caveman-compress": {
       "source": "JuliusBrussee/caveman",
       "sourceType": "github",
       "sourceUrl": "https://github.com/JuliusBrussee/caveman.git",
       "skillPath": "skills/caveman-compress/SKILL.md",
-      "skillFolderHash": "0fca830ebfbf51481ebcf285fd5c67d892ad3ee5",
+      "skillFolderHash": "b251ec60119a86c4d0da6651b0d2b0cbe06d3c97",
       "installedAt": "2026-08-04T19:56:26.202Z",
-      "updatedAt": "2026-08-04T19:56:26.202Z"
+      "updatedAt": "2026-08-13T20:41:42.330Z"
     },
     "caveman-help": {
       "source": "JuliusBrussee/caveman",
       "sourceType": "github",
       "sourceUrl": "https://github.com/JuliusBrussee/caveman.git",
       "skillPath": "skills/caveman-help/SKILL.md",
-      "skillFolderHash": "686974193bba1a8a12029032fcf730d03e5ffdea",
+      "skillFolderHash": "b4f5ebc5f3ce9bfa652996b5161bbe3cc0b88297",
       "installedAt": "2026-08-04T19:56:26.203Z",
-      "updatedAt": "2026-08-04T19:56:26.203Z"
+      "updatedAt": "2026-08-13T20:41:42.331Z"
     },
     "caveman-review": {
       "source": "JuliusBrussee/caveman",
@@ -44,7 +44,7 @@
       "skillPath": "skills/caveman-review/SKILL.md",
       "skillFolderHash": "2d9762b7aec395b9713fde57fb8965bc3bbd2c3f",
       "installedAt": "2026-08-04T19:56:26.203Z",
-      "updatedAt": "2026-08-04T19:56:26.203Z"
+      "updatedAt": "2026-08-13T20:41:42.331Z"
     },
     "caveman-stats": {
       "source": "JuliusBrussee/caveman",
@@ -62,7 +62,7 @@
       "skillPath": "skills/cavecrew/SKILL.md",
       "skillFolderHash": "326ab384eb445cc0a74608d6f0c0abe6558bb44a",
       "installedAt": "2026-08-04T19:56:26.204Z",
-      "updatedAt": "2026-08-04T19:56:26.204Z"
+      "updatedAt": "2026-08-13T20:41:42.331Z"
     },
     "herdr": {
       "source": "herdrdev/herdr",

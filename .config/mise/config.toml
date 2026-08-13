@@ -25,6 +25,8 @@ test -d /usr/libexec/rosetta || softwareupdate --install-rosetta --agree-to-lice
 [bootstrap.hooks.final]
 run = '''
 #!/usr/bin/env zsh
+#
+# Configure Docker CLI plugins
 f="$HOME/.docker/config.json"
 mkdir -p "$HOME/.docker"
 test -f "$f" || echo '{}' > "$f"
@@ -84,6 +86,7 @@ login_shell = "/bin/zsh"
 
 [dotfiles]
 "~/.agents/.skill-lock.json" = {}
+"~/.agents/skills" = {}
 
 "~/.config/ghostty/config.ghostty" = {}
 "~/.config/git/ignore" = {}

@@ -1,18 +1,15 @@
 {
   "agents": {
-    "build": {
-      "color": "#a6e3a1",
-      "system": "You are an expert Software Engineer."
-    },
-    "plan": {
-      "color": "#cba6f7",
-      "system": "You are an expert Software Engineer."
-    },
-    "compaction": {},
+    "build": {},
+    "plan": {},
     "explore": {},
     "general": {},
-    "summary": {},
-    "title": {}
+    "build-workhorse": {},
+    "build-mini": {},
+    "plan-workhorse": {},
+    "plan-mini": {},
+    "debugger": {},
+    "reviewer": {}
   },
   "default_agent": "plan",
   "formatter": {},

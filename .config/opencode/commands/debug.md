@@ -1,38 +1,29 @@
 ---
-agent: debugger
-description: Provide a root cause analysis of some error, exception, or bug.
+agent: plan
+description: Provide a root cause analysis of an error, exception, or bug.
 ---
-# Debug Command
-
-Accept a stack trace, error message, or bug description from the user and perform a thorough root cause analysis.
+Analyze stack trace, error message, or bug description in `$ARGUMENTS`. Remain read-only: delegate bounded investigation only to `plan-workhorse`; synthesize analysis. Use only checks current `plan`/`plan-workhorse` permissions allow.
 
 ## Scope Priority
 
-Focus primarily on:
-1. **Runtime exceptions**: crashes, unhandled rejections, null reference errors, etc.
-2. **Compile and type errors**: Compilation errors, type mismatches, missing properties, etc.
-
-Test failures and logic bugs are supported but should be treated as secondary priorities.
+Prioritize runtime failures (crashes, unhandled rejections, null references), then compile/type errors (failures, mismatches, missing properties), then test and logic failures.
 
 ## Investigation Process
 
-1. If the tech stack is unclear and you have access to the `identify-stack` skill, invoke it to understand the project's architecture.
-2. Use the `explore` subagent to investigate the codebase, trace the error path, and locate the exact files and lines involved.
-3. Verify hypotheses by examining relevant source files, configuration, and dependencies.
+Trace stack and execution path. Inspect source, configuration, and dependencies; run only permitted checks. Cite exact `path:line` locations. Separate observed evidence, conclusions supported by evidence, and hypotheses/unresolved uncertainty.
 
 ## Output Format
 
-Provide your findings in the following template:
-
-<template>
-
 ## Root Cause Analysis
-A clear, concise explanation of what is happening, and why the erorr occurs. Identify the exact file(s) and line(s) responsible when possible.
+
+State symptom, trigger, location, failure mechanism, and root cause. Support conclusions with evidence; mark hypotheses and uncertainty.
 
 ## Resolution Instructions
-Step-by-step guidance on how to fix the issue. Keep instructions concise and actionable.
 
-## Alternative Instructions (if applicable)
-If multiple valid fixes exist, provide a short paragraph outlining its **pros** and **cons**. End with a bold, clear suggestion for which resolution to implement and why.
+Give actionable guidance, not implementation.
 
-</template>
+When multiple valid fixes exist, add `## Alternative Resolution`: options, tradeoffs, recommendation.
+
+## Verification
+
+Specify focused verification within permitted checks.
