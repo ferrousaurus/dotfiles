@@ -67,6 +67,7 @@ three_finger_drag = false
 "brew:docker-credential-helper" = "latest"
 "brew:git" = "latest"
 "brew:mise" = "latest"
+"brew:zsh-autosuggestions" = "latest"
 "brew:zsh-syntax-highlighting" = "latest"
 
 # These are commented out because they are expected to be installed, but may not
