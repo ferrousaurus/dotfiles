@@ -1,4 +1,4 @@
-[## Base directory for Atuin data files (databases, keys, session, etc.)
+## Base directory for Atuin data files (databases, keys, session, etc.)
 ## All data file paths default to being relative to this directory.
 ## linux/mac: ~/.local/share/atuin (or XDG_DATA_HOME/atuin)
 ## windows: %USERPROFILE%/.local/share/atuin
@@ -404,4 +404,3 @@ enabled = false
 ## Syntax highlight commands in the search results, using the theme's colors.
 ## Not available on all platforms (e.g. Windows).
 # syntax_highlight = true
-]
