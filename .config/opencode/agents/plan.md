@@ -4,6 +4,18 @@ mode: primary
 permission:
   bash:
     "*": deny
+    "deno task check": allow
+    "deno task lint": allow
+    "deno task lint:check": allow
+    "deno task format:check": allow
+    "npm task check": allow
+    "npm task lint": allow
+    "npm task lint:check": allow
+    "npm task format:check": allow
+    "nub task check": allow
+    "nub task lint": allow
+    "npm task lint:check": allow
+    "nub task format:check": allow
     "git log *": allow
     "git diff *": allow
     "git status *": allow

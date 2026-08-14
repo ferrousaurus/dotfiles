@@ -67,8 +67,6 @@ three_finger_drag = false
 "brew:docker-credential-helper" = "latest"
 "brew:git" = "latest"
 "brew:mise" = "latest"
-"brew:zsh-autosuggestions" = "latest"
-"brew:zsh-history-substring-search" = "latest"
 "brew:zsh-syntax-highlighting" = "latest"
 
 # These are commented out because they are expected to be installed, but may not
@@ -88,6 +86,7 @@ login_shell = "/bin/zsh"
 "~/.agents/.skill-lock.json" = {}
 "~/.agents/skills" = {}
 
+"~/.config/atuin/config.toml" = {}
 "~/.config/ghostty/config.ghostty" = {}
 "~/.config/git/ignore" = {}
 "~/.config/herdr/config.toml" = {}
@@ -139,6 +138,7 @@ vim = "nvim"
 [tools]
 age = "latest"
 ast-grep = "latest"
+atuin = "latest"
 aube = "latest"
 bat = "latest" # cat replcaement
 bat-extras = "latest"

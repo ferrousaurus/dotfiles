@@ -3,7 +3,23 @@ description: Performs narrow read-only searches and small research tasks for the
 hidden: true
 mode: subagent
 permission:
-  bash: deny
+  bash:
+    "*": deny
+    "deno task check": allow
+    "deno task lint": allow
+    "deno task lint:check": allow
+    "deno task format:check": allow
+    "npm task check": allow
+    "npm task lint": allow
+    "npm task lint:check": allow
+    "npm task format:check": allow
+    "nub task check": allow
+    "nub task lint": allow
+    "npm task lint:check": allow
+    "nub task format:check": allow
+    "git log *": allow
+    "git diff *": allow
+    "git status *": allow
   edit: deny
   glob: allow
   grep: allow
