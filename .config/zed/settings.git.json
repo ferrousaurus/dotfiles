@@ -1,5 +1,9 @@
 {
   "agent": {
+    "auto_compact": {
+      "enabled": true,
+      "threshold": "90%"
+    },
     "default_profile": "ask",
     "limit_content_width": false
   },
@@ -80,9 +84,7 @@
     "diagnostics": false,
     "metrics": false
   },
-  "terminal": {
-    "button": false
-  },
+  "terminal": {},
   "theme": {
     "dark": "Catppuccin Macchiato (sky)",
     "light": "Catppuccin Latte (sky)",

@@ -1,19 +1,197 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "agent": {
-    "build": {},
-    "plan": {},
+    "build": {
+      "description": "Implements and verifies changes, delegating bounded work aggressively.",
+      "mode": "primary",
+      "permission": {
+        "bash": "allow",
+        "edit": "allow",
+        "task": {
+          "*": "deny",
+          "build-mini": "allow",
+          "build-workhorse": "allow",
+          "debugger": "allow",
+          "documenter": "allow",
+          "explore": "allow",
+          "general": "allow",
+          "reviewer": "allow"
+        }
+      },
+      "prompt": "{file:./prompts/build.md}"
+    },
+    "plan": {
+      "description": "Investigates requests and produces implementation-ready plans without making changes.",
+      "mode": "primary",
+      "permission": {
+        "bash": {
+          "*": "deny",
+          "deno task check": "allow",
+          "deno task lint": "allow",
+          "deno task lint:check": "allow",
+          "deno task format:check": "allow",
+          "npm task check": "allow",
+          "npm task lint": "allow",
+          "npm task lint:check": "allow",
+          "npm task format:check": "allow",
+          "nub task check": "allow",
+          "nub task lint": "allow",
+          "nub task format:check": "allow",
+          "git log *": "allow",
+          "git diff *": "allow",
+          "git status *": "allow"
+        },
+        "edit": "deny",
+        "task": {
+          "*": "deny",
+          "documenter": "allow",
+          "explore": "allow",
+          "plan-mini": "allow",
+          "plan-workhorse": "allow"
+        }
+      },
+      "prompt": "{file:./prompts/plan.md}"
+    },
     "explore": {},
     "general": {},
     "title": {},
     "summary": {},
     "compaction": {},
-    "build-workhorse": {},
-    "build-mini": {},
-    "plan-workhorse": {},
-    "plan-mini": {},
-    "debugger": {},
-    "reviewer": {}
+    "build-workhorse": {
+      "description": "Implements and verifies bounded multi-step changes for the Build agent.",
+      "hidden": true,
+      "mode": "subagent",
+      "permission": {
+        "bash": "allow",
+        "edit": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "read": "allow",
+        "task": "deny"
+      },
+      "prompt": "{file:./prompts/build-workhorse.md}"
+    },
+    "build-mini": {
+      "description": "Performs narrow searches, mechanical edits, and focused test updates for the Build agent.",
+      "hidden": true,
+      "mode": "subagent",
+      "permission": {
+        "bash": "allow",
+        "edit": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "read": "allow",
+        "task": "deny"
+      },
+      "prompt": "{file:./prompts/build-mini.md}"
+    },
+    "plan-workhorse": {
+      "description": "Performs bounded, multi-step read-only investigation and analysis for the Plan agent.",
+      "hidden": true,
+      "mode": "subagent",
+      "permission": {
+        "bash": {
+          "*": "deny",
+          "deno task check": "allow",
+          "deno task lint": "allow",
+          "deno task lint:check": "allow",
+          "deno task format:check": "allow",
+          "npm task check": "allow",
+          "npm task lint": "allow",
+          "npm task lint:check": "allow",
+          "npm task format:check": "allow",
+          "nub task check": "allow",
+          "nub task lint": "allow",
+          "nub task format:check": "allow",
+          "git log *": "allow",
+          "git diff *": "allow",
+          "git status *": "allow"
+        },
+        "edit": "deny",
+        "glob": "allow",
+        "grep": "allow",
+        "read": "allow",
+        "task": "deny"
+      },
+      "prompt": "{file:./prompts/plan-workhorse.md}"
+    },
+    "plan-mini": {
+      "description": "Performs narrow read-only searches and small research tasks for the Plan agent.",
+      "hidden": true,
+      "mode": "subagent",
+      "permission": {
+        "bash": {
+          "*": "deny",
+          "deno task check": "allow",
+          "deno task lint": "allow",
+          "deno task lint:check": "allow",
+          "deno task format:check": "allow",
+          "npm task check": "allow",
+          "npm task lint": "allow",
+          "npm task lint:check": "allow",
+          "npm task format:check": "allow",
+          "nub task check": "allow",
+          "nub task lint": "allow",
+          "nub task format:check": "allow",
+          "git log *": "allow",
+          "git diff *": "allow",
+          "git status *": "allow"
+        },
+        "edit": "deny",
+        "glob": "allow",
+        "grep": "allow",
+        "read": "allow",
+        "task": "deny"
+      },
+      "prompt": "{file:./prompts/plan-mini.md}"
+    },
+    "debugger": {
+      "description": "Investigates failures and returns evidence-based root cause analyses and resolution guidance.",
+      "mode": "subagent",
+      "permission": {
+        "bash": {
+          "*": "deny",
+          "npm test": "allow",
+          "npm run format:check": "allow",
+          "npm run lint": "allow",
+          "npm run lint:check": "allow",
+          "npm run check": "allow"
+        },
+        "edit": "deny",
+        "grep": "allow",
+        "read": "allow",
+        "task": "deny"
+      },
+      "prompt": "{file:./prompts/debugger.md}"
+    },
+    "documenter": {
+      "description": "Drafts ready-to-apply technical documentation and returns it to the calling agent.",
+      "mode": "subagent",
+      "permission": { "bash": "deny", "edit": "deny", "read": "allow", "task": "deny" },
+      "prompt": "{file:./prompts/documenter.md}"
+    },
+    "reviewer": {
+      "description": "Independently reviews changes for correctness, regressions, convention compliance, and readiness.",
+      "mode": "subagent",
+      "permission": {
+        "bash": {
+          "*": "deny",
+          "git diff *": "allow",
+          "git log *": "allow",
+          "git show *": "allow",
+          "npm test": "allow",
+          "npm run format:check": "allow",
+          "npm run lint": "allow",
+          "npm run lint:check": "allow",
+          "npm run check": "allow"
+        },
+        "edit": "deny",
+        "grep": "allow",
+        "read": "allow",
+        "task": "deny"
+      },
+      "prompt": "{file:./prompts/reviewer.md}"
+    }
   },
   "default_agent": "plan",
   "formatter": {},
