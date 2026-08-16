@@ -22,7 +22,8 @@
   "document_folding_ranges": "on",
   "document_symbols": "on",
   "edit_predictions": {
-    "allow_data_collection": "no"
+    "allow_data_collection": "no",
+    "mode": "subtle"
   },
   "format_on_save": "modifications",
   "git_panel": {
