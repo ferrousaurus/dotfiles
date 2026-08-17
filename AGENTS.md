@@ -1,0 +1,3 @@
+This project defines a collection of dotfiles that will can be shared between multiple machines. It is managed through @.config/mise/config.toml's dotfiles section, and installed via `mise bootstrap`.
+
+Some files are infixed with `.git`, such as `.config/opencode/opencode.git.json`. These files are intended to be colocated with a similar file infixed with `.local` (i.e. `.config/opencode/opencode.local.json`). mise's `pre-dotfiles` hook runs `jq` with these two files to create the associated dotfile (i.e. `.config/opencode/opencode.json`) which is the file symlinked to the canonical directory.

@@ -8,13 +8,12 @@
         "edit": "allow",
         "task": {
           "*": "deny",
-          "build-mini": "allow",
-          "build-workhorse": "allow",
-          "debugger": "allow",
-          "documenter": "allow",
           "explore": "allow",
-          "general": "allow",
-          "reviewer": "allow"
+          "librarian": "allow",
+          "implementer": "allow",
+          "debugger": "allow",
+          "reviewer": "allow",
+          "documenter": "allow"
         }
       },
       "system": "{file:./prompts/build.md}"
@@ -43,21 +42,42 @@
         "edit": "deny",
         "task": {
           "*": "deny",
-          "documenter": "allow",
           "explore": "allow",
-          "plan-mini": "allow",
-          "plan-workhorse": "allow"
+          "librarian": "allow",
+          "debugger": "allow",
+          "reviewer": "allow",
+          "documenter": "allow"
         }
       },
       "system": "{file:./prompts/plan.md}"
     },
-    "explore": {},
+    "explore": {
+      "description": "Performs bounded local repository discovery and dependency tracing.",
+      "hidden": true,
+      "mode": "subagent",
+      "permission": {
+        "bash": "deny",
+        "edit": "deny",
+        "glob": "allow",
+        "grep": "allow",
+        "read": "allow",
+        "task": "deny"
+      },
+      "system": "{file:./prompts/explorer.md}"
+    },
     "general": {},
     "title": {},
     "summary": {},
     "compaction": {},
-    "build-workhorse": {
-      "description": "Implements and verifies bounded multi-step changes for the Build agent.",
+    "librarian": {
+      "description": "Performs bounded external and version-specific research using authoritative sources.",
+      "hidden": true,
+      "mode": "subagent",
+      "permission": { "bash": "deny", "edit": "deny", "read": "allow", "webfetch": "allow", "task": "deny" },
+      "system": "{file:./prompts/librarian.md}"
+    },
+    "implementer": {
+      "description": "Performs bounded implementation work within explicit caller-owned files or subsystems.",
       "hidden": true,
       "mode": "subagent",
       "permission": {
@@ -68,81 +88,7 @@
         "read": "allow",
         "task": "deny"
       },
-      "system": "{file:./prompts/build-workhorse.md}"
-    },
-    "build-mini": {
-      "description": "Performs narrow searches, mechanical edits, and focused test updates for the Build agent.",
-      "hidden": true,
-      "mode": "subagent",
-      "permission": {
-        "bash": "allow",
-        "edit": "allow",
-        "glob": "allow",
-        "grep": "allow",
-        "read": "allow",
-        "task": "deny"
-      },
-      "system": "{file:./prompts/build-mini.md}"
-    },
-    "plan-workhorse": {
-      "description": "Performs bounded, multi-step read-only investigation and analysis for the Plan agent.",
-      "hidden": true,
-      "mode": "subagent",
-      "permission": {
-        "bash": {
-          "*": "deny",
-          "deno task check": "allow",
-          "deno task lint": "allow",
-          "deno task lint:check": "allow",
-          "deno task format:check": "allow",
-          "npm task check": "allow",
-          "npm task lint": "allow",
-          "npm task lint:check": "allow",
-          "npm task format:check": "allow",
-          "nub task check": "allow",
-          "nub task lint": "allow",
-          "nub task format:check": "allow",
-          "git log *": "allow",
-          "git diff *": "allow",
-          "git status *": "allow"
-        },
-        "edit": "deny",
-        "glob": "allow",
-        "grep": "allow",
-        "read": "allow",
-        "task": "deny"
-      },
-      "system": "{file:./prompts/plan-workhorse.md}"
-    },
-    "plan-mini": {
-      "description": "Performs narrow read-only searches and small research tasks for the Plan agent.",
-      "hidden": true,
-      "mode": "subagent",
-      "permission": {
-        "bash": {
-          "*": "deny",
-          "deno task check": "allow",
-          "deno task lint": "allow",
-          "deno task lint:check": "allow",
-          "deno task format:check": "allow",
-          "npm task check": "allow",
-          "npm task lint": "allow",
-          "npm task lint:check": "allow",
-          "npm task format:check": "allow",
-          "nub task check": "allow",
-          "nub task lint": "allow",
-          "nub task format:check": "allow",
-          "git log *": "allow",
-          "git diff *": "allow",
-          "git status *": "allow"
-        },
-        "edit": "deny",
-        "glob": "allow",
-        "grep": "allow",
-        "read": "allow",
-        "task": "deny"
-      },
-      "system": "{file:./prompts/plan-mini.md}"
+      "system": "{file:./prompts/implementer.md}"
     },
     "debugger": {
       "description": "Investigates failures and returns evidence-based root cause analyses and resolution guidance.",
@@ -157,6 +103,7 @@
           "npm run check": "allow"
         },
         "edit": "deny",
+        "glob": "allow",
         "grep": "allow",
         "read": "allow",
         "task": "deny"
@@ -166,7 +113,14 @@
     "documenter": {
       "description": "Drafts ready-to-apply technical documentation and returns it to the calling agent.",
       "mode": "subagent",
-      "permission": { "bash": "deny", "edit": "deny", "read": "allow", "task": "deny" },
+      "permission": {
+        "bash": "deny",
+        "edit": "deny",
+        "glob": "allow",
+        "grep": "allow",
+        "read": "allow",
+        "task": "deny"
+      },
       "system": "{file:./prompts/documenter.md}"
     },
     "reviewer": {
@@ -185,6 +139,7 @@
           "npm run check": "allow"
         },
         "edit": "deny",
+        "glob": "allow",
         "grep": "allow",
         "read": "allow",
         "task": "deny"

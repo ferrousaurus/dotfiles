@@ -3,7 +3,7 @@ agent: plan
 description: Review all current changes against origin/develop.
 ---
 
-Review all current-branch changes against `origin/develop`. Delegate bounded investigation to `plan-workhorse`; retain synthesis and final review.
+Review all current-branch changes against `origin/develop`.
 
 Review exactly these four evidence sources independently; omit or double-count none:
 
