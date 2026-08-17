@@ -1,3 +1,8 @@
-This project defines a collection of dotfiles that will can be shared between multiple machines. It is managed through @.config/mise/config.toml's dotfiles section, and installed via `mise bootstrap`.
+# Dotfiles
 
-Some files are infixed with `.git`, such as `.config/opencode/opencode.git.json`. These files are intended to be colocated with a similar file infixed with `.local` (i.e. `.config/opencode/opencode.local.json`). mise's `pre-dotfiles` hook runs `jq` with these two files to create the associated dotfile (i.e. `.config/opencode/opencode.json`) which is the file symlinked to the canonical directory.
+- Install or refresh links with `mise bootstrap`; it is macOS-specific, expects Homebrew and `jq`, may install Rosetta, and updates Docker CLI configuration.
+- `.config/mise/config.toml` is source of truth for files linked into `$HOME` and bootstrap side effects.
+- For merged OpenCode and Zed configs, edit tracked `*.git.*` inputs, not generated runtime files. Bootstrap combines them with ignored `*.local.*` overrides using `jq`.
+- Preserve local overrides. Root `.gitignore` intentionally excludes `*.local.*`.
+- OpenCode source lives under `.config/opencode`; obey its nested `AGENTS.md`. Neovim starts at `.config/nvim/init.lua`, loads LazyVim through `lua/config/lazy.lua`, then imports local `lua/plugins` overrides.
+- No repository-wide build, test, lint, or CI workflow exists; verify edited config with its owning tool.

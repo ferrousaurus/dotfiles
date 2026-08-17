@@ -7,7 +7,7 @@ run = '''
 jq -s '.[0] * .[1]' ~/.dotfiles/.config/opencode/opencode.git.json ~/.dotfiles/.config/opencode/opencode.local.json > ~/.dotfiles/.config/opencode/opencode.json
 
 # Merge OpenCode v2 configs
-[[ -f ~/.dotfiles/.config/opencode/opencode2.local.json ]] || echo "{}" > ~/.dotfiles/.config/opencode/opencode.local.json
+[[ -f ~/.dotfiles/.config/opencode/opencode2.local.json ]] || echo "{}" > ~/.dotfiles/.config/opencode/opencode2.local.json
 jq -s '.[0] * .[1]' ~/.dotfiles/.config/opencode/opencode2.git.json ~/.dotfiles/.config/opencode/opencode2.local.json > ~/.dotfiles/.config/opencode/opencode2.json
 
 # Merge Zed configs
