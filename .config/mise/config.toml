@@ -95,15 +95,19 @@ login_shell = "/bin/zsh"
 "~/.config/ghostty/config.ghostty" = {}
 "~/.config/git/ignore" = {}
 "~/.config/herdr/config.toml" = {}
-"~/.config/hunk/config.toml" = {}
 "~/.config/kitty/kitty.conf" = {}
 "~/.config/kitty/catppuccin-macchiato.conf" = {}
 "~/.config/mise/config.toml" = {}
+"~/.config/opencode/.ocx/receipt.jsonc" = {}
 "~/.config/opencode/AGENTS.md" = {}
 "~/.config/opencode/cli.json" = {}
 "~/.config/opencode/commands" = {}
+"~/.config/opencode/plugins" = {}
+"~/.config/opencode/profiles" = {}
 "~/.config/opencode/prompts" = {}
-"~/.config/opencode/opencode.json" = { source = "~/.dotfiles/.config/opencode/opencode.json" }
+"~/.config/opencode/ocx.jsonc" = {}
+"~/.config/opencode/opencode.json" = {}
+"~/.config/opencode/opencode-quota/quota-toast.jsonc" = {}
 "~/.config/opencode/tui.jsonc" = {}
 "~/.config/starship.toml" = {}
 "~/.config/zed/keymap.jsonc" = {}
@@ -169,4 +173,5 @@ usage = "latest"
 zoxide = "latest" # cd replacement
 yq = "latest" # jq replacement
 
+"npm:ocx" = "latest"
 "npm:skills" = "latest"
