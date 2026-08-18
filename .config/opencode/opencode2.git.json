@@ -9,6 +9,8 @@
     { "action": "read", "resource": "*/.env", "effect": "ask" },
     { "action": "read", "resource": ".env.*", "effect": "ask" },
     { "action": "read", "resource": "*/.env.*", "effect": "ask" },
+    { "action": "read", "resource": ".env.schema", "effect": "allow" },
+    { "action": "read", "resource": "*/.env.schema", "effect": "allow" },
     { "action": "read", "resource": ".envrc.private", "effect": "deny" },
     { "action": "read", "resource": "*/.envrc.private", "effect": "deny" },
     { "action": "read", "resource": ".secrets", "effect": "deny" },

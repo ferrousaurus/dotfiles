@@ -11,6 +11,8 @@
       "**/.env": "ask",
       ".env.*": "ask",
       "**/.env.*": "ask",
+      ".env.schema": "ask",
+      "**/.env.schema": "ask",
       ".envrc.private": "deny",
       "**/.envrc.private": "deny",
       ".secrets": "deny",
