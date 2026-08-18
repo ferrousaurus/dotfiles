@@ -190,6 +190,6 @@
   "lsp": {},
   "mcp": { "servers": {} },
   "media": { "image": { "auto_resize": true } },
-  "plugins": ["envsitter-guard@latest"],
+  "plugins": [],
   "share": "disabled"
 }
