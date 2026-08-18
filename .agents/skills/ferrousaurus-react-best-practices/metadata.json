@@ -1,0 +1,6 @@
+{
+  "version": "1.0.0",
+  "organization": "Ferrousaurus",
+  "date": "May 2026",
+  "abstract": "React writing conventions that enforce functional component patterns, correct state management primitives, restricted useEffect usage, TanStack Query data fetching, slot-based composition, and consistent hook and rendering patterns. Contains 27 rules across 8 categories covering component definition, state management, effects & lifecycle, data fetching, composition & props, hooks, conditional rendering, and file organization. Triggers on writing, reviewing, or refactoring React code."
+}

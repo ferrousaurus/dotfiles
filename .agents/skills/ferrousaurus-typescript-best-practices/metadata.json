@@ -1,0 +1,6 @@
+{
+  "version": "1.0.0",
+  "organization": "Ferrousaurus",
+  "date": "May 2026",
+  "abstract": "Comprehensive TypeScript writing conventions, designed for AI agents and LLMs. Contains 70+ rules across 8 categories, prioritized by impact from critical (function declaration conventions) to incremental (formatting and naming). Each rule includes detailed explanations and code examples comparing incorrect vs. correct implementations."
+}

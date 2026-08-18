@@ -1,0 +1,6 @@
+{
+  "version": "1.0.0",
+  "organization": "Ferrousaurus",
+  "date": "May 2026",
+  "abstract": "Strict library classification rules for the Ferrousaurus stack. Every library is explicitly Go-To, Acceptable, or Unacceptable within its solution domain. Use these rules when bootstrapping an application or deciding on a dependency to add."
+}
