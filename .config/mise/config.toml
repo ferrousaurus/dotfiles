@@ -25,12 +25,16 @@ test -d /usr/libexec/rosetta || softwareupdate --install-rosetta --agree-to-lice
 [bootstrap.hooks.final]
 run = '''
 #!/usr/bin/env zsh
-#
+
 # Configure Docker CLI plugins
 f="$HOME/.docker/config.json"
 mkdir -p "$HOME/.docker"
 test -f "$f" || echo '{}' > "$f"
 jq -M '(.cliPluginsExtraDirs // []) as $existing | .credsStore = (.credsStore // "osxkeychain") | .currentContext = (.currentContext // "colima") | .cliPluginsExtraDirs = ($existing + (["/opt/homebrew/lib/docker/cli-plugins", (env.HOME + "/.docker/cli-plugins"), (env.HOME + "/.local/share/mise/installs/docker-compose/latest")] - $existing))' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+
+# Install opencode packages
+cd $HOME/.config/opencode
+nub i
 '''
 
 [bootstrap.hooks.post-defaults]
@@ -100,7 +104,7 @@ login_shell = "/bin/zsh"
 "~/.config/opencode/commands" = {}
 "~/.config/opencode/prompts" = {}
 "~/.config/opencode/opencode.json" = { source = "~/.dotfiles/.config/opencode/opencode.json" }
-"~/.config/opencode/tui.json" = {}
+"~/.config/opencode/tui.jsonc" = {}
 "~/.config/starship.toml" = {}
 "~/.config/zed/keymap.jsonc" = {}
 "~/.config/zed/settings.json" = {  }

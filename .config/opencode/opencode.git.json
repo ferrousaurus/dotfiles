@@ -153,6 +153,6 @@
   "default_agent": "plan",
   "formatter": {},
   "lsp": {},
-  "plugin": ["envsitter-guard@latest"],
+  "plugin": ["envsitter-guard@latest", "@slkiser/opencode-quota@latest"],
   "share": "disabled"
 }
