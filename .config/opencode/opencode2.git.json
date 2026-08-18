@@ -1,4 +1,45 @@
 {
+  "permissions": [
+    { "action": "read", "resource": "*", "effect": "allow" },
+    { "action": "read", "resource": ".env.local", "effect": "deny" },
+    { "action": "read", "resource": "*/.env.local", "effect": "deny" },
+    { "action": "read", "resource": ".env.local.*", "effect": "deny" },
+    { "action": "read", "resource": "*/.env.local.*", "effect": "deny" },
+    { "action": "read", "resource": ".env", "effect": "ask" },
+    { "action": "read", "resource": "*/.env", "effect": "ask" },
+    { "action": "read", "resource": ".env.*", "effect": "ask" },
+    { "action": "read", "resource": "*/.env.*", "effect": "ask" },
+    { "action": "read", "resource": ".envrc.private", "effect": "deny" },
+    { "action": "read", "resource": "*/.envrc.private", "effect": "deny" },
+    { "action": "read", "resource": ".secrets", "effect": "deny" },
+    { "action": "read", "resource": "*/.secrets", "effect": "deny" },
+    { "action": "read", "resource": ".secrets.*", "effect": "deny" },
+    { "action": "read", "resource": "*/.secrets.*", "effect": "deny" },
+    { "action": "read", "resource": "*.pem", "effect": "deny" },
+    { "action": "read", "resource": "*.key", "effect": "deny" },
+    { "action": "read", "resource": "*.p12", "effect": "deny" },
+    { "action": "read", "resource": "*.pfx", "effect": "deny" },
+    { "action": "read", "resource": "*.jks", "effect": "deny" },
+    { "action": "read", "resource": "credentials.json", "effect": "deny" },
+    { "action": "read", "resource": "*/credentials.json", "effect": "deny" },
+    { "action": "read", "resource": "service-account*.json", "effect": "deny" },
+    { "action": "read", "resource": "*/service-account*.json", "effect": "deny" },
+    { "action": "read", "resource": "terraform.tfstate", "effect": "deny" },
+    { "action": "read", "resource": "*/terraform.tfstate", "effect": "deny" },
+    { "action": "read", "resource": "terraform.tfstate.*", "effect": "deny" },
+    { "action": "read", "resource": "*/terraform.tfstate.*", "effect": "deny" },
+    { "action": "read", "resource": ".terraform/**", "effect": "deny" },
+    { "action": "read", "resource": "*/.terraform/**", "effect": "deny" },
+    { "action": "read", "resource": "~/.ssh/**", "effect": "deny" },
+    { "action": "read", "resource": "~/.aws/credentials", "effect": "deny" },
+    { "action": "read", "resource": "~/.config/gcloud/**", "effect": "deny" },
+    { "action": "read", "resource": "~/.kube/config", "effect": "deny" },
+    { "action": "read", "resource": "~/.docker/config.json", "effect": "deny" },
+    { "action": "read", "resource": "~/.npmrc", "effect": "deny" },
+    { "action": "read", "resource": "~/.pypirc", "effect": "deny" },
+    { "action": "read", "resource": "~/.netrc", "effect": "deny" },
+    { "action": "read", "resource": "~/.git-credentials", "effect": "deny" }
+  ],
   "agents": {
     "build": {
       "description": "Implements and verifies changes, delegating bounded work aggressively.",
@@ -60,7 +101,6 @@
         "edit": "deny",
         "glob": "allow",
         "grep": "allow",
-        "read": "allow",
         "task": "deny"
       },
       "system": "{file:./prompts/explorer.md}"
@@ -73,7 +113,7 @@
       "description": "Performs bounded external and version-specific research using authoritative sources.",
       "hidden": true,
       "mode": "subagent",
-      "permission": { "bash": "deny", "edit": "deny", "read": "allow", "webfetch": "allow", "task": "deny" },
+      "permission": { "bash": "deny", "edit": "deny", "webfetch": "allow", "task": "deny" },
       "system": "{file:./prompts/librarian.md}"
     },
     "implementer": {
@@ -85,7 +125,6 @@
         "edit": "allow",
         "glob": "allow",
         "grep": "allow",
-        "read": "allow",
         "task": "deny"
       },
       "system": "{file:./prompts/implementer.md}"
@@ -105,7 +144,6 @@
         "edit": "deny",
         "glob": "allow",
         "grep": "allow",
-        "read": "allow",
         "task": "deny"
       },
       "system": "{file:./prompts/debugger.md}"
@@ -118,7 +156,6 @@
         "edit": "deny",
         "glob": "allow",
         "grep": "allow",
-        "read": "allow",
         "task": "deny"
       },
       "system": "{file:./prompts/documenter.md}"
@@ -141,7 +178,6 @@
         "edit": "deny",
         "glob": "allow",
         "grep": "allow",
-        "read": "allow",
         "task": "deny"
       },
       "system": "{file:./prompts/reviewer.md}"

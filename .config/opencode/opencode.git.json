@@ -1,5 +1,48 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "read": {
+      "*": "allow",
+      ".env.local": "deny",
+      "**/.env.local": "deny",
+      ".env.local.*": "deny",
+      "**/.env.local.*": "deny",
+      ".env": "ask",
+      "**/.env": "ask",
+      ".env.*": "ask",
+      "**/.env.*": "ask",
+      ".envrc.private": "deny",
+      "**/.envrc.private": "deny",
+      ".secrets": "deny",
+      "**/.secrets": "deny",
+      ".secrets.*": "deny",
+      "**/.secrets.*": "deny",
+      "*.pem": "deny",
+      "*.key": "deny",
+      "*.p12": "deny",
+      "*.pfx": "deny",
+      "*.jks": "deny",
+      "credentials.json": "deny",
+      "**/credentials.json": "deny",
+      "service-account*.json": "deny",
+      "**/service-account*.json": "deny",
+      "terraform.tfstate": "deny",
+      "**/terraform.tfstate": "deny",
+      "terraform.tfstate.*": "deny",
+      "**/terraform.tfstate.*": "deny",
+      ".terraform/**": "deny",
+      "**/.terraform/**": "deny",
+      "~/.ssh/**": "deny",
+      "~/.aws/credentials": "deny",
+      "~/.config/gcloud/**": "deny",
+      "~/.kube/config": "deny",
+      "~/.docker/config.json": "deny",
+      "~/.npmrc": "deny",
+      "~/.pypirc": "deny",
+      "~/.netrc": "deny",
+      "~/.git-credentials": "deny"
+    }
+  },
   "agent": {
     "build": {
       "description": "Implements and verifies changes, delegating bounded work aggressively.",
@@ -61,7 +104,6 @@
         "edit": "deny",
         "glob": "allow",
         "grep": "allow",
-        "read": "allow",
         "task": "deny"
       },
       "prompt": "{file:./prompts/explorer.md}"
@@ -76,7 +118,7 @@
       "description": "Performs bounded external and version-specific research using authoritative sources.",
       "hidden": true,
       "mode": "subagent",
-      "permission": { "bash": "deny", "edit": "deny", "read": "allow", "webfetch": "allow", "task": "deny" },
+      "permission": { "bash": "deny", "edit": "deny", "webfetch": "allow", "task": "deny" },
       "prompt": "{file:./prompts/librarian.md}"
     },
     "implementer": {
@@ -88,7 +130,6 @@
         "edit": "allow",
         "glob": "allow",
         "grep": "allow",
-        "read": "allow",
         "task": "deny"
       },
       "prompt": "{file:./prompts/implementer.md}"
@@ -108,7 +149,6 @@
         "edit": "deny",
         "glob": "allow",
         "grep": "allow",
-        "read": "allow",
         "task": "deny"
       },
       "prompt": "{file:./prompts/debugger.md}"
@@ -121,7 +161,6 @@
         "edit": "deny",
         "glob": "allow",
         "grep": "allow",
-        "read": "allow",
         "task": "deny"
       },
       "prompt": "{file:./prompts/documenter.md}"
@@ -144,7 +183,6 @@
         "edit": "deny",
         "glob": "allow",
         "grep": "allow",
-        "read": "allow",
         "task": "deny"
       },
       "prompt": "{file:./prompts/reviewer.md}"
@@ -153,6 +191,6 @@
   "default_agent": "plan",
   "formatter": {},
   "lsp": {},
-  "plugin": ["envsitter-guard@latest", "@slkiser/opencode-quota@latest"],
+  "plugin": ["@slkiser/opencode-quota@latest"],
   "share": "disabled"
 }
