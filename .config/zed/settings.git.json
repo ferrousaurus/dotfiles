@@ -7,6 +7,20 @@
     "default_profile": "ask",
     "limit_content_width": false
   },
+  "auto_install_extensions": {
+    "catppuccin-icons": true,
+    "docker-compose": true,
+    "dockerfile": true,
+    "env": true,
+    "html": true,
+    "ini": true,
+    "oxc": true,
+    "python-requirements": true,
+    "rainbow-csv": true,
+    "sql": true,
+    "toml": true,
+    "tsgo": true
+  },
   "buffer_font_family": "FiraMono Nerd Font Mono",
   "buffer_font_size": 13.0,
   "buffer_line_height": "standard",
@@ -56,7 +70,19 @@
       }
     }
   },
+  "language_servers": [
+    "typescript-ls",
+    "oxfmt",
+    "oxlint",
+    "!vtsls",
+    "!typescript-language-server",
+    "!eslint",
+    "..."
+  ],
   "preferred_line_length": 120,
+  "prettier": {
+    "allowed": false
+  },
   "project_panel": {
     "bold_folder_labels": true,
     "diagnostic_badges": true,
