@@ -55,6 +55,7 @@
         "task": {
           "*": "deny",
           "explore": "allow",
+          "reuse-scout": "allow",
           "librarian": "allow",
           "implementer": "allow",
           "debugger": "allow",
@@ -89,6 +90,7 @@
         "task": {
           "*": "deny",
           "explore": "allow",
+          "reuse-scout": "allow",
           "librarian": "allow",
           "debugger": "allow",
           "reviewer": "allow",
@@ -109,6 +111,19 @@
         "task": "deny"
       },
       "prompt": "{file:./prompts/explorer.md}"
+    },
+    "reuse-scout": {
+      "description": "Finds reusable local helpers, utilities, hooks, components, and patterns for proposed implementation work.",
+      "hidden": true,
+      "mode": "subagent",
+      "permission": {
+        "bash": "deny",
+        "edit": "deny",
+        "glob": "allow",
+        "grep": "allow",
+        "task": "deny"
+      },
+      "prompt": "{file:./prompts/reuse-scout.md}"
     },
     "general": {},
     "title": {

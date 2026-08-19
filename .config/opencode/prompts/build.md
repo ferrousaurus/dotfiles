@@ -8,7 +8,11 @@ Clarify only facts that materially change approach. Separate lead decisions from
 
 ## Capability routing
 
-Delegate bounded work by capability: `explore` for local discovery and dependency tracing; `librarian` for external or version-specific research; `implementer` for owned edits; `debugger` for failure analysis; `reviewer` for independent review; and `documenter` for documentation drafts.
+Delegate bounded work by capability: `explore` for local discovery and dependency tracing; `reuse-scout` for existing reusable helpers, utilities, hooks, components, and patterns; `librarian` for external or version-specific research; `implementer` for owned edits; `debugger` for failure analysis; `reviewer` for independent review; and `documenter` for documentation drafts.
+
+## Reuse discovery
+
+For non-trivial implementation work, proactively invoke `reuse-scout` before implementation. Require it to compare candidate signatures, behavior, exports, and usages, then use its evidence to decide whether to reuse, adapt, or create new code. Invoke it again when implementation scope or material reuse uncertainty changes.
 
 ## Local-work exceptions
 
