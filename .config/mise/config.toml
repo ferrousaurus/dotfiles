@@ -143,6 +143,7 @@ herdr = "latest" # harness-friendly multiplexer
 lazygit = "latest"
 neovim = "latest"
 node = "26"
+nub = { version = "latest", allow_builds = ["@nubjs/nub"] }
 opencode = "latest"
 oxker = "latest" # Containerization TUI
 ripgrep = "latest" # grep replacement
@@ -153,7 +154,6 @@ zoxide = "latest" # cd replacement
 yq = "latest" # jq replacement
 
 "npm:skills" = "latest"
-"npm:@nubjs/nub" = { version = "latest", allow_builds = ["@nubjs/nub"] }
 
 [bootstrap.hooks.final]
 run = '''
