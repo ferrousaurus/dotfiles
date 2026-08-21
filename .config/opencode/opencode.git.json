@@ -99,6 +99,40 @@
       },
       "prompt": "{file:./prompts/plan.md}"
     },
+    "architect": {
+      "description": "Investigates requests and produces implementation-ready plans without making changes.",
+      "mode": "primary",
+      "permission": {
+        "bash": {
+          "*": "deny",
+          "deno task check": "allow",
+          "deno task lint": "allow",
+          "deno task lint:check": "allow",
+          "deno task format:check": "allow",
+          "npm task check": "allow",
+          "npm task lint": "allow",
+          "npm task lint:check": "allow",
+          "npm task format:check": "allow",
+          "nub task check": "allow",
+          "nub task lint": "allow",
+          "nub task format:check": "allow",
+          "git log *": "allow",
+          "git diff *": "allow",
+          "git status *": "allow"
+        },
+        "edit": "deny",
+        "task": {
+          "*": "deny",
+          "explore": "allow",
+          "scout-reuse": "allow",
+          "librarian": "allow",
+          "debugger": "allow",
+          "reviewer": "allow",
+          "documenter": "allow"
+        }
+      },
+      "prompt": "{file:./prompts/plan.md}"
+    },
     "explore": {
       "description": "Performs bounded local repository discovery and dependency tracing.",
       "hidden": true,
