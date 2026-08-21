@@ -81,6 +81,9 @@ three_finger_drag = false
 # "brew:lima" = "latest"
 # "brew:luarocks" = "latest"
 
+"apt:mosh" = "latest"
+"apt:mise" = "latest"
+
 [bootstrap.repos]
 #"~/.dotfiles" = { url = "git@github.com:ferrousaurus/dotfiles.git", ref = "main" }
 
