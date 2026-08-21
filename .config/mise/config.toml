@@ -134,6 +134,7 @@ bottom = "latest" # Process TUI
 colima = "latest" # Docker-compatible Container VM
 docker-cli = "latest"
 docker-compose = "latest"
+dotnet = "10"
 eza = "latest" # ls replacement
 fd = "latest" # find replacement
 fzf = "latest"
@@ -141,7 +142,7 @@ github-cli = "latest"
 herdr = "latest" # harness-friendly multiplexer
 lazygit = "latest"
 neovim = "latest"
-nub = "latest"
+node = "26"
 opencode = "latest"
 oxker = "latest" # Containerization TUI
 ripgrep = "latest" # grep replacement
@@ -152,6 +153,7 @@ zoxide = "latest" # cd replacement
 yq = "latest" # jq replacement
 
 "npm:skills" = "latest"
+"npm:@nubjs/nub" = { version = "latest", allow_builds = ["@nubjs/nub"] }
 
 [bootstrap.hooks.final]
 run = '''
