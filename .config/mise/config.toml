@@ -19,7 +19,9 @@ jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.confi
 run = '''
 #!/usr/bin/env zsh
 # Check if Rosetta is installed and install if not
-test -d /usr/libexec/rosetta || softwareupdate --install-rosetta --agree-to-license
+if [[ "$(uname)" == "Darwin" ]]; then
+  test -d /usr/libexec/rosetta || softwareupdate --install-rosetta --agree-to-license
+fi
 '''
 
 [bootstrap.hooks.final]
@@ -83,6 +85,7 @@ three_finger_drag = false
 
 "apt:mosh" = "latest"
 "apt:mise" = "latest"
+"apt:zsh" = "latest"
 
 [bootstrap.repos]
 #"~/.dotfiles" = { url = "git@github.com:ferrousaurus/dotfiles.git", ref = "main" }
