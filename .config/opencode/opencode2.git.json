@@ -57,7 +57,14 @@
           "implementer": "allow",
           "debugger": "allow",
           "reviewer": "allow",
-          "documenter": "allow"
+          "documenter": "allow",
+          "review-verification": "allow",
+          "review-spec": "allow",
+          "review-security": "allow",
+          "review-contracts": "allow",
+          "review-accessibility": "allow",
+          "review-migration": "allow",
+          "review-performance": "allow"
         }
       },
       "system": "{file:./prompts/build.md}"
@@ -79,9 +86,12 @@
           "nub task check": "allow",
           "nub task lint": "allow",
           "nub task format:check": "allow",
-          "git log *": "allow",
-          "git diff *": "allow",
-          "git status *": "allow"
+          "git merge-base origin/develop HEAD": "allow",
+          "git log --format=%H origin/develop..HEAD": "allow",
+          "git diff --no-ext-diff --merge-base origin/develop HEAD": "allow",
+          "git diff --no-ext-diff --cached": "allow",
+          "git diff --no-ext-diff": "allow",
+          "git status --short --untracked-files=all": "allow"
         },
         "edit": "deny",
         "task": {
@@ -91,7 +101,14 @@
           "librarian": "allow",
           "debugger": "allow",
           "reviewer": "allow",
-          "documenter": "allow"
+          "documenter": "allow",
+          "review-verification": "allow",
+          "review-spec": "allow",
+          "review-security": "allow",
+          "review-contracts": "allow",
+          "review-accessibility": "allow",
+          "review-migration": "allow",
+          "review-performance": "allow"
         }
       },
       "system": "{file:./prompts/plan.md}"
@@ -113,9 +130,12 @@
           "nub task check": "allow",
           "nub task lint": "allow",
           "nub task format:check": "allow",
-          "git log *": "allow",
-          "git diff *": "allow",
-          "git status *": "allow"
+          "git merge-base origin/develop HEAD": "allow",
+          "git log --format=%H origin/develop..HEAD": "allow",
+          "git diff --no-ext-diff --merge-base origin/develop HEAD": "allow",
+          "git diff --no-ext-diff --cached": "allow",
+          "git diff --no-ext-diff": "allow",
+          "git status --short --untracked-files=all": "allow"
         },
         "edit": "deny",
         "task": {
@@ -125,7 +145,14 @@
           "librarian": "allow",
           "debugger": "allow",
           "reviewer": "allow",
-          "documenter": "allow"
+          "documenter": "allow",
+          "review-verification": "allow",
+          "review-spec": "allow",
+          "review-security": "allow",
+          "review-contracts": "allow",
+          "review-accessibility": "allow",
+          "review-migration": "allow",
+          "review-performance": "allow"
         }
       },
       "system": "{file:./prompts/plan.md}"
@@ -217,14 +244,12 @@
       "permission": {
         "bash": {
           "*": "deny",
-          "git diff *": "allow",
-          "git log *": "allow",
-          "git show *": "allow",
-          "npm test": "allow",
-          "npm run format:check": "allow",
-          "npm run lint": "allow",
-          "npm run lint:check": "allow",
-          "npm run check": "allow"
+          "git merge-base origin/develop HEAD": "allow",
+          "git log --format=%H origin/develop..HEAD": "allow",
+          "git diff --no-ext-diff --merge-base origin/develop HEAD": "allow",
+          "git diff --no-ext-diff --cached": "allow",
+          "git diff --no-ext-diff": "allow",
+          "git status --short --untracked-files=all": "allow"
         },
         "edit": "deny",
         "glob": "allow",
@@ -232,6 +257,102 @@
         "task": "deny"
       },
       "system": "{file:./prompts/reviewer.md}"
+    },
+    "review-verification": {
+      "description": "Executes and reports deterministic repository checks without diagnosing or changing them.",
+      "mode": "subagent",
+      "permission": {
+        "bash": {
+          "*": "deny",
+          "git status --short --untracked-files=all": "allow",
+          "git diff --check": "allow",
+          "jq empty .config/opencode/opencode.git.json": "allow",
+          "jq empty .config/opencode/opencode2.git.json": "allow"
+        },
+        "edit": "deny",
+        "glob": "allow",
+        "grep": "allow",
+        "task": "deny"
+      },
+      "system": "{file:./prompts/review-verification.md}"
+    },
+    "review-spec": {
+      "description": "Reviews requirements and acceptance-criteria traceability.",
+      "disable": true,
+      "mode": "subagent",
+      "permission": {
+        "bash": "deny",
+        "edit": "deny",
+        "glob": "allow",
+        "grep": "allow",
+        "task": "deny"
+      },
+      "system": "{file:./prompts/review-spec.md}"
+    },
+    "review-security": {
+      "description": "Reviews threats, security controls, and exploitable weaknesses.",
+      "disable": true,
+      "mode": "subagent",
+      "permission": {
+        "bash": "deny",
+        "edit": "deny",
+        "glob": "allow",
+        "grep": "allow",
+        "task": "deny"
+      },
+      "system": "{file:./prompts/review-security.md}"
+    },
+    "review-contracts": {
+      "description": "Reviews public interface semantics and compatibility.",
+      "disable": true,
+      "mode": "subagent",
+      "permission": {
+        "bash": "deny",
+        "edit": "deny",
+        "glob": "allow",
+        "grep": "allow",
+        "task": "deny"
+      },
+      "system": "{file:./prompts/review-contracts.md}"
+    },
+    "review-accessibility": {
+      "description": "Reviews accessible user flows and interaction semantics.",
+      "disable": true,
+      "mode": "subagent",
+      "permission": {
+        "bash": "deny",
+        "edit": "deny",
+        "glob": "allow",
+        "grep": "allow",
+        "task": "deny"
+      },
+      "system": "{file:./prompts/review-accessibility.md}"
+    },
+    "review-migration": {
+      "description": "Reviews state transitions, rollout, recovery, and compatibility windows.",
+      "disable": true,
+      "mode": "subagent",
+      "permission": {
+        "bash": "deny",
+        "edit": "deny",
+        "glob": "allow",
+        "grep": "allow",
+        "task": "deny"
+      },
+      "system": "{file:./prompts/review-migration.md}"
+    },
+    "review-performance": {
+      "description": "Reviews measured regressions and credible scalability risks.",
+      "disable": true,
+      "mode": "subagent",
+      "permission": {
+        "bash": "deny",
+        "edit": "deny",
+        "glob": "allow",
+        "grep": "allow",
+        "task": "deny"
+      },
+      "system": "{file:./prompts/review-performance.md}"
     }
   },
   "default_agent": "plan",
