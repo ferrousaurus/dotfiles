@@ -1,19 +1,19 @@
-[bootstrap.hooks.pre-dotfiles]
-run = '''
-#!/usr/bin/env zsh
+[settings]
+color_theme = "catppuccin"
+experimental = true
+lockfile = true
+minimum_release_age = "3d"
+pin = true
 
-# Merge OpenCode configs
-[[ -f ~/.dotfiles/.config/opencode/opencode.local.json ]] || echo "{}" > ~/.dotfiles/.config/opencode/opencode.local.json
-jq -s '.[0] * .[1]' ~/.dotfiles/.config/opencode/opencode.git.json ~/.dotfiles/.config/opencode/opencode.local.json > ~/.dotfiles/.config/opencode/opencode.json
+[settings.npm]
+package_manager = "aube"
 
-# Merge OpenCode v2 configs
-[[ -f ~/.dotfiles/.config/opencode/opencode2.local.json ]] || echo "{}" > ~/.dotfiles/.config/opencode/opencode2.local.json
-jq -s '.[0] * .[1]' ~/.dotfiles/.config/opencode/opencode2.git.json ~/.dotfiles/.config/opencode/opencode2.local.json > ~/.dotfiles/.config/opencode/opencode2.json
-
-# Merge Zed configs
-[[ -f ~/.dotfiles/.config/zed/settings.local.json ]] || echo "{}" > ~/.dotfiles/.config/zed/settings.local.json
-jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.config/zed/settings.local.json > ~/.dotfiles/.config/zed/settings.json
-'''
+[env]
+_.file = "~/.config/mise/.secrets.toml"
+OPENCODE_EXPERIMENTAL_OXFMT = true
+OPENCODE_EXPERIMENTAL_DISABLE_COPY_ON_SELECT = true
+OPENCODE_EXPERIMENTAL_SCOUT = true
+TERM = "xterm-256color"
 
 [bootstrap.hooks.pre-packages]
 run = '''
@@ -23,51 +23,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
   test -d /usr/libexec/rosetta || softwareupdate --install-rosetta --agree-to-license
 fi
 '''
-
-[bootstrap.hooks.final]
-run = '''
-#!/usr/bin/env zsh
-
-# Configure Docker CLI plugins
-f="$HOME/.docker/config.json"
-mkdir -p "$HOME/.docker"
-test -f "$f" || echo '{}' > "$f"
-jq -M '(.cliPluginsExtraDirs // []) as $existing | .credsStore = (.credsStore // "osxkeychain") | .currentContext = (.currentContext // "colima") | .cliPluginsExtraDirs = ($existing + (["/opt/homebrew/lib/docker/cli-plugins", (env.HOME + "/.docker/cli-plugins"), (env.HOME + "/.local/share/mise/installs/docker-compose/latest")] - $existing))' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
-
-# Install opencode packages
-cd $HOME/.config/opencode
-nub i
-'''
-
-[bootstrap.hooks.post-defaults]
-run = "killall Dock || true"
-
-[bootstrap.macos.dock]
-autohide = true
-orientation = "bottom"
-show_recents = false
-tilesize = 36
-magnification = false
-
-[bootstrap.macos.finder]
-show_all_files = true
-#show_extensions_warning = false
-show_pathbar = true
-show_status_bar = true
-preferred_view_style = "column"
-
-[bootstrap.macos.keyboard]
-#key_repeat = 2
-#initial_key_repeat = 15
-#press_and_hold = true
-fn_state = false
-
-[bootstrap.macos.trackpad]
-tap_to_click = true
-three_finger_drag = false
-
-[bootstrap.macos.defaults]
-"com.app.finder" = { AppleShowAllFiles = true }
 
 [bootstrap.packages]
 # These are commented out because they are expected to be installed, but may not
@@ -86,12 +41,27 @@ three_finger_drag = false
 "apt:mosh" = "latest"
 "apt:mise" = "latest"
 "apt:zsh" = "latest"
+"apt:jq" = "latest"
 
 [bootstrap.repos]
 #"~/.dotfiles" = { url = "git@github.com:ferrousaurus/dotfiles.git", ref = "main" }
 
-[bootstrap.user]
-login_shell = "/bin/zsh"
+[bootstrap.hooks.pre-dotfiles]
+run = '''
+#!/usr/bin/env zsh
+
+# Merge OpenCode configs
+[[ -f ~/.dotfiles/.config/opencode/opencode.local.json ]] || echo "{}" > ~/.dotfiles/.config/opencode/opencode.local.json
+jq -s '.[0] * .[1]' ~/.dotfiles/.config/opencode/opencode.git.json ~/.dotfiles/.config/opencode/opencode.local.json > ~/.dotfiles/.config/opencode/opencode.json
+
+# Merge OpenCode v2 configs
+[[ -f ~/.dotfiles/.config/opencode/opencode2.local.json ]] || echo "{}" > ~/.dotfiles/.config/opencode/opencode2.local.json
+jq -s '.[0] * .[1]' ~/.dotfiles/.config/opencode/opencode2.git.json ~/.dotfiles/.config/opencode/opencode2.local.json > ~/.dotfiles/.config/opencode/opencode2.json
+
+# Merge Zed configs
+[[ -f ~/.dotfiles/.config/zed/settings.local.json ]] || echo "{}" > ~/.dotfiles/.config/zed/settings.local.json
+jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.config/zed/settings.local.json > ~/.dotfiles/.config/zed/settings.json
+'''
 
 [dotfiles]
 "~/.agents/.skill-lock.json" = {}
@@ -120,32 +90,38 @@ login_shell = "/bin/zsh"
 
 "~/.zshrc" = {}
 
-[env]
-_.file = "~/.config/mise/.secrets.toml"
-OPENCODE_EXPERIMENTAL_OXFMT = true
-OPENCODE_EXPERIMENTAL_DISABLE_COPY_ON_SELECT = true
-OPENCODE_EXPERIMENTAL_SCOUT = true
-TERM = "xterm-256color"
+[bootstrap.macos.defaults]
+"com.app.finder" = { AppleShowAllFiles = true }
 
-[settings]
-color_theme = "catppuccin"
-experimental = true
-lockfile = true
-minimum_release_age = "3d"
-pin = true
+[bootstrap.macos.dock]
+autohide = true
+orientation = "bottom"
+show_recents = false
+tilesize = 36
+magnification = false
 
-[settings.npm]
-package_manager = "aube"
+[bootstrap.macos.finder]
+show_all_files = true
+#show_extensions_warning = false
+show_pathbar = true
+show_status_bar = true
+preferred_view_style = "column"
 
-[shell_alias]
-brew86 = "arch -x86_64 /usr/local/bin/brew"
-cat = "bat --color=always"
-cd = "z"
-fzf = "fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
-grep = "batgrep"
-ls = "eza -aghl --show-symlinks --icons=always --hyperlink"
-vi = "nvim"
-vim = "nvim"
+[bootstrap.macos.keyboard]
+#key_repeat = 2
+#initial_key_repeat = 15
+#press_and_hold = true
+fn_state = false
+
+[bootstrap.macos.trackpad]
+tap_to_click = true
+three_finger_drag = false
+
+[bootstrap.hooks.post-defaults]
+run = "killall Dock || true"
+
+[bootstrap.user]
+login_shell = "/bin/zsh"
 
 [tools]
 age = "latest"
@@ -176,3 +152,28 @@ zoxide = "latest" # cd replacement
 yq = "latest" # jq replacement
 
 "npm:skills" = "latest"
+
+[bootstrap.hooks.final]
+run = '''
+#!/usr/bin/env zsh
+
+# Configure Docker CLI plugins
+f="$HOME/.docker/config.json"
+mkdir -p "$HOME/.docker"
+test -f "$f" || echo '{}' > "$f"
+jq -M '(.cliPluginsExtraDirs // []) as $existing | .credsStore = (.credsStore // "osxkeychain") | .currentContext = (.currentContext // "colima") | .cliPluginsExtraDirs = ($existing + (["/opt/homebrew/lib/docker/cli-plugins", (env.HOME + "/.docker/cli-plugins"), (env.HOME + "/.local/share/mise/installs/docker-compose/latest")] - $existing))' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+
+# Install opencode packages
+cd $HOME/.config/opencode
+nub i
+'''
+
+[shell_alias]
+brew86 = "arch -x86_64 /usr/local/bin/brew"
+cat = "bat --color=always"
+cd = "z"
+fzf = "fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+grep = "batgrep"
+ls = "eza -aghl --show-symlinks --icons=always --hyperlink"
+vi = "nvim"
+vim = "nvim"
