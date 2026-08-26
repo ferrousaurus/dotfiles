@@ -2,11 +2,11 @@
   "name": "ferrousaurus-dotfiles-oxlint",
   "version": "0.0.1",
   "type": "module",
-  "packageManager": "nub@0.7.5",
+  "packageManager": "pnpm@11.24.0",
   "devEngines": {
     "packageManager": {
-      "name": "nub",
-      "version": "^0.7.5",
+      "name": "pnpm",
+      "version": "^11.24.0",
       "onFail": "ignore"
     }
   },
