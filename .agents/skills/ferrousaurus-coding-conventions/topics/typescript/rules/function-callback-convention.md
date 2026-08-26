@@ -23,7 +23,7 @@ const activeUsers = users.filter(isActive);
 **Incorrect (arrow function for side-effecting callback):**
 
 ```typescript
-button.addEventListener('click', (event: MouseEvent) => {
+button.addEventListener('click', async (event: MouseEvent) => {
   await saveData(formData);
   logEvent('form-submitted', { timestamp: Date.now() });
 });
@@ -39,7 +39,7 @@ const activeUsers = users.filter(isActive);
 **Correct (function declaration for side-effecting callback):**
 
 ```typescript
-function handleSubmit(event: MouseEvent) {
+async function handleSubmit(event: MouseEvent) {
   await saveData(formData);
   logEvent('form-submitted', { timestamp: Date.now() });
 }

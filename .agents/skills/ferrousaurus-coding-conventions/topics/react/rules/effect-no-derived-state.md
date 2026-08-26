@@ -21,7 +21,7 @@ Never use `useEffect` to compute values that can be derived from existing props 
 
 ```tsx
 function TodoList({ todos, filter }: TodoListProps) {
-  const [visibleTodos, setVisibleTodos] = useState([]);
+  const [visibleTodos, setVisibleTodos] = useState<typeof todos>([]);
 
   // 🔴 Avoid: Redundant state updated by an Effect
   useEffect(() => {

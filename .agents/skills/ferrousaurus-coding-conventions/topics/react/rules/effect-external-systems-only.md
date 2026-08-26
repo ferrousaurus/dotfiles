@@ -32,7 +32,7 @@ tags: react, effect, useEffect, lifecycle
 
 ```tsx
 function SearchResults({ query }: SearchResultsProps) {
-  const [filteredResults, setFilteredResults] = useState([]);
+  const [filteredResults, setFilteredResults] = useState<typeof results>([]);
 
   // 🔴 Avoid: Deriving state in an Effect
   useEffect(() => {

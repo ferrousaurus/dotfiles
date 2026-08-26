@@ -37,7 +37,7 @@ Next.js is built around React Server Components. Default to server components. O
 
 ```tsx
 // This component has no hooks or event handlers — it's a server component
-export default function UserProfile({ userId }: UserProfileProps) {
+export default async function UserProfile({ userId }: UserProfileProps) {
   const user = await getUser(userId);
 
   return (
