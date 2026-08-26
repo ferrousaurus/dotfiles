@@ -15,7 +15,7 @@ importers:
         specifier: ~26.2
         version: 26.2.0
       eslint-plugin-react-you-might-not-need-an-effect:
-        specifier: 1.0.1
+        specifier: ^1.0.1
         version: 1.0.1(eslint@10.9.1)
       oxlint:
         specifier: ~1.79.0
