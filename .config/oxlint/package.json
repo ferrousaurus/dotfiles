@@ -11,7 +11,6 @@
     }
   },
   "devDependencies": {
-    "@nubjs/types": ">=0.4.13 <=0.7.5",
     "@oxlint/plugins": "1.79.0",
     "@types/node": "~26.2",
     "eslint-plugin-react-you-might-not-need-an-effect": "1.0.1",

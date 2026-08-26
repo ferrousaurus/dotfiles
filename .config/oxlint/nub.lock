@@ -8,9 +8,6 @@ importers:
 
   .:
     devDependencies:
-      '@nubjs/types':
-        specifier: '>=0.4.13 <=0.7.5'
-        version: 0.7.5(@types/node@26.2.0)
       '@oxlint/plugins':
         specifier: 1.79.0
         version: 1.79.0
@@ -81,11 +78,6 @@ packages:
   '@humanwhocodes/retry@0.4.3':
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
-
-  '@nubjs/types@0.7.5':
-    resolution: {integrity: sha512-NWECA86iZzmIhSSN0RnTjq5FFrG/q0p/EyY+dB1O3bwuSo85x1KwRPZspDC1A+1kahIKNXLfWarDvCWRGu4/lQ==}
-    peerDependencies:
-      '@types/node': '>=25'
 
   '@oxlint-tsgolint/darwin-arm64@7.0.2001':
     resolution: {integrity: sha512-CUJEdbSZ54+Xy9OXqOhWLTKZKV0BBiV7C2i/ygyVmXtkUNXx5YCzN8DpSSshTAKktoL7S+tnQ/ftFG/i7X896w==}
@@ -673,10 +665,6 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/retry@0.4.3': {}
-
-  '@nubjs/types@0.7.5(@types/node@26.2.0)':
-    dependencies:
-      '@types/node': 26.2.0
 
   '@oxlint-tsgolint/darwin-arm64@7.0.2001':
     optional: true
