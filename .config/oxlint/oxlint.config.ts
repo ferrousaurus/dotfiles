@@ -8,10 +8,10 @@ export default defineConfig({
   },
   plugins: ["eslint", "typescript", "import", "node", "oxc", "react", "unicorn"],
   jsPlugins: [
-    /*{
+    {
       name: "react-effect",
       specifier: "eslint-plugin-react-you-might-not-need-an-effect"
-      },*/
+    },
     {
       name: "anti-slop",
       specifier: "./tools/oxlint/anti-slop/index.ts"
@@ -46,15 +46,15 @@ export default defineConfig({
     "typescript/consistent-type-imports": ["error", {
       prefer: "type-imports", fixStyle: "inline-type-imports"
     }],
-    //"react-effect/no-derived-state": "error",
-    //"react-effect/no-chain-state-updates": "error",
-    //"react-effect/no-event-handler": "error",
-    //"react-effect/no-adjust-state-on-prop-change": "error",
-    //"react-effect/no-reset-all-state-on-prop-change": "error",
-    //"react-effect/no-pass-live-state-to-parent": "error",
-    //"react-effect/no-pass-data-to-parent": "error",
-    //"react-effect/no-external-store-subscription": "error",
-    //"react-effect/no-initialize-state": "error",
+    "react-effect/no-derived-state": "error",
+    "react-effect/no-chain-state-updates": "error",
+    "react-effect/no-event-handler": "error",
+    "react-effect/no-adjust-state-on-prop-change": "error",
+    "react-effect/no-reset-all-state-on-prop-change": "error",
+    "react-effect/no-pass-live-state-to-parent": "error",
+    "react-effect/no-pass-data-to-parent": "error",
+    "react-effect/no-external-store-subscription": "error",
+    "react-effect/no-initialize-state": "error",
     "anti-slop/no-chained-type-assertions": "error",
     "anti-slop/no-conditional-empty-object-spread": "error",
     "anti-slop/no-known-value-widening": "error",
