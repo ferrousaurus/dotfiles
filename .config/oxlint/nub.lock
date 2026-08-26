@@ -10,13 +10,13 @@ importers:
     devDependencies:
       '@nubjs/types':
         specifier: '>=0.4.13 <=0.7.5'
-        version: 0.7.5(@types/node@26.3.0)
+        version: 0.7.5(@types/node@26.2.0)
       '@oxlint/plugins':
         specifier: 1.80.0
         version: 1.80.0
       '@types/node':
-        specifier: ^26
-        version: 26.3.0
+        specifier: ~26.2
+        version: 26.2.0
       eslint-plugin-react-you-might-not-need-an-effect:
         specifier: 1.0.1
         version: 1.0.1(eslint@10.9.1)
@@ -252,8 +252,8 @@ packages:
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
 
-  '@types/node@26.3.0':
-    resolution: {integrity: sha512-L3fgrnchriRC2ExBflb8j4uZZURHZfQsmQeyVzhjcHW4kkwVyo8/0h1B2MVzMTrYUJYu6G7EWs14hW/L9putqw==}
+  '@types/node@26.2.0':
+    resolution: {integrity: sha512-5IviulTZeRNp2vAJ514cc/HUlY5nZ9fCbq9DMyC52BrhFZACo3nI0R7qBxhQmo/d27NFe96ur/b7Wwxklda+kg==}
 
   '@typescript/typescript-aix-ppc64@7.0.2':
     resolution: {integrity: sha512-MTKKkWB7p/0E9xi1d1tHtZ5PiLkGEMIq88pK2CubZjOsLtYTLqhgIgi6zepFa+9GHZ6h05NMCkQxGKiPXMxXtQ==}
@@ -674,9 +674,9 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
-  '@nubjs/types@0.7.5(@types/node@26.3.0)':
+  '@nubjs/types@0.7.5(@types/node@26.2.0)':
     dependencies:
-      '@types/node': 26.3.0
+      '@types/node': 26.2.0
 
   '@oxlint-tsgolint/darwin-arm64@7.0.2001':
     optional: true
@@ -761,7 +761,7 @@ snapshots:
 
   '@types/json-schema@7.0.15': {}
 
-  '@types/node@26.3.0':
+  '@types/node@26.2.0':
     dependencies:
       undici-types: 8.3.0
 
