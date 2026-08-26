@@ -150,6 +150,7 @@ usage = "latest"
 zoxide = "latest" # cd replacement
 yq = "latest" # jq replacement
 
+"npm:oxlint" = "latest"
 "npm:skills" = "latest"
 
 [bootstrap.hooks.final]
