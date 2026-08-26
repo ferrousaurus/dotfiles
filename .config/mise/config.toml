@@ -78,6 +78,7 @@ jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.confi
 "~/.config/opencode/opencode.json" = {}
 "~/.config/opencode/opencode-quota/quota-toast.jsonc" = {}
 "~/.config/opencode/tui.jsonc" = {}
+"~/.config/oxlint" = {}
 "~/.config/starship.toml" = {}
 "~/.config/zed/keymap.jsonc" = {}
 "~/.config/zed/settings.json" = {  }
@@ -170,6 +171,10 @@ jq -M --arg home "$HOME" --arg platform "$platform" --arg mise_compose_dir "$mis
 # Install opencode packages
 cd $HOME/.config/opencode
 mise exec -- nub i
+
+# Install oxlint packages
+cd $HOME/.config/oxlint
+mise exec -- nub i
 '''
 
 [shell_alias]
@@ -181,3 +186,4 @@ grep = "batgrep"
 ls = "eza -aghl --show-symlinks --icons=always --hyperlink"
 vi = "nvim"
 vim = "nvim"
+oxlint = "nubx -y oxlint"
