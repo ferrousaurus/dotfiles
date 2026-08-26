@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  eslint@1.0.0: npm:noop3@1.0.0
-
 importers:
 
   .:
