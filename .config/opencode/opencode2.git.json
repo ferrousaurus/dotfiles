@@ -57,6 +57,7 @@
           "implementer": "allow",
           "debugger": "allow",
           "reviewer": "allow",
+          "review-style": "allow",
           "documenter": "allow",
           "review-verification": "allow",
           "review-spec": "allow",
@@ -101,6 +102,7 @@
           "librarian": "allow",
           "debugger": "allow",
           "reviewer": "allow",
+          "review-style": "allow",
           "documenter": "allow",
           "review-verification": "allow",
           "review-spec": "allow",
@@ -145,6 +147,7 @@
           "librarian": "allow",
           "debugger": "allow",
           "reviewer": "allow",
+          "review-style": "allow",
           "documenter": "allow",
           "review-verification": "allow",
           "review-spec": "allow",
@@ -257,6 +260,19 @@
         "task": "deny"
       },
       "system": "{file:./prompts/reviewer.md}"
+    },
+    "review-style": {
+      "description": "Reviews changed code against applicable repository coding conventions.",
+      "disable": true,
+      "mode": "subagent",
+      "permission": {
+        "bash": "deny",
+        "edit": "deny",
+        "glob": "allow",
+        "grep": "allow",
+        "task": "deny"
+      },
+      "system": "{file:./prompts/review-style.md}"
     },
     "review-verification": {
       "description": "Executes and reports deterministic repository checks without diagnosing or changing them.",

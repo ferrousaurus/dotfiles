@@ -50,7 +50,7 @@ function Header() {
 }
 ```
 
-**Correct (Zustand/Jotai for runtime-updating state — per the dependency rules):**
+**Correct (Zustand/Jotai for runtime-updating state — per the dependency conventions):**
 
 ```tsx
 const useCartStore = create<CartState>((set) => ({
@@ -68,6 +68,6 @@ With Zustand/Jotai, components subscribe to specific slices of state and only re
 
 ### Cross-References
 
-- Dependency rule: Local State Mgmt (Zustand Go-To, Jotai Acceptable for many instances)
+- Dependency convention: Local State Mgmt (Zustand Go-To, Jotai Acceptable for many instances)
 - Related: [state-no-prop-drilling.md](../../react/rules/state-no-prop-drilling.md)
 - Related: [data-tanstack-query-only.md](../../react/rules/data-tanstack-query-only.md)

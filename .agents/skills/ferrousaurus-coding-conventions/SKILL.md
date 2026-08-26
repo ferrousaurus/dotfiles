@@ -1,6 +1,6 @@
 ---
 name: ferrousaurus-coding-conventions
-description: Selective coding conventions for React, TypeScript, and dependency choices. Triggers when writing, reviewing, or refactoring React or TypeScript code, or when selecting, adding, or replacing application dependencies.
+description: Selective coding conventions for React and TypeScript. Triggers when writing, reviewing, or refactoring React or TypeScript code.
 license: MIT
 metadata:
   author: Ferrousaurus
@@ -9,15 +9,13 @@ metadata:
 
 # Ferrousaurus Coding Conventions
 
-Coding conventions for agents, split into selectively loadable `react`, `typescript`, and `dependencies` topics. Rule files contain canonical guidance, rationale, examples, and related rules.
+Coding conventions for agents, split into selectively loadable `react` and `typescript` topics. Rule files contain canonical guidance, rationale, examples, and related rules.
 
 ## When to Apply
 
 - **React:** `.tsx` or `.jsx` components, hooks, rendering, effects, state, composition, or React project structure.
 - **TypeScript:** `.ts` or `.tsx` types, functions, safety, nullability, control flow, async code, modules, style, or naming.
-- **Dependencies:** bootstrapping an application, adding or replacing a package, or evaluating a library choice.
-
-For `.tsx`, load matching React rules first, then matching TypeScript rules. React-specific rules override generic TypeScript rules where they conflict.
+For `.tsx`, load matching React rules first, then matching TypeScript rules. React-specific rules override generic TypeScript rules where they conflict. When a rule names a package or library, also load the matching rule from `../ferrousaurus-dependency-conventions`; that skill owns dependency choices.
 
 ## React Exceptions
 
@@ -26,7 +24,7 @@ React projects intentionally override two generic TypeScript module rules:
 - Use type-based directories such as `components/`, `hooks/`, and `utils/`, not the TypeScript `module-flat-by-feature` layout.
 - Use PascalCase for component filenames, while hooks, utilities, and types remain camelCase; this overrides `module-file-naming` only for component files.
 
-React state and data rules determine the appropriate React primitive. When they name a library, the matching dependency rule is authoritative for that library choice.
+React state and data rules determine the appropriate React primitive. When they name a library, the matching rule in `ferrousaurus-dependency-conventions` is authoritative for that library choice.
 
 ## Precedence
 
@@ -34,17 +32,17 @@ Apply instructions in this order:
 
 1. Repository and project instructions.
 2. React-specific rules, which override generic TypeScript rules for `.tsx` files.
-3. Source-specific dependency rules, which govern library choices in their solution domain.
-4. These conventions.
-5. User constraints override preferences when compatible with higher-priority instructions and technical requirements.
+3. These conventions.
+4. User constraints override preferences when compatible with higher-priority instructions and technical requirements.
 
 ## Selective Loading Procedure
 
 1. Identify task signals: file extensions, framework APIs, rule terms, package or solution domain, and requested change.
 2. Inspect the matching topic index below. Use rule filenames and each candidate file's available frontmatter (`title`, optional `impact`, and `tags`) to select rules.
 3. Load only rule files matching identified signals. Do not load all rules by default.
-4. Load a related rule only when the selected rule references it, the task crosses its subject boundary, or resolving the task requires its context. Use related links as navigation, not as an instruction to load every related rule.
-5. Report selected rule paths in the response, along with any related paths additionally loaded.
+4. When a selected React or TypeScript rule names a package or library, load the matching rule from `../ferrousaurus-dependency-conventions` for the dependency choice.
+5. Load a related rule only when the selected rule references it, the task crosses its subject boundary, or resolving the task requires its context. Use related links as navigation, not as an instruction to load every related rule.
+6. Report selected rule paths in the response, along with any related paths additionally loaded.
 
 ## Topic Indexes
 
@@ -78,18 +76,6 @@ Paths: `topics/react/rules/<rule-file>.md`.
 
 Paths: `topics/typescript/rules/<rule-file>.md`.
 
-### Dependencies
-
-| Rule group | Rule files | Trigger terms |
-| --- | --- | --- |
-| API and data | `api-client`, `api-layer`, `api-schema`, `database`, `orm`, `validation-library` | API, fetch, REST, OpenAPI, database, ORM, Prisma, schema, validation |
-| Application libraries | `animation`, `async-state-management`, `auth-library`, `component-library`, `form-library`, `rendering-library`, `routing-library`, `ssr-library`, `table-data-grid`, `utility` | React, router, SSR, auth, forms, components, animation, async state, tables, utilities |
-| Tooling | `bundler`, `code-documentation`, `formatter`, `linter`, `package-manager`, `javascript-runtime`, `testing`, `monorepo-tooling` | Vite, formatter, linter, package manager, Node, tests, workspace, monorepo |
-| Operations | `cicd`, `container-orchestration`, `deployment-hosting`, `file-storage-uploads`, `image-optimization`, `secrets-management`, `task-queue` | deploy, CI/CD, Docker, storage, images, secrets, jobs |
-| Platform services | `css-styling`, `email`, `local-state-management`, `realtime-websockets` | CSS, styling, email, Zustand, Jotai, real-time, WebSocket |
-
-Paths: `topics/dependencies/rules/<rule-file>.md`. Dependency rules classify choices as Go-To, Acceptable, or Unacceptable. Always inspect the source-specific rule for the relevant solution domain; do not infer a library choice from a neighboring domain.
-
 ## Rule Selection Output
 
 When applying this skill, report paths selected, for example:
@@ -100,5 +86,5 @@ Selected rules:
 - topics/react/rules/data-tanstack-query-only.md
 - topics/typescript/rules/function-parameters-always-typed.md
 Related rules loaded:
-- topics/dependencies/rules/async-state-management.md
+- ../ferrousaurus-dependency-conventions/topics/dependencies/rules/async-state-management.md
 ```

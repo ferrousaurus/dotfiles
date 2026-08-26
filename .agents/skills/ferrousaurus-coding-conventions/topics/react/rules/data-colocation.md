@@ -81,6 +81,6 @@ function Sidebar() {
 
 ### Cross-References
 
-- Dependency rule: Async State Mgmt (TanStack Query Go-To)
+- Dependency convention: Async State Mgmt (TanStack Query Go-To)
 - Related: [data-tanstack-query-only.md](../../react/rules/data-tanstack-query-only.md)
 - Related: [state-no-prop-drilling.md](../../react/rules/state-no-prop-drilling.md)

@@ -76,5 +76,5 @@ function LoginForm() {
 
 ### Cross-References
 
-- Dependency rule: Component Library (Mantine Go-To), Form Library (TanStack Form Go-To)
+- Dependency convention: Component Library (Mantine Go-To), Form Library (TanStack Form Go-To)
 - Related: [state-use-ref-only.md](../../react/rules/state-use-ref-only.md)

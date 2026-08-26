@@ -66,5 +66,5 @@ Regardless of framework: push interactivity to the edges. The more logic that ru
 
 ### Cross-References
 
-- Dependency rule: Rendering Library (React), SSR Library (TanStack Start), Routing Library (TanStack Router)
+- Dependency convention: Rendering Library (React), SSR Library (TanStack Start), Routing Library (TanStack Router)
 - Related: [data-tanstack-query-only.md](../../react/rules/data-tanstack-query-only.md)

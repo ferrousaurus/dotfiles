@@ -78,5 +78,5 @@ function SubmitButton() {
 
 ### Cross-References
 
-- Dependency rule: SSR Library (TanStack Start Go-To)
+- Dependency convention: SSR Library (TanStack Start Go-To)
 - Related: [data-tanstack-query-only.md](../../react/rules/data-tanstack-query-only.md)

@@ -9,7 +9,7 @@ tags: react, data, fetching, tanstack-query, useEffect
 
 **Impact: HIGH (useEffect+useState fetching causes race conditions, stale data, and boilerplate)**
 
-All server state flows through TanStack Query (per the dependency rules). Never use `useEffect` + `useState` for data fetching. TanStack Query handles caching, background refetching, stale-while-revalidate, deduplication, and race conditions — all of which you'd have to implement manually with `useEffect`.
+All server state flows through TanStack Query (per the dependency-conventions skill). Never use `useEffect` + `useState` for data fetching. TanStack Query handles caching, background refetching, stale-while-revalidate, deduplication, and race conditions — all of which you'd have to implement manually with `useEffect`.
 
 **Incorrect (useEffect + useState for fetching):**
 
@@ -89,6 +89,6 @@ function useUpdateUser() {
 
 ### Cross-References
 
-- Dependency rule: Async State Mgmt (TanStack Query Go-To), API Client (Native fetch + TanStack Query)
+- Dependency convention: Async State Mgmt (TanStack Query Go-To), API Client (Native fetch + TanStack Query)
 - Related: [data-colocation.md](../../react/rules/data-colocation.md)
 - Related: [effect-external-systems-only.md](../../react/rules/effect-external-systems-only.md)
