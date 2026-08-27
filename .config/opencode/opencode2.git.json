@@ -115,7 +115,7 @@
       },
       "system": "{file:./prompts/plan.md}"
     },
-    "architect": {
+    "specify": {
       "description": "Investigates requests and produces implementation-ready plans without making changes.",
       "mode": "primary",
       "permission": {
@@ -234,7 +234,11 @@
       "mode": "subagent",
       "permission": {
         "bash": "deny",
-        "edit": "deny",
+        "edit": {
+          "*": "deny",
+          "docs/specs/**/*.md": "ask",
+          "docs/plans/**/*.md": "ask"
+        },
         "glob": "allow",
         "grep": "allow",
         "task": "deny"

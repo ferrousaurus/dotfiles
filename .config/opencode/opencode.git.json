@@ -118,7 +118,7 @@
       },
       "prompt": "{file:./prompts/plan.md}"
     },
-    "architect": {
+    "specify": {
       "description": "Investigates requests and produces implementation-ready plans without making changes.",
       "mode": "primary",
       "permission": {
@@ -190,8 +190,7 @@
       "prompt": "{file:./prompts/scout-reuse.md}"
     },
     "general": {},
-    "title": {
-    },
+    "title": {},
     "summary": {},
     "compaction": {},
     "librarian": {
@@ -271,9 +270,11 @@
       "mode": "subagent",
       "permission": {
         "bash": "deny",
-        "edit": "deny",
-        "glob": "allow",
-        "grep": "allow",
+        "edit": {
+          "*": "deny",
+          "docs/specs/**/*.md": "ask",
+          "docs/plans/**/*.md": "ask"
+        },
         "task": "deny"
       },
       "prompt": "{file:./prompts/review-style.md}"
