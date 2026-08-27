@@ -147,7 +147,7 @@
         },
         "edit": {
           "*": "deny",
-          "docs/specs/*.md": "allow",
+          "docs/specs/*.md": "allow"
         },
         "task": {
           "*": "deny",
