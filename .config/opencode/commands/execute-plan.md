@@ -2,10 +2,9 @@
 agent: build
 description: Execute and verify a persisted implementation plan without prompting the user.
 ---
-
 Invocation:
 
-`/execute-plan docs/plans/<name>.md`
+`/execute-plan @docs/plans/<name>.md`
 
 Treat `$ARGUMENTS` as exactly one required plan path. Accept only an existing readable Markdown file under `docs/plans/`. Reject missing paths, multiple arguments, absolute paths, traversal, and destinations outside `docs/plans/`.
 

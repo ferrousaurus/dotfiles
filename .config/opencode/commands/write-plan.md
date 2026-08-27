@@ -2,19 +2,13 @@
 agent: plan
 description: Persist a self-contained implementation plan from the conversation or a specification
 ---
-Supported invocations:
+Invocation:
 
-`/write-plan docs/plans/<name>.md`
+`/write-plan @docs/specs/<name>.md`
 
-`/write-plan docs/plans/<name>.md --from docs/specs/<name>.md`
+Parse `$ARGUMENTS` using this form only. The single argument is the location of the specification to build the plan from.
 
-Parse `$ARGUMENTS` using those forms only.
-
-The destination must be a Markdown file under `docs/plans/`. An optional source must follow from `--from` and identify one Markdown file under `docs/specs/`. Reject missing destinations, absolute paths, traversal, unsupported arguments, or paths outside those directories.
-
-When `--from` is omitted, use the current conversation as the requirements source.
-
-When `--from` is present:
+The destination is a Markdown file with the same filename as the specification in `$ARGUMENTS`; that is, `docs/plans/<name>.md`.
 
 1. Read the specified specification.
 2. Treat is as the authoritative requirements baseline.
