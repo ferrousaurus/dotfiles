@@ -97,7 +97,10 @@
           "git diff --no-ext-diff": "allow",
           "git status --short --untracked-files=all": "allow"
         },
-        "edit": "deny",
+        "edit": {
+          "*": "deny",
+          "docs/plans/*.md": "allow"
+        },
         "task": {
           "*": "deny",
           "explore": "allow",
@@ -142,7 +145,10 @@
           "git diff --no-ext-diff": "allow",
           "git status --short --untracked-files=all": "allow"
         },
-        "edit": "deny",
+        "edit": {
+          "*": "deny",
+          "docs/specs/*.md": "allow",
+        },
         "task": {
           "*": "deny",
           "explore": "allow",
@@ -237,11 +243,7 @@
       "mode": "subagent",
       "permission": {
         "bash": "deny",
-        "edit": {
-          "*": "deny",
-          "docs/specs/*.md": "ask",
-          "docs/plans/*.md": "ask"
-        },
+        "edit": "deny",
         "glob": "allow",
         "grep": "allow",
         "task": "deny"
