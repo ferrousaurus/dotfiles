@@ -236,8 +236,8 @@
         "bash": "deny",
         "edit": {
           "*": "deny",
-          "docs/specs/**/*.md": "ask",
-          "docs/plans/**/*.md": "ask"
+          "docs/specs/*.md": "ask",
+          "docs/plans/*.md": "ask"
         },
         "glob": "allow",
         "grep": "allow",
