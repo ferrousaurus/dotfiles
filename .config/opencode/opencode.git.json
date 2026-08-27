@@ -237,7 +237,11 @@
       "mode": "subagent",
       "permission": {
         "bash": "deny",
-        "edit": "deny",
+        "edit": {
+          "*": "deny",
+          "docs/specs/**/*.md": "ask",
+          "docs/plans/**/*.md": "ask"
+        },
         "glob": "allow",
         "grep": "allow",
         "task": "deny"
@@ -270,11 +274,7 @@
       "mode": "subagent",
       "permission": {
         "bash": "deny",
-        "edit": {
-          "*": "deny",
-          "docs/specs/**/*.md": "ask",
-          "docs/plans/**/*.md": "ask"
-        },
+        "edit": "deny",
         "task": "deny"
       },
       "prompt": "{file:./prompts/review-style.md}"
