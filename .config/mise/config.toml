@@ -9,38 +9,11 @@ pin = true
 package_manager = "aube"
 
 [env]
-_.file = "~/.config/mise/.secrets.toml"
+_.file = { path = "~/.config/mise/.secrets.toml", redact = true }
 OPENCODE_EXPERIMENTAL_OXFMT = true
 OPENCODE_EXPERIMENTAL_DISABLE_COPY_ON_SELECT = true
 OPENCODE_EXPERIMENTAL_SCOUT = true
 TERM = "xterm-256color"
-
-[bootstrap.hooks.pre-packages]
-run = '''
-# Check if Rosetta is installed and install if not
-if [ "$(uname)" = "Darwin" ]; then
-  test -d /usr/libexec/rosetta || softwareupdate --install-rosetta --agree-to-license
-fi
-'''
-
-[bootstrap.packages]
-# These are commented out because they are expected to be installed, but may not
-# function with a mirror. Add them to the config.local.toml, or install them
-# manually with `brew install ${PACKAGE}`
-
-# "brew:docker-credential-helper" = "latest"
-# "brew:git" = "latest"
-# "brew:mise" = "latest"
-# "brew:zsh-autosuggestions" = "latest"
-# "brew:zsh-syntax-highlighting" = "latest"
-# "brew:docker-buildx" = "latest"
-# "brew:lima" = "latest"
-# "brew:luarocks" = "latest"
-
-"apt:mosh" = "latest"
-"apt:mise" = "latest"
-"apt:zsh" = "latest"
-"apt:jq" = "latest"
 
 [bootstrap.repos]
 #"~/.dotfiles" = { url = "git@github.com:ferrousaurus/dotfiles.git", ref = "main" }
@@ -71,7 +44,10 @@ jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.confi
 "~/.config/herdr/config.toml" = {}
 "~/.config/kitty/kitty.conf" = {}
 "~/.config/kitty/catppuccin-macchiato.conf" = {}
+"~/.config/mise/miserc.toml" = {}
 "~/.config/mise/config.toml" = {}
+"~/.config/mise/config.macos.toml" = {}
+"~/.config/mise/config.linux.toml" = {}
 "~/.config/opencode/AGENTS.md" = {}
 "~/.config/opencode/cli.json" = {}
 "~/.config/opencode/commands" = {}
@@ -88,39 +64,6 @@ jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.confi
 "~/.config/zed/themes/catppuccin-sky.json" = {}
 
 "~/.zshrc" = {}
-
-[bootstrap.macos.defaults]
-"com.app.finder" = { AppleShowAllFiles = true }
-
-[bootstrap.macos.dock]
-autohide = true
-orientation = "bottom"
-show_recents = false
-tilesize = 36
-magnification = false
-
-[bootstrap.macos.finder]
-show_all_files = true
-#show_extensions_warning = false
-show_pathbar = true
-show_status_bar = true
-preferred_view_style = "column"
-
-[bootstrap.macos.keyboard]
-#key_repeat = 2
-#initial_key_repeat = 15
-#press_and_hold = true
-fn_state = false
-
-[bootstrap.macos.trackpad]
-tap_to_click = true
-three_finger_drag = false
-
-[bootstrap.hooks.post-defaults]
-run = "killall Dock || true"
-
-[bootstrap.user]
-login_shell = "/bin/zsh"
 
 [tools]
 age = "latest"
@@ -179,7 +122,6 @@ mise exec -- nub i
 '''
 
 [shell_alias]
-brew86 = "arch -x86_64 /usr/local/bin/brew"
 cat = "bat --color=always"
 cd = "z"
 fzf = "fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"

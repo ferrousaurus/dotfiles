@@ -1,0 +1,5 @@
+[bootstrap.packages]
+"apt:mosh" = "latest"
+"apt:mise" = "latest"
+"apt:zsh" = "latest"
+"apt:jq" = "latest"

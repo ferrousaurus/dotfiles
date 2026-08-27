@@ -1,0 +1,54 @@
+[bootstrap.hooks.pre-packages]
+run = '''
+test -d /usr/libexec/rosetta || softwareupdate --install-rosetta --agree-to-license
+'''
+
+[bootstrap.packages]
+# These are commented out because they are expected to be installed, but may not
+# function with a mirror. Add them to the config.local.toml, or install them
+# manually with `brew install ${PACKAGE}`
+
+# "brew:docker-credential-helper" = "latest"
+# "brew:git" = "latest"
+# "brew:mise" = "latest"
+# "brew:zsh-autosuggestions" = "latest"
+# "brew:zsh-syntax-highlighting" = "latest"
+# "brew:docker-buildx" = "latest"
+# "brew:lima" = "latest"
+# "brew:luarocks" = "latest"
+
+[bootstrap.macos.defaults]
+"com.app.finder" = { AppleShowAllFiles = true }
+
+[bootstrap.macos.dock]
+autohide = true
+orientation = "bottom"
+show_recents = false
+tilesize = 36
+magnification = false
+
+[bootstrap.macos.finder]
+show_all_files = true
+#show_extensions_warning = false
+show_pathbar = true
+show_status_bar = true
+preferred_view_style = "column"
+
+[bootstrap.macos.keyboard]
+#key_repeat = 2
+#initial_key_repeat = 15
+#press_and_hold = true
+fn_state = false
+
+[bootstrap.macos.trackpad]
+tap_to_click = true
+three_finger_drag = false
+
+[bootstrap.hooks.post-defaults]
+run = "killall Dock || true"
+
+[bootstrap.user]
+login_shell = "/bin/zsh"
+
+[shell_alias]
+brew86 = "arch -x86_64 /usr/local/bin/brew"
