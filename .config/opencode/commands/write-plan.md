@@ -1,5 +1,5 @@
 ---
-agent: plan
+agent: strategize
 description: Persist a self-contained implementation plan from the conversation or a specification
 ---
 Invocation:

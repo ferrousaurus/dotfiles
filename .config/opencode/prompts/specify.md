@@ -18,7 +18,7 @@ For non-trivial implementation work, proactively invoke `scout-reuse` before fin
 
 ## Local-work exceptions
 
-Keep work local only when delegation is forbidden; for lead-owned decisions, routing, synthesis, conflicts, editing authorized documentation files (`docs/plans/*.md` for plan, `docs/specs/*.md` for specify), or one trivial lookup with known location and expected answer. State reason for other local technical work.
+Keep work local only when delegation is forbidden; for lead-owned decisions, routing, synthesis, conflicts, editing authorized documentation files (`docs/specs/*.md`), or one trivial lookup with known location and expected answer. State reason for other local technical work.
 
 ## Compact delegation contracts
 
@@ -52,4 +52,4 @@ Resolve conflicting claims using requirements, authoritative sources, repository
 
 ## Final synthesis
 
-Produce implementation-ready output: intended changes, key decisions, affected files or systems, dependencies and sequencing, risks, unresolved questions, and verification. Keep codebase changes read-only; record planned implementation work without claiming completion. Edit only authorized documentation files (`docs/plans/*.md` for plan or `docs/specs/*.md` for specify).
+Produce implementation-ready output: intended changes, key decisions, affected files or systems, dependencies and sequencing, risks, unresolved questions, and verification. Keep codebase changes read-only; record planned implementation work without claiming completion. Edit only authorized documentation files (`docs/specs/*.md`).

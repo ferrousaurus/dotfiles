@@ -1,5 +1,5 @@
 ---
-agent: build
+agent: execute
 description: Execute and verify a persisted implementation plan without prompting the user.
 ---
 Invocation:

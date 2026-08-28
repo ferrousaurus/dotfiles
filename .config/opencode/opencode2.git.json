@@ -43,82 +43,10 @@
     { "action": "read", "resource": "~/.git-credentials", "effect": "deny" }
   ],
   "agents": {
-    "build": {
-      "description": "Implements and verifies changes, delegating bounded work aggressively.",
-      "mode": "primary",
-      "permission": {
-        "bash": "allow",
-        "edit": "allow",
-        "task": {
-          "*": "deny",
-          "explore": "allow",
-          "scout-reuse": "allow",
-          "librarian": "allow",
-          "implementer": "allow",
-          "debugger": "allow",
-          "reviewer": "allow",
-          "review-style": "allow",
-          "documenter": "allow",
-          "review-verification": "allow",
-          "review-spec": "allow",
-          "review-security": "allow",
-          "review-contracts": "allow",
-          "review-accessibility": "allow",
-          "review-migration": "allow",
-          "review-performance": "allow"
-        }
-      },
-      "system": "{file:./prompts/build.md}"
-    },
-    "plan": {
-      "description": "Investigates requests and produces implementation-ready plans without making changes.",
-      "mode": "primary",
-      "permission": {
-        "bash": {
-          "*": "deny",
-          "deno task check": "allow",
-          "deno task lint": "allow",
-          "deno task lint:check": "allow",
-          "deno task format:check": "allow",
-          "npm task check": "allow",
-          "npm task lint": "allow",
-          "npm task lint:check": "allow",
-          "npm task format:check": "allow",
-          "nub task check": "allow",
-          "nub task lint": "allow",
-          "nub task format:check": "allow",
-          "git merge-base origin/develop HEAD": "allow",
-          "git log --format=%H origin/develop..HEAD": "allow",
-          "git diff --no-ext-diff --merge-base origin/develop HEAD": "allow",
-          "git diff --no-ext-diff --cached": "allow",
-          "git diff --no-ext-diff": "allow",
-          "git status --short --untracked-files=all": "allow"
-        },
-        "edit": {
-          "*": "deny",
-          "docs/plans/*.md": "allow"
-        },
-        "task": {
-          "*": "deny",
-          "explore": "allow",
-          "scout-reuse": "allow",
-          "librarian": "allow",
-          "debugger": "allow",
-          "reviewer": "allow",
-          "review-style": "allow",
-          "documenter": "allow",
-          "review-verification": "allow",
-          "review-spec": "allow",
-          "review-security": "allow",
-          "review-contracts": "allow",
-          "review-accessibility": "allow",
-          "review-migration": "allow",
-          "review-performance": "allow"
-        }
-      },
-      "system": "{file:./prompts/plan.md}"
-    },
+    "plan": { "color": "primary" },
+    "build": { "color": "secondary" },
     "specify": {
+      "color": "error",
       "description": "Investigates requests and produces implementation-ready plans without making changes.",
       "mode": "primary",
       "permission": {
@@ -164,7 +92,84 @@
           "review-performance": "allow"
         }
       },
-      "system": "{file:./prompts/plan.md}"
+      "system": "{file:./prompts/specify.md}"
+    },
+    "strategize": {
+      "color": "warning",
+      "description": "Investigates requests and produces implementation-ready plans without making changes.",
+      "mode": "primary",
+      "permission": {
+        "bash": {
+          "*": "deny",
+          "deno task check": "allow",
+          "deno task lint": "allow",
+          "deno task lint:check": "allow",
+          "deno task format:check": "allow",
+          "npm task check": "allow",
+          "npm task lint": "allow",
+          "npm task lint:check": "allow",
+          "npm task format:check": "allow",
+          "nub task check": "allow",
+          "nub task lint": "allow",
+          "nub task format:check": "allow",
+          "git merge-base origin/develop HEAD": "allow",
+          "git log --format=%H origin/develop..HEAD": "allow",
+          "git diff --no-ext-diff --merge-base origin/develop HEAD": "allow",
+          "git diff --no-ext-diff --cached": "allow",
+          "git diff --no-ext-diff": "allow",
+          "git status --short --untracked-files=all": "allow"
+        },
+        "edit": {
+          "*": "deny",
+          "docs/plans/*.md": "allow"
+        },
+        "task": {
+          "*": "deny",
+          "explore": "allow",
+          "scout-reuse": "allow",
+          "librarian": "allow",
+          "debugger": "allow",
+          "reviewer": "allow",
+          "review-style": "allow",
+          "documenter": "allow",
+          "review-verification": "allow",
+          "review-spec": "allow",
+          "review-security": "allow",
+          "review-contracts": "allow",
+          "review-accessibility": "allow",
+          "review-migration": "allow",
+          "review-performance": "allow"
+        }
+      },
+      "system": "{file:./prompts/strategize.md}"
+    },
+    "execute": {
+      "color": "success",
+      "description": "Implements and verifies changes, delegating bounded work aggressively.",
+      "mode": "primary",
+      "permission": {
+        "bash": "allow",
+        "edit": "allow",
+        "task": {
+          "*": "deny",
+          "explore": "allow",
+          "scout-reuse": "allow",
+          "librarian": "allow",
+          "implementer": "allow",
+          "debugger": "allow",
+          "reviewer": "allow",
+          "review-style": "allow",
+          "documenter": "allow",
+          "review-verification": "allow",
+          "review-spec": "allow",
+          "review-security": "allow",
+          "review-contracts": "allow",
+          "review-accessibility": "allow",
+          "review-migration": "allow",
+          "review-performance": "allow"
+        }
+      },
+      "system": "{file:./prompts/execute.md}"
     },
     "explore": {
       "description": "Performs bounded local repository discovery and dependency tracing.",
