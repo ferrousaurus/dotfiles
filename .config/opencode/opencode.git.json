@@ -46,8 +46,47 @@
     }
   },
   "agent": {
-    "plan": { "color": "primary" },
-    "build": { "color": "secondary" },
+    "plan": { "disable": true },
+    "build": { "disable": true },
+    "chat": {
+      "color": "primary",
+      "description": "General discussion of a directory.",
+      "mode": "primary",
+      "prompt": "{file:./prompts/chat.md}",
+      "permission": {
+        "bash": {
+          "*": "deny",
+          "deno task *": "ask",
+          "deno task check": "allow",
+          "deno task lint": "allow",
+          "deno task lint:check": "allow",
+          "deno task format:check": "allow",
+          "npm task *": "ask",
+          "npm task check": "allow",
+          "npm task lint": "allow",
+          "npm task lint:check": "allow",
+          "npm task format:check": "allow",
+          "nub task *": "ask",
+          "nub task check": "allow",
+          "nub task lint": "allow",
+          "nub task lint:check": "allow",
+          "nub task format:check": "allow",
+          "git merge-base origin/develop HEAD": "allow",
+          "git log --format=%H origin/develop..HEAD": "allow",
+          "git diff --no-ext-diff --merge-base origin/develop HEAD": "allow",
+          "git diff --no-ext-diff --cached": "allow",
+          "git diff --no-ext-diff": "allow",
+          "git status --short --untracked-files=all": "allow"
+        },
+        "edit": "ask",
+        "task": {
+          "*": "deny",
+          "explore": "allow",
+          "general": "allow",
+          "librarian": "allow"
+        }
+      }
+    },
     "specify": {
       "color": "error",
       "description": "Investigates requests and produces implementation-ready plans without making changes.",
@@ -80,7 +119,6 @@
         "task": {
           "*": "deny",
           "explore": "allow",
-          "scout-reuse": "allow",
           "librarian": "allow",
           "debugger": "allow",
           "reviewer": "allow",
@@ -129,7 +167,6 @@
         "task": {
           "*": "deny",
           "explore": "allow",
-          "scout-reuse": "allow",
           "librarian": "allow",
           "debugger": "allow",
           "reviewer": "allow",
@@ -156,7 +193,6 @@
         "task": {
           "*": "deny",
           "explore": "allow",
-          "scout-reuse": "allow",
           "librarian": "allow",
           "implementer": "allow",
           "debugger": "allow",
@@ -186,19 +222,6 @@
         "task": "deny"
       },
       "prompt": "{file:./prompts/explorer.md}"
-    },
-    "scout-reuse": {
-      "description": "Finds reusable local helpers, utilities, hooks, components, and patterns for proposed implementation work.",
-      "hidden": true,
-      "mode": "subagent",
-      "permission": {
-        "bash": "deny",
-        "edit": "deny",
-        "glob": "allow",
-        "grep": "allow",
-        "task": "deny"
-      },
-      "prompt": "{file:./prompts/scout-reuse.md}"
     },
     "general": {},
     "title": {},
@@ -277,7 +300,6 @@
     },
     "review-style": {
       "description": "Reviews changed code against applicable repository coding conventions.",
-      "disable": true,
       "mode": "subagent",
       "permission": {
         "bash": "deny",
@@ -306,7 +328,6 @@
     },
     "review-spec": {
       "description": "Reviews requirements and acceptance-criteria traceability.",
-      "disable": true,
       "mode": "subagent",
       "permission": {
         "bash": "deny",
@@ -319,7 +340,6 @@
     },
     "review-security": {
       "description": "Reviews threats, security controls, and exploitable weaknesses.",
-      "disable": true,
       "mode": "subagent",
       "permission": {
         "bash": "deny",
@@ -332,7 +352,6 @@
     },
     "review-contracts": {
       "description": "Reviews public interface semantics and compatibility.",
-      "disable": true,
       "mode": "subagent",
       "permission": {
         "bash": "deny",
@@ -345,7 +364,6 @@
     },
     "review-accessibility": {
       "description": "Reviews accessible user flows and interaction semantics.",
-      "disable": true,
       "mode": "subagent",
       "permission": {
         "bash": "deny",
@@ -358,7 +376,6 @@
     },
     "review-migration": {
       "description": "Reviews state transitions, rollout, recovery, and compatibility windows.",
-      "disable": true,
       "mode": "subagent",
       "permission": {
         "bash": "deny",
@@ -371,7 +388,6 @@
     },
     "review-performance": {
       "description": "Reviews measured regressions and credible scalability risks.",
-      "disable": true,
       "mode": "subagent",
       "permission": {
         "bash": "deny",
@@ -383,7 +399,7 @@
       "prompt": "{file:./prompts/review-performance.md}"
     }
   },
-  "default_agent": "plan",
+  "default_agent": "chat",
   "formatter": {},
   "lsp": {},
   "plugin": ["@slkiser/opencode-quota@latest"],

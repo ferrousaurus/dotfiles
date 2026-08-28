@@ -12,11 +12,11 @@ If `$ARGUMENTS` is missing, empty, or only whitespace, ask exactly one opening q
 
 Wait for the user's response. Treat that response as the initial description, then continue with the normal interview.
 
-If `$ARGUMENTS` is present, treat it as the initial desription and begin the normal interview without asking the opening question.
+If `$ARGUMENTS` is present, treat it as the initial description and begin the normal interview without asking the opening question.
 
-Do not research the repository until an initial description has been provided. If the description does not identify the goal or relevant scope clearly enough for bounded research, ask exactly one scoping quesiton and wait.
+Do not research the repository until an initial description has been provided. If the description does not identify the goal or relevant scope clearly enough for bounded research, ask exactly one scoping question and wait.
 
-Focus on the problem, desired outcome, users, use cases, required behavior, scope, non-goals, acceptance criteria, constraints, dependencies, failure behavior, and applicable security, accessibility, performance, compatibility, and migration requirements. Do not tur the conversation into an implementation plan.
+Focus on the problem, desired outcome, users, use cases, required behavior, scope, non-goals, acceptance criteria, constraints, dependencies, failure behavior, and applicable security, accessibility, performance, compatibility, and migration requirements. Do not turn the conversation into an implementation plan.
 
 If the goal or relevant repository area is unclear, ask exactly one scoping question before substantive research. Once the scope is bounded, inspect relevant repository evidence before asking implementation-sensitive questions. Repeat bounded research only when an answer materially changes scope.
 
@@ -26,7 +26,7 @@ For each turn:
 
 1. Update the working assumptions and decision log.
 2. Briefly present relevant context or repository evidence.
-3. Recommend an answer and explain its key tradeoff when evidence supports once.
+3. Recommend an answer and explain its key tradeoff when evidence supports one.
 4. Ask exactly one material unanswered question.
 5. Wait for the user's answer.
 
@@ -41,7 +41,7 @@ Finish only when no unresolved requirement-level decision would require a later 
 - Requirements
 - Acceptance behavior
 - Scope and non-goals
-- Constrains and assumptions
+- Constraints and assumptions
 - Material edge and failure cases
 - Repository findings with `path:line` citations
 - Decisions and rejected alternatives

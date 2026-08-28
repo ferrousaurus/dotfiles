@@ -15,14 +15,14 @@ Read the complete plan before editing. Treat it as the authoritative implementat
 Before implementation:
 
 1. Extract every requirement and acceptance criteria.
-2. Identify ordered steps, affected files and symbols, dependencies, risks, defaults, and verification requirments.
+2. Identify ordered steps, affected files and symbols, dependencies, risks, defaults, and verification requirements.
 3. Inspect relevant repository state and preserve existing changes.
 4. Validate paths, APIs, interfaces, and assumptions against current evidence.
 5. Create a requirement-to-implementation and verification checklist.
 
 Execute every actionable plan step in dependency order. Preserve scope and acceptance criteria. Do not perform unrelated cleanup, silently omit work, modify the plan document, commit, install unapproved dependencies, or widen permissions.
 
-Follow recorded plan decisions and defaults. Resolve minor ambiguity using repository conventiosn and authoritative evidence. Adapt stale mechanical details only when intent and acceptance criteria remain unchanged, and report every adaptation.
+Follow recorded plan decisions and defaults. Resolve minor ambiguity using repository conventions and authoritative evidence. Adapt stale mechanical details only when intent and acceptance criteria remain unchanged, and report every adaptation.
 
 If a material conflict, unsafe instruction, missing permission, unavailable dependency, destructive ambiguity, or requirement gap prevents safe execution, stop and report `blocked` or `conflict`. Do not guess and do not prompt the user.
 
