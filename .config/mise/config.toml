@@ -15,29 +15,20 @@ OPENCODE_EXPERIMENTAL_DISABLE_COPY_ON_SELECT = true
 OPENCODE_EXPERIMENTAL_SCOUT = true
 TERM = "xterm-256color"
 
-[bootstrap.files]
+[bootstrap.files."~/.config/opencode/opencode.json"]
+template = true
+content = '''{{ exec(command="[ -f ~/.dotfiles/.config/opencode/opencode.local.json ] || echo '{}' > ~/.dotfiles/.config/opencode/opencode.local.json; jq -s '.[0] * .[1]' ~/.dotfiles/.config/opencode/opencode.git.json ~/.dotfiles/.config/opencode/opencode.local.json") }}'''
+
+[bootstrap.files."~/.config/opencode/opencode2.json"]
+template = true
+content = '''{{ exec(command="[ -f ~/.dotfiles/.config/opencode/opencode2.local.json ] || echo '{}' > ~/.dotfiles/.config/opencode/opencode2.local.json; jq -s '.[0] * .[1]' ~/.dotfiles/.config/opencode/opencode2.git.json ~/.dotfiles/.config/opencode/opencode2.local.json") }}'''
+
+[bootstrap.files."~/.config/zed/settings.json"]
+template = true
+content = '''{{ exec(command="[ -f ~/.dotfiles/.config/zed/settings.local.json ] || echo '{}' > ~/.dotfiles/.config/zed/settings.local.json; jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.config/zed/settings.local.json") }}'''
 
 [bootstrap.repos]
 #"~/.dotfiles" = { url = "git@github.com:ferrousaurus/dotfiles.git", ref = "main" }
-
-[bootstrap.hooks.pre-dotfiles]
-run = [
-  '''#!/usr/bin/env zsh
-# Merge OpenCode configs
-[ -f ~/.dotfiles/.config/opencode/opencode.local.json ] || echo "{}" > ~/.dotfiles/.config/opencode/opencode.local.json
-jq -s '.[0] * .[1]' ~/.dotfiles/.config/opencode/opencode.git.json ~/.dotfiles/.config/opencode/opencode.local.json > ~/.dotfiles/.config/opencode/opencode.json
-''',
-  '''#!/usr/bin/env zsh
-# Merge OpenCode v2 configs
-[ -f ~/.dotfiles/.config/opencode/opencode2.local.json ] || echo "{}" > ~/.dotfiles/.config/opencode/opencode2.local.json
-jq -s '.[0] * .[1]' ~/.dotfiles/.config/opencode/opencode2.git.json ~/.dotfiles/.config/opencode/opencode2.local.json > ~/.dotfiles/.config/opencode/opencode2.json
-''',
-  '''#!/usr/bin/env zsh
-# Merge Zed configs
-[ -f ~/.dotfiles/.config/zed/settings.local.json ] || echo "{}" > ~/.dotfiles/.config/zed/settings.local.json
-jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.config/zed/settings.local.json > ~/.dotfiles/.config/zed/settings.json
-''',
-]
 
 [dotfiles]
 "~/.agents/.skill-lock.json" = {}
@@ -58,13 +49,11 @@ jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.confi
 "~/.config/opencode/cli.json" = {}
 "~/.config/opencode/commands" = {}
 "~/.config/opencode/prompts" = {}
-"~/.config/opencode/opencode.json" = {}
 "~/.config/opencode/opencode-quota/quota-toast.jsonc" = {}
 "~/.config/opencode/tui.jsonc" = {}
 "~/.config/oxlint" = {}
 "~/.config/starship.toml" = {}
 "~/.config/zed/keymap.jsonc" = {}
-"~/.config/zed/settings.json" = {}
 "~/.config/zed/tasks.json" = {}
 "~/.config/nvim" = {}
 "~/.config/zed/themes/catppuccin-sky.json" = {}
