@@ -12,7 +12,7 @@ Create a self-contained specification from the current conversation and verified
 
 Own requirements, scope, decisions, conflict resolution, and final synthesis. Resolve every requirement-level ambiguity before persistence. If essential user input remains missing, ask now and do not write an incomplete specification.
 
-Do not write the document directly. Deletegate persistence to `documenter` using the compact task contract. Supply the complete synthesized specification in `Context`; never assume the subagent can see this conversation.
+Do not write the document directly. Delegate drafting to `documenter` using the compact task contract. Supply the complete synthesized specification in `Context`; never assume the subagent can see this conversation. Require `documenter` to return the complete Markdown document in its response.
 
 Require this template:
 
@@ -26,7 +26,7 @@ State that this document is authoritative input for implementation planning.
 Describe the problem, desired outcome, and success conditions.
 
 ## Requirements
-Give each requirement a stable identicier. Distinguish functional and non-functional requirements.
+Give each requirement a stable identifier. Distinguish functional and non-functional requirements.
 
 ## Acceptance Criteria
 Provide observable, testable criteria mapped to requirement identifiers.
@@ -51,7 +51,7 @@ Record finalized decisions and rejected alternatives that materially affect plan
 ## Repository and Domain Context
 Include facts a later Plan agent needs, with repository citations as `path:line`.
 
-## Dependencies and Sequencing Contraints
+## Dependencies and Sequencing Constraints
 Record prerequisites and ordering requirements without turning the specification into an implementation plan.
 
 ## Assumptions and Required Defaults
@@ -65,14 +65,15 @@ Do not include implementation steps unless the user explicitly made them require
 
 Delegate `documenter` with:
 
-- **Goal:** Persist the supplied final specification.
-- **Scope:** Exact destination file only.
-- **Acceptance:** A fresh Plan agent can produce an implementation plan using this document and repository evidence without needing this conversation or user clarification.
-- **Context:** Complete synthesized specification and all citations.
-- **Allowed:** Read documentation needed for local conventions; create or replace the exact destination.
-- **Forbidden:** Modify other files, change requirements or decisions, add unsupported content, implement, delegate, commit, or install dependencies.
+- **Goal:** Draft the complete, self-contained specification document following the required template.
+- **Scope:** Proposed content for the target destination path under `docs/specs/`.
+- **Acceptance:** The returned Markdown document conforms to the required template, applies plain language, and enables a fresh Plan agent to produce an implementation plan using this document and repository evidence without needing this conversation or user clarification.
+- **Context:** Complete synthesized specification, all citations, and the required template.
+- **Allowed:** Read documentation needed for local conventions.
+- **Forbidden:** Modify files, change requirements or decisions, add unsupported content, implement, delegate, commit, or install dependencies.
 - **Dependencies:** Preserve supplied requirement identifiers and decisions.
-- **Return:** Written path, change summary, validation evidence, and any conflict or missing information.
-</template>
+- **Return:** Complete drafted Markdown document in the response, target path, validation evidence, and any conflict or missing information.
 
-After persistence, read the destination and validate its path, required sections, internal consistency, citations, and lack of blocking questions. Delegate a correction for the same file if necessary. Report completion only afer validation.
+After receiving the draft from `documenter`, review and validate the returned Markdown document for required sections, internal consistency, citations, and lack of blocking questions. Delegate a bounded correction if necessary.
+
+Once validated, commit the changes by writing the finalized Markdown document to the destination file. Validate the written file and report completion only after validation.

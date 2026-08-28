@@ -11,16 +11,16 @@ Parse `$ARGUMENTS` using this form only. The single argument is the location of 
 The destination is a Markdown file with the same filename as the specification in `$ARGUMENTS`; that is, `docs/plans/<name>.md`.
 
 1. Read the specified specification.
-2. Treat is as the authoritative requirements baseline.
+2. Treat it as the authoritative requirements baseline.
 3. Use the current invocation only for planning instructions, not as an undocumented replacement for specification requirements.
 4. Record any explicit override and its rationale in the plan.
-5. Stop before persistence if the specification contians a material conflict that available evidence cannot resolve.
+5. Stop before persistence if the specification contains a material conflict that available evidence cannot resolve.
 
 Research the repository sufficiently to produce an implementation-ready plan. Follow normal Plan-agent discovery, reuse, evidence, and reconciliation requirements.
 
-Resolve every decision that could cause Build to ask the user a question. Make architecture and implementation decisions from requirements, repository conventions, authoritative evidence, and risk. Where multiple valid chocies remain, select one and record its rationale. If essential requirements are missing and no safe default exists, ask now and do not persist an incomplete plan.
+Resolve every decision that could cause Build to ask the user a question. Make architecture and implementation decisions from requirements, repository conventions, authoritative evidence, and risk. Where multiple valid choices remain, select one and record its rationale. If essential requirements are missing and no safe default exists, ask now and do not persist an incomplete plan.
 
-Do not write the document directly. Delegate persistence to `documenter` using the compact task contract. Supply the finalized plan in `Context`; never assume the subagent can see this conversation or source specification.
+Delegate drafting to `documenter` using the compact task contract. Supply the finalized plan in `Context`; never assume the subagent can see this conversation or source specification. Require `documenter` to return the complete Markdown document in its response.
 
 Require this template:
 
@@ -28,7 +28,7 @@ Require this template:
 # Implementation Plan
 
 ## Build Directive
-Instruct a fresh Build agent to execute the plan fully without requesting user clarification. Require it to follow recorded decisions and defaults, verify repository state, and repots an external blocker rather than invent requirements.
+Instruct a fresh Build agent to execute the plan fully without requesting user clarification. Require it to follow recorded decisions and defaults, verify repository state, and reports an external blocker rather than invent requirements.
 
 ## Objective
 ## Requirements and Acceptance Criteria
@@ -46,10 +46,10 @@ Record relevant files, symbols, existing behavior, worktree considerations, and 
 Record selected architecture, implementation choices, rejected alternatives, and compatibility decisions.
 
 ## Reuse Findings
-Idenfify reusable helpers, components, patterns, signatures, exports, and usages. State whether each should be reused, adapted, or replaced.
+Identify reusable helpers, components, patterns, signatures, exports, and usages. State whether each should be reused, adapted, or replaced.
 
-## Implmenetation Steps
-Give an ordered, depenency-aware sequence. For every step include:
+## Implementation Steps
+Give an ordered, dependency-aware sequence. For every step include:
 
 - Exact files or systems
 - Relevant symbols
@@ -81,13 +81,15 @@ Do not claim unperformed implementation or verification. Do not leave unresolved
 
 Delegate `documenter` with:
 
-- **Goal:** Persist the supplied final implementation plan.
-- **Scope:** Exact destination file only.
-- **Acceptance:** A fresh Build agent can implement and verify the work end-to-end using only this document and repository access, without prompting the user.
-- **Context:** Complete finalized plan, source-spec path when applicable, requirements, decisions, repository evidence, and citations.
-- **Allowed:** Read relevant documentation and the source specification; create or replace the exact destination.
-- **Forbidden:** Modify other files, alter requirments or architecture, invent facts or citations, implement, delegate, commit, or install dependencies.
+- **Goal:** Draft the complete, self-contained implementation plan document following the required template.
+- **Scope:** Proposed content for `docs/plans/<name>.md`.
+- **Acceptance:** The returned Markdown document conforms to the required template, applies plain language, and enables a fresh Build agent to implement and verify the work end-to-end using only this document and repository access, without prompting the user.
+- **Context:** Complete finalized plan, source-spec path when applicable, requirements, decisions, repository evidence, citations, and the required template.
+- **Allowed:** Read relevant documentation and the source specification.
+- **Forbidden:** Modify files, alter requirements or architecture, invent facts or citations, implement, delegate, commit, or install dependencies.
 - **Dependencies:** Preserve requirement traceability and finalized decisions.
-- **Return:** Written path, source-spec path when applicable, change summary, validation evidence, and any conflict.
+- **Return:** Complete drafted Markdown document in the response, target path, source-spec path when applicable, validation evidence, and any conflict.
 
-After persistence, read the destination and validate its path, required sections, requirement coverage, implementation detail, decision completeness, citations, and verification plan. Delegate a bounded correction for the same file if necessary. Reposrt completion only after validation.
+After receiving the draft from `documenter`, review and validate the returned Markdown document for required sections, requirement coverage, implementation detail, decision completeness, citations, and verification plan. Delegate a bounded correction if necessary.
+
+Once validated, commit the changes by writing the finalized Markdown document to the destination file. Validate the written file and report completion only after validation.
