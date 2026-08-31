@@ -21,11 +21,6 @@ TERM = "xterm-256color"
 [bootstrap.hooks.pre-dotfiles]
 run = [
   '''#!/usr/bin/env zsh
-# Merge OpenCode v2 configs
-[ -f ~/.dotfiles/.config/opencode/opencode2.local.json ] || echo "{}" > ~/.dotfiles/.config/opencode/opencode2.local.json
-jq -s '.[0] * .[1]' ~/.dotfiles/.config/opencode/opencode2.git.json ~/.dotfiles/.config/opencode/opencode2.local.json > ~/.dotfiles/.config/opencode/opencode2.json
-''',
-  '''#!/usr/bin/env zsh
 # Merge Zed configs
 [ -f ~/.dotfiles/.config/zed/settings.local.json ] || echo "{}" > ~/.dotfiles/.config/zed/settings.local.json
 jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.config/zed/settings.local.json > ~/.dotfiles/.config/zed/settings.json
@@ -37,24 +32,17 @@ jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.confi
 "~/.agents/agents" = {}
 "~/.agents/skills" = {}
 
-"~/.config/atuin/config.toml" = {}
-"~/.config/ghostty/config.ghostty" = {}
-"~/.config/git/ignore" = {}
+"~/.config/atuin" = {}
+"~/.config/ghostty" = {}
+"~/.config/git" = {}
 "~/.config/herdr/config.toml" = {}
-"~/.config/kitty/kitty.conf" = {}
-"~/.config/kitty/catppuccin-macchiato.conf" = {}
-"~/.config/mise/miserc.toml" = {}
-"~/.config/mise/config.toml" = {}
-"~/.config/mise/config.macos.toml" = {}
-"~/.config/mise/config.linux.toml" = {}
+"~/.config/kitty" = {}
+"~/.config/mise" = {}
+"~/.config/nvim" = {}
 "~/.config/opencode" = {}
 "~/.config/oxlint" = {}
 "~/.config/starship.toml" = {}
-"~/.config/zed/keymap.jsonc" = {}
-"~/.config/zed/settings.json" = {}
-"~/.config/zed/tasks.json" = {}
-"~/.config/nvim" = {}
-"~/.config/zed/themes/catppuccin-sky.json" = {}
+"~/.config/zed" = {}
 
 "~/.zshrc" = {}
 

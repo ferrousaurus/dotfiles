@@ -405,6 +405,8 @@
   "plugin": ["@slkiser/opencode-quota@latest"],
   "share": "disabled",
   "provider": {
-    "openai": {}
+    "openai": {},
+    "copilot": {},
+    "opencode-go": {}
   }
 }

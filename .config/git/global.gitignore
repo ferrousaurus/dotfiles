@@ -1,0 +1,6 @@
+.DS_Store
+mise.local.toml
+.env.local
+.env.*.local
+*.local.code-workspace
+.local/
