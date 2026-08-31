@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { z } from "zod";
 
-export const configValidator = z.record(z.string(), z.unknown());
+const configValidator = z.record(z.string(), z.unknown());
 
 const localConfigPath = fileURLToPath(new URL(`file://${process.env.HOME}/.config/opencode/opencode.local.json`))
 
