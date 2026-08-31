@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@opencode-ai/plugin": "1.18.16",
+    "@opencode-ai/plugin": "~1.15.0",
     "es-toolkit": "~1.51.0",
     "zod": "~4.4.3"
   },
