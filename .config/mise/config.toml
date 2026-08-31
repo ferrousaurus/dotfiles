@@ -21,11 +21,6 @@ TERM = "xterm-256color"
 [bootstrap.hooks.pre-dotfiles]
 run = [
   '''#!/usr/bin/env zsh
-# Merge OpenCode configs
-[ -f ~/.dotfiles/.config/opencode/opencode.local.json ] || echo "{}" > ~/.dotfiles/.config/opencode/opencode.local.json
-jq -s '.[0] * .[1]' ~/.dotfiles/.config/opencode/opencode.git.json ~/.dotfiles/.config/opencode/opencode.local.json > ~/.dotfiles/.config/opencode/opencode.json
-''',
-  '''#!/usr/bin/env zsh
 # Merge OpenCode v2 configs
 [ -f ~/.dotfiles/.config/opencode/opencode2.local.json ] || echo "{}" > ~/.dotfiles/.config/opencode/opencode2.local.json
 jq -s '.[0] * .[1]' ~/.dotfiles/.config/opencode/opencode2.git.json ~/.dotfiles/.config/opencode/opencode2.local.json > ~/.dotfiles/.config/opencode/opencode2.json
@@ -52,13 +47,7 @@ jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.confi
 "~/.config/mise/config.toml" = {}
 "~/.config/mise/config.macos.toml" = {}
 "~/.config/mise/config.linux.toml" = {}
-"~/.config/opencode/AGENTS.md" = {}
-"~/.config/opencode/cli.json" = {}
-"~/.config/opencode/commands" = {}
-"~/.config/opencode/prompts" = {}
-"~/.config/opencode/opencode.json" = {}
-"~/.config/opencode/opencode-quota/quota-toast.jsonc" = {}
-"~/.config/opencode/tui.jsonc" = {}
+"~/.config/opencode" = {}
 "~/.config/oxlint" = {}
 "~/.config/starship.toml" = {}
 "~/.config/zed/keymap.jsonc" = {}
@@ -78,7 +67,19 @@ bat = "latest" # cat replcaement
 bat-extras = "latest"
 bottom = "latest" # Process TUI
 colima = "latest" # Docker-compatible Container VM
-docker-cli = "latest"
+docker-cli = {version = "latest", postinstall = '''#!/usr/bin/env zsh
+# Configure Docker CLI plugins
+f="$HOME/.docker/config.json"
+mkdir -p "$HOME/.docker"
+test -f "$f" || echo '{}' > "$f"
+platform="$(uname)"
+mise_compose="$(mise which docker-compose 2>/dev/null || true)"
+mise_compose_dir=""
+if [ -n "$mise_compose" ] && [ -x "$mise_compose" ]; then
+mise_compose_dir="$(dirname "$mise_compose")"
+fi
+jq -M --arg home "$HOME" --arg platform "$platform" --arg mise_compose_dir "$mise_compose_dir" '(.cliPluginsExtraDirs // []) as $existing | .cliPluginsExtraDirs = ($existing + ([ (if $platform == "Darwin" then "/opt/homebrew/lib/docker/cli-plugins" else empty end), ($home + "/.docker/cli-plugins"), (if $mise_compose_dir != "" then $mise_compose_dir else empty end) ] - $existing)) | if $platform == "Darwin" then .credsStore = (.credsStore // "osxkeychain") | .currentContext = (.currentContext // "colima") else . end' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+''' }
 docker-compose = "latest"
 dotnet = "10"
 eza = "latest" # ls replacement
@@ -90,9 +91,9 @@ lazygit = "latest"
 neovim = "latest"
 node = "26"
 nub = { version = "latest", allow_builds = ["@nubjs/nub"] }
-opencode = "latest"
+opencode = { version = "latest", postinstall = "cd $HOME/.config/opencode && mise exec -- nub ci" }
 oxker = "latest" # Containerization TUI
-oxlint = "latest"
+oxlint = { version = "latest", postinstall = "cd $HOME/.config/oxlint && mise exec -- nub ci" }
 ripgrep = "latest" # grep replacement
 starship = "latest"
 sops = "latest"
@@ -101,33 +102,6 @@ zoxide = "latest" # cd replacement
 yq = "latest" # jq replacement
 
 "npm:skills" = "latest"
-
-[bootstrap.hooks.final]
-run = [
-  '''#!/usr/bin/env zsh
-# Configure Docker CLI plugins
-f="$HOME/.docker/config.json"
-mkdir -p "$HOME/.docker"
-test -f "$f" || echo '{}' > "$f"
-platform="$(uname)"
-mise_compose="$(mise which docker-compose 2>/dev/null || true)"
-mise_compose_dir=""
-if [ -n "$mise_compose" ] && [ -x "$mise_compose" ]; then
-  mise_compose_dir="$(dirname "$mise_compose")"
-fi
-jq -M --arg home "$HOME" --arg platform "$platform" --arg mise_compose_dir "$mise_compose_dir" '(.cliPluginsExtraDirs // []) as $existing | .cliPluginsExtraDirs = ($existing + ([ (if $platform == "Darwin" then "/opt/homebrew/lib/docker/cli-plugins" else empty end), ($home + "/.docker/cli-plugins"), (if $mise_compose_dir != "" then $mise_compose_dir else empty end) ] - $existing)) | if $platform == "Darwin" then .credsStore = (.credsStore // "osxkeychain") | .currentContext = (.currentContext // "colima") else . end' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
-''',
-  '''#!/usr/bin/env zsh
-# Install opencode packages
-cd $HOME/.config/opencode
-mise exec -- nub i
-''',
-  '''#!/usr/bin/env zsh
-# Install oxlint packages
-cd $HOME/.config/oxlint
-mise exec -- nub i
-''',
-]
 
 [shell_alias]
 cat = "bat --color=always"

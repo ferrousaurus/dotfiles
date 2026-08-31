@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "paths": {
+      "#/*": ["./plugins/*"]
+    },
+    "rootDir": "plugins",
+    "strict": true,
+    "noEmit": true,
+    "types": ["node"],
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+  },
+  "include": [
+    "plugins/**/*.ts"
+  ]
+}
