@@ -403,5 +403,8 @@
   "formatter": {},
   "lsp": {},
   "plugin": ["@slkiser/opencode-quota@latest"],
-  "share": "disabled"
+  "share": "disabled",
+  "provider": {
+    "openai": {}
+  }
 }
