@@ -1,13 +1,13 @@
 {
   "dependencies": {
-    "@opencode-ai/plugin": "~1.15.0",
+    "@opencode-ai/plugin": "1.18.18",
     "es-toolkit": "~1.51.0",
     "zod": "~4.4.3"
   },
   "devEngines": {
     "packageManager": {
-      "name": "nub",
-      "version": "^0.7.5",
+      "name": "npm",
+      "version": "^11.19.0",
       "onFail": "ignore"
     }
   },
