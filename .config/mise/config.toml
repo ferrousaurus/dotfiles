@@ -91,9 +91,9 @@ lazygit = "latest"
 neovim = "latest"
 node = "26"
 nub = { version = "latest", allow_builds = ["@nubjs/nub"] }
-opencode = { version = "latest", postinstall = "cd $HOME/.config/opencode && mise exec -- nub ci" }
+opencode = { version = "latest", postinstall = "cd $HOME/.config/opencode && mise exec -- nub i" }
 oxker = "latest" # Containerization TUI
-oxlint = { version = "latest", postinstall = "cd $HOME/.config/oxlint && mise exec -- nub ci" }
+oxlint = { version = "latest", postinstall = "cd $HOME/.config/oxlint && mise exec -- nub i" }
 ripgrep = "latest" # grep replacement
 starship = "latest"
 sops = "latest"
