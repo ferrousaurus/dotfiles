@@ -43,6 +43,9 @@
       "~/.pypirc": "deny",
       "~/.netrc": "deny",
       "~/.git-credentials": "deny"
+    },
+    "skill": {
+      "review": "deny"
     }
   },
   "agent": {
@@ -83,7 +86,7 @@
           "*": "deny",
           "explore": "allow",
           "general": "allow",
-          "librarian": "allow"
+          "researcher": "allow"
         }
       }
     },
@@ -119,7 +122,7 @@
         "task": {
           "*": "deny",
           "explore": "allow",
-          "librarian": "allow",
+          "researcher": "allow",
           "debugger": "allow",
           "reviewer": "allow",
           "review-style": "allow",
@@ -167,7 +170,7 @@
         "task": {
           "*": "deny",
           "explore": "allow",
-          "librarian": "allow",
+          "researcher": "allow",
           "debugger": "allow",
           "reviewer": "allow",
           "review-style": "allow",
@@ -193,7 +196,7 @@
         "task": {
           "*": "deny",
           "explore": "allow",
-          "librarian": "allow",
+          "researcher": "allow",
           "implementer": "allow",
           "debugger": "allow",
           "reviewer": "allow",
@@ -227,12 +230,12 @@
     "title": {},
     "summary": {},
     "compaction": {},
-    "librarian": {
+    "researcher": {
       "description": "Performs bounded external and version-specific research using authoritative sources.",
       "hidden": true,
       "mode": "subagent",
       "permission": { "bash": "deny", "edit": "deny", "webfetch": "allow", "task": "deny" },
-      "prompt": "{file:./prompts/librarian.md}"
+      "prompt": "{file:./prompts/researcher.md}"
     },
     "implementer": {
       "description": "Performs bounded implementation work within explicit caller-owned files or subsystems.",
@@ -294,109 +297,12 @@
         "edit": "deny",
         "glob": "allow",
         "grep": "allow",
-        "task": "deny"
+        "task": "deny",
+        "skill": {
+          "review": "allow"
+        }
       },
       "prompt": "{file:./prompts/reviewer.md}"
-    },
-    "review-style": {
-      "description": "Reviews changed code against applicable repository coding conventions.",
-      "mode": "subagent",
-      "permission": {
-        "bash": "deny",
-        "edit": "deny",
-        "task": "deny"
-      },
-      "prompt": "{file:./prompts/review-style.md}"
-    },
-    "review-verification": {
-      "description": "Executes and reports deterministic repository checks without diagnosing or changing them.",
-      "mode": "subagent",
-      "permission": {
-        "bash": {
-          "*": "deny",
-          "git status --short --untracked-files=all": "allow",
-          "git diff --check": "allow",
-          "jq empty .config/opencode/opencode.git.json": "allow",
-          "jq empty .config/opencode/opencode2.git.json": "allow"
-        },
-        "edit": "deny",
-        "glob": "allow",
-        "grep": "allow",
-        "task": "deny"
-      },
-      "prompt": "{file:./prompts/review-verification.md}"
-    },
-    "review-spec": {
-      "description": "Reviews requirements and acceptance-criteria traceability.",
-      "mode": "subagent",
-      "permission": {
-        "bash": "deny",
-        "edit": "deny",
-        "glob": "allow",
-        "grep": "allow",
-        "task": "deny"
-      },
-      "prompt": "{file:./prompts/review-spec.md}"
-    },
-    "review-security": {
-      "description": "Reviews threats, security controls, and exploitable weaknesses.",
-      "mode": "subagent",
-      "permission": {
-        "bash": "deny",
-        "edit": "deny",
-        "glob": "allow",
-        "grep": "allow",
-        "task": "deny"
-      },
-      "prompt": "{file:./prompts/review-security.md}"
-    },
-    "review-contracts": {
-      "description": "Reviews public interface semantics and compatibility.",
-      "mode": "subagent",
-      "permission": {
-        "bash": "deny",
-        "edit": "deny",
-        "glob": "allow",
-        "grep": "allow",
-        "task": "deny"
-      },
-      "prompt": "{file:./prompts/review-contracts.md}"
-    },
-    "review-accessibility": {
-      "description": "Reviews accessible user flows and interaction semantics.",
-      "mode": "subagent",
-      "permission": {
-        "bash": "deny",
-        "edit": "deny",
-        "glob": "allow",
-        "grep": "allow",
-        "task": "deny"
-      },
-      "prompt": "{file:./prompts/review-accessibility.md}"
-    },
-    "review-migration": {
-      "description": "Reviews state transitions, rollout, recovery, and compatibility windows.",
-      "mode": "subagent",
-      "permission": {
-        "bash": "deny",
-        "edit": "deny",
-        "glob": "allow",
-        "grep": "allow",
-        "task": "deny"
-      },
-      "prompt": "{file:./prompts/review-migration.md}"
-    },
-    "review-performance": {
-      "description": "Reviews measured regressions and credible scalability risks.",
-      "mode": "subagent",
-      "permission": {
-        "bash": "deny",
-        "edit": "deny",
-        "glob": "allow",
-        "grep": "allow",
-        "task": "deny"
-      },
-      "prompt": "{file:./prompts/review-performance.md}"
     }
   },
   "default_agent": "chat",

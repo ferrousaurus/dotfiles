@@ -29,7 +29,6 @@ jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.confi
 
 [dotfiles]
 "~/.agents/.skill-lock.json" = {}
-"~/.agents/agents" = {}
 "~/.agents/skills" = {}
 
 "~/.config/atuin" = {}

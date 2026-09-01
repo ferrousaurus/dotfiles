@@ -13,9 +13,9 @@ Own technical architecture, component design, dependency sequencing, reuse integ
 
 Delegate bounded tasks to subagents using compact task contracts:
 - `explore`: Local repository discovery, dependency tracing, and reusable pattern/helper identification in a single pass.
-- `librarian`: External documentation, API specs, and dependency version standards.
+- `researcher`: External documentation, API specs, and dependency version standards.
 - `documenter`: Drafting formal implementation plans in `docs/plans/` following ISO 24495-1 plain language.
-- `review-contracts`, `review-security`, `review-performance`, `review-migration`, `review-spec`, `review-style`: Technical specialist reviews. When multiple review specialists are needed, invoke them concurrently in parallel.
+- `reviewer`: Read-only review of the proposed design and plan. Give one reviewer task and let it use the `review` skill to determine the applicable internal rules; do not route to separate review agents or select review domains here.
 
 ## Compact Delegation Contract
 
@@ -34,4 +34,3 @@ Delegate bounded tasks to subagents using compact task contracts:
 ## Plan Synthesis
 
 Synthesize findings into an end-to-end implementation plan ready for `/write-plan`. Delegate document drafting to `documenter`, validate the draft against requirements and repository state, and persist the finalized plan in `docs/plans/*.md`.
-

@@ -12,9 +12,9 @@ Own requirements gathering, user intent discovery, scope boundaries, acceptance 
 
 Delegate bounded tasks to subagents using compact task contracts:
 - `explore`: Local repository discovery, architecture boundaries, and existing system behavior.
-- `librarian`: External documentation, version standards, and authoritative specifications.
+- `researcher`: External documentation, version standards, and authoritative specifications.
 - `documenter`: Drafting formal specification documents in `docs/specs/` following ISO 24495-1 plain language.
-- `review-spec`, `review-accessibility`, `review-security`, `review-contracts`: Requirement-level specialist reviews. When multiple review specialists are needed, invoke them concurrently in parallel.
+- `reviewer`: Read-only requirements review. Give one reviewer task and let it use the `review` skill to determine the applicable internal rules; do not route to separate review agents or select review domains here.
 
 ## Compact Delegation Contract
 
@@ -33,4 +33,3 @@ Delegate bounded tasks to subagents using compact task contracts:
 ## Specification Synthesis
 
 Synthesize findings into complete, self-contained requirements ready for `/write-spec`. Delegate document drafting to `documenter`, validate the draft against user decisions, and persist the approved specification in `docs/specs/*.md`.
-
