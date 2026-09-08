@@ -64,16 +64,48 @@
     }
   },
   "languages": {
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      },
+      "language_servers": [
+        "typescript-ls",
+        "oxfmt",
+        "oxlint"
+      ]
+    },
+    "JSX": {
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      },
+      "language_servers": [
+        "typescript-ls",
+        "oxfmt",
+        "oxlint"
+      ]
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      },
+      "language_servers": [
+        "typescript-ls",
+        "oxfmt",
+        "oxlint"
+      ]
+    },
     "TypeScript": {
       "code_actions_on_format": {
         "source.organizeImports": true
-      }
+      },
+      "language_servers": [
+        "typescript-ls",
+        "oxfmt",
+        "oxlint"
+      ]
     }
   },
   "language_servers": [
-    "typescript-ls",
-    "oxfmt",
-    "oxlint",
     "!vtsls",
     "!typescript-language-server",
     "!eslint",
