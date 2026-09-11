@@ -1,6 +1,10 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "permission": {
+    "external_directory": {
+      "~/.config/opencode/**": "allow",
+      "~/.config/oxlint/**": "allow",
+    },
     "read": {
       "*": "allow",
       ".env.local": "deny",
@@ -49,8 +53,12 @@
     }
   },
   "agent": {
-    "plan": { "disable": true },
-    "build": { "disable": true },
+    "plan": {
+      "disable": true
+    },
+    "build": {
+      "disable": true
+    },
     "chat": {
       "color": "primary",
       "description": "General discussion of a directory.",
@@ -234,7 +242,12 @@
       "description": "Performs bounded external and version-specific research using authoritative sources.",
       "hidden": true,
       "mode": "subagent",
-      "permission": { "bash": "deny", "edit": "deny", "webfetch": "allow", "task": "deny" },
+      "permission": {
+        "bash": "deny",
+        "edit": "deny",
+        "webfetch": "allow",
+        "task": "deny"
+      },
       "prompt": "{file:./prompts/researcher.md}"
     },
     "implementer": {
@@ -308,7 +321,9 @@
   "default_agent": "chat",
   "formatter": {},
   "lsp": {},
-  "plugin": ["@slkiser/opencode-quota@latest"],
+  "plugin": [
+    "@slkiser/opencode-quota@latest"
+  ],
   "share": "disabled",
   "provider": {
     "openai": {},
