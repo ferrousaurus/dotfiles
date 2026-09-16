@@ -4,6 +4,7 @@
     "external_directory": {
       "~/.config/opencode/**": "allow",
       "~/.config/oxlint/**": "allow",
+      "~/.local/share/opencode/**": "allow",
     },
     "read": {
       "*": "allow",
