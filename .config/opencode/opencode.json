@@ -226,6 +226,17 @@
   "default_agent": "chat",
   "formatter": {},
   "lsp": {},
+  "mcp": {
+    "chrome-devtools": {
+      "type": "local",
+      "command": [
+        "nubx",
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ],
+      "enabled": false
+    }
+  },
   "plugin": [
     "@slkiser/opencode-quota@latest"
   ],
