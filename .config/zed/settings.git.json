@@ -9,6 +9,7 @@
   },
   "auto_install_extensions": {
     "catppuccin-icons": true,
+    "csharp": true,
     "docker-compose": true,
     "dockerfile": true,
     "env": true,
