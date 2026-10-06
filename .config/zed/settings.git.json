@@ -64,6 +64,14 @@
     }
   },
   "languages": {
+  "CSharp": {
+    "language_servers": [
+      "csharp-ls",
+      "!omnisharp",
+      "!roslyn"
+    ],
+    "format_on_save": "modifications"
+  },
     "JavaScript": {
       "code_actions_on_format": {
         "source.organizeImports": true
@@ -72,7 +80,8 @@
         "typescript-ls",
         "oxfmt",
         "oxlint"
-      ]
+      ],
+      "format_on_save": "modifications"
     },
     "JSX": {
       "code_actions_on_format": {
@@ -82,7 +91,8 @@
         "typescript-ls",
         "oxfmt",
         "oxlint"
-      ]
+      ],
+      "format_on_save": "modifications"
     },
     "TSX": {
       "code_actions_on_format": {
@@ -92,7 +102,8 @@
         "typescript-ls",
         "oxfmt",
         "oxlint"
-      ]
+      ],
+      "format_on_save": "modifications"
     },
     "TypeScript": {
       "code_actions_on_format": {
@@ -102,7 +113,8 @@
         "typescript-ls",
         "oxfmt",
         "oxlint"
-      ]
+      ],
+      "format_on_save": "modifications"
     }
   },
   "language_servers": [

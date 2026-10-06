@@ -13,89 +13,50 @@ _.file = { path = "~/.config/mise/.secrets.toml", redact = true }
 OPENCODE_EXPERIMENTAL_OXFMT = true
 OPENCODE_EXPERIMENTAL_DISABLE_COPY_ON_SELECT = true
 OPENCODE_EXPERIMENTAL_SCOUT = true
-TERM = "xterm-256color"
 
 [bootstrap.repos]
 #"~/.dotfiles" = { url = "git@github.com:ferrousaurus/dotfiles.git", ref = "main" }
 
-[bootstrap.hooks.pre-dotfiles]
-run = [
-  '''#!/usr/bin/env zsh
-# Merge Zed configs
-[ -f ~/.dotfiles/.config/zed/settings.local.json ] || echo "{}" > ~/.dotfiles/.config/zed/settings.local.json
-jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.config/zed/settings.local.json > ~/.dotfiles/.config/zed/settings.json
-''',
-]
-
 [dotfiles]
 "~/.agents/.skill-lock.json" = {}
 "~/.agents/skills" = {}
-
 "~/.config/atuin" = {}
-"~/.config/ghostty" = {}
 "~/.config/git" = {}
-"~/.config/herdr/config.toml" = {}
-"~/.config/kitty" = {}
 "~/.config/mise" = {}
-"~/.config/nvim" = {}
 "~/.config/opencode" = {}
-"~/.config/oxlint" = {}
 "~/.config/starship.toml" = {}
-"~/.config/zed" = {}
-
-"~/.zshrc" = {}
 
 [tools]
 age = "latest"
 ast-grep = "latest"
 atuin = "latest"
 aube = "latest"
-bat = "latest" # cat replcaement
-bat-extras = "latest"
+bat = "latest"
 bottom = "latest" # Process TUI
-colima = "latest" # Docker-compatible Container VM
-docker-cli = {version = "latest", postinstall = '''#!/usr/bin/env zsh
-# Configure Docker CLI plugins
-f="$HOME/.docker/config.json"
-mkdir -p "$HOME/.docker"
-test -f "$f" || echo '{}' > "$f"
-platform="$(uname)"
-mise_compose="$(mise which docker-compose 2>/dev/null || true)"
-mise_compose_dir=""
-if [ -n "$mise_compose" ] && [ -x "$mise_compose" ]; then
-mise_compose_dir="$(dirname "$mise_compose")"
-fi
-jq -M --arg home "$HOME" --arg platform "$platform" --arg mise_compose_dir "$mise_compose_dir" '(.cliPluginsExtraDirs // []) as $existing | .cliPluginsExtraDirs = ($existing + ([ (if $platform == "Darwin" then "/opt/homebrew/lib/docker/cli-plugins" else empty end), ($home + "/.docker/cli-plugins"), (if $mise_compose_dir != "" then $mise_compose_dir else empty end) ] - $existing)) | if $platform == "Darwin" then .credsStore = (.credsStore // "osxkeychain") | .currentContext = (.currentContext // "colima") else . end' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
-''' }
+docker-cli = "latest"
 docker-compose = "latest"
 dotnet = "10"
 eza = "latest" # ls replacement
 fd = "latest" # find replacement
 fzf = "latest"
 github-cli = "latest"
-herdr = "latest" # harness-friendly multiplexer
 lazygit = "latest"
+herdr = "latest" # harness-friendly multiplexer
 neovim = "latest"
 node = "26"
 nub = { version = "latest", allow_builds = ["@nubjs/nub"] }
-opencode = { version = "latest", postinstall = "cd $HOME/.config/opencode && mise exec -- nub i" }
+opencode = "latest"
 oxker = "latest" # Containerization TUI
-oxlint = { version = "latest", postinstall = "cd $HOME/.config/oxlint && mise exec -- nub i" }
+oxlint = "latest"
 ripgrep = "latest" # grep replacement
-starship = "latest"
 sops = "latest"
+starship = "latest"
 usage = "latest"
-zoxide = "latest" # cd replacement
 yq = "latest" # jq replacement
+zoxide = "latest" # cd replacement
+
+"dotnet:Aspire.Cli" = "13"
+"dotnet:csharp-ls" = "latest"
 
 "npm:skills" = "latest"
-
-[shell_alias]
-cat = "bat --color=always"
-cd = "z"
-fzf = "fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
-grep = "batgrep"
-ls = "eza -aghl --show-symlinks --icons=always --hyperlink"
-vi = "nvim"
-vim = "nvim"
-oxlint = "nubx -y oxlint"
+"npm:@opencode-ai/cli" = "next"
