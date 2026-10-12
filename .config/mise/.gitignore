@@ -1,3 +1,4 @@
 config.local.toml
 mise.lock
 age.txt
+.secrets.toml

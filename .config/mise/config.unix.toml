@@ -1,0 +1,44 @@
+[env]
+
+[bootstrap.hooks.pre-dotfiles]
+run = [
+  '''#!/usr/bin/env zsh
+# Merge Zed configs
+[ -f ~/.dotfiles/.config/zed/settings.local.json ] || echo "{}" > ~/.dotfiles/.config/zed/settings.local.json
+jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.config/zed/settings.local.json > ~/.dotfiles/.config/zed/settings.json
+''',
+]
+
+[dotfiles]
+"~/.config/ghostty" = {}
+"~/.config/herdr/config.toml" = {}
+"~/.config/kitty" = {}
+"~/.config/zed" = {}
+
+"~/.zshrc" = {}
+
+[tools]
+bat-extras = "latest"
+docker-cli = { version = "latest", postinstall = '''#!/usr/bin/env zsh
+# Configure Docker CLI plugins
+f="$HOME/.docker/config.json"
+mkdir -p "$HOME/.docker"
+test -f "$f" || echo '{}' > "$f"
+platform="$(uname)"
+mise_compose="$(mise which docker-compose 2>/dev/null || true)"
+mise_compose_dir=""
+if [ -n "$mise_compose" ] && [ -x "$mise_compose" ]; then
+  mise_compose_dir="$(dirname "$mise_compose")"
+fi
+jq -M --arg home "$HOME" --arg platform "$platform" --arg mise_compose_dir "$mise_compose_dir" '(.cliPluginsExtraDirs // []) as $existing | .cliPluginsExtraDirs = ($existing + ([ (if $platform == "Darwin" then "/opt/homebrew/lib/docker/cli-plugins" else empty end), ($home + "/.docker/cli-plugins"), (if $mise_compose_dir != "" then $mise_compose_dir else empty end) ] - $existing)) | if $platform == "Darwin" then .credsStore = (.credsStore // "osxkeychain") | .currentContext = (.currentContext // "colima") else . end' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+''' }
+
+[shell_alias]
+cat = "bat --color=always"
+cd = "z"
+fzf = "fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+grep = "batgrep"
+ls = "eza -aghl --show-symlinks --icons=always --hyperlink"
+vi = "nvim"
+vim = "nvim"
+oxlint = "nubx -y oxlint"

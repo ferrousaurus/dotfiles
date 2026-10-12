@@ -26,3 +26,5 @@ if [[ -n "$KITTY_INSTALLATION_DIR" ]]; then
     kitty-integration
     unfunction kitty-integration
 fi
+
+[[ "${HERDR_ENV:-0}" != "1" && ( "$TERM" == "xterm-ghostty" || "$TERM" == "xterm-kitty" ) ]] && herdr
