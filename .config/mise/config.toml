@@ -37,12 +37,12 @@ dotnet = { version = "10" }
 node = { version = "26" }
 rust = { version = "1" }
 
-"aqua:aubepkg/aube" = { depends = ["rust"], version = "latest" }
+"aqua:aubepkg/aube" = { version = "latest" }
 "aqua:cli/cli" = { version = "latest" } # GitHub CLI
 "aqua:docker/cli" = { version = "latest" }
 "aqua:herdrdev/herdr" = { version = "latest" } # harness-friendly multiplexer
 "aqua:getsops/sops" = { depends = ["asdf:threkk/asdf-age"], version = "latest" }
-"aqua:jesseduffield/lazydocker" = { depends = "aqua:docker/cli", version = "latest" }
+"aqua:jesseduffield/lazydocker" = { depends = ["aqua:docker/cli"], version = "latest" }
 "aqua:jesseduffield/lazygit" = { version = "latest" }
 "aqua:junegunn/fzf" = { version = "latest" }
 "aqua:mikefarah/yq" = { version = "latest" } # jq replacement
@@ -51,24 +51,24 @@ rust = { version = "1" }
 
 "asdf:threkk/asdf-age" = { version = "latest" }
 
-"cargo:ast-grep" = { depends = ["rust"], version = "latest" }
-"cargo:atuin" = { depends = ["rust"], version = "latest" }
-"cargo:bat" = { depends = ["rust"], version = "latest" }
-"cargo:bottom" = { depends = ["rust"], version = "latest" } # Process TUI
-"cargo:eza" = { depends = ["rust"], version = "latest" } # ls replacement
-"cargo:fd-find" = { depends = ["rust"], version = "latest" } # find replacement
-"cargo:oxker" = {depends = ["rust"], version = "latest" } # Containerization TUI
-"cargo:ripgrep" = {depends = ["rust"], version = "latest" } # grep replacement
-"cargo:starship" = { depends = ["rust"], version = "latest" }
-"cargo:usage-cli" = { depends = ["rust"], version = "latest" }
-"cargo:zoxide" = { depends = ["rust"], version = "latest" } # cd replacement
+"cargo:ast-grep" = { version = "latest" }
+"cargo:atuin" = { version = "latest" }
+"cargo:bat" = { version = "latest" }
+"cargo:bottom" = { version = "latest" } # Process TUI
+"cargo:eza" = { version = "latest" } # ls replacement
+"cargo:fd-find" = { version = "latest" } # find replacement
+"cargo:oxker" = {version = "latest" } # Containerization TUI
+"cargo:ripgrep" = {version = "latest" } # grep replacement
+"cargo:starship" = { version = "latest" }
+"cargo:usage-cli" = { version = "latest" }
+"cargo:zoxide" = { version = "latest" } # cd replacement
 
 "github:docker/compose" = { depends = ["aqua:docker/cli"], version = "latest" }
-"github:nubjs/nub" = { depends = ["node"], version = "latest", allow_builds = ["@nubjs/nub"] }
+"github:nubjs/nub" = { allow_builds = ["@nubjs/nub"], version = "latest" }
 
-"dotnet:Aspire.Cli" = { depends = ["dotnet"], version = "13" }
-"dotnet:csharp-ls" = { depends = ["dotnet"], version = "latest" }
+"dotnet:Aspire.Cli" = { version = "13" }
+"dotnet:csharp-ls" = { version = "latest" }
 
-"npm:@opencode/cli" = { depends = ["node", "github:nubjs/nub"], version = "latest", allow_builds = ["@opencode/cli"], postinstall = "cd $HOME/.config/opencode && nub i" }
+"npm:@opencode/cli" = { depends = ["github:nubjs/nub"], version = "latest", allow_builds = ["@opencode/cli"], postinstall = "cd $HOME/.config/opencode && nub i" }
 
 "npm:skills" = { depends = ["github:nubjs/nub"], version = "latest", postinstall = "nubx skills experimental_install -g" }
