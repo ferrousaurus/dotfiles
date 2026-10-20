@@ -1569,7 +1569,7 @@
     }
   },
   "plugins": [
-    "@slkiser/opencode-quota@latest"
+    "@slkiser/opencode-quota@5"
   ],
   "share": "disabled",
   "providers": {
