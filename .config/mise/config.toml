@@ -1,7 +1,7 @@
 [settings]
 color_theme = "catppuccin"
 experimental = true
-lockfile = true
+lockfile = false
 minimum_release_age = "3d"
 pin = true
 
