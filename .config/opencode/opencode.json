@@ -1,420 +1,1579 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "permission": {
-    "external_directory": {
-      "/**": "deny",
-      "~/.agents/**": "allow",
-      "~/.config/**": "ask",
-      "~/.config/opencode/**": "allow",
-      "~/.config/oxlint/**": "allow",
-      "~/.dotfiles/.agents/**": "allow",
-      "~/.dotfiles/.config/**": "ask",
-      "~/.local/share/**": "ask",
-      "~/.local/share/opencode/**": "allow",
-      "~/Source/**": "ask",
-      "~/source/**": "ask"
+  "permissions": [
+    {
+      "action": "read",
+      "resource": "*",
+      "effect": "allow"
     },
-    "read": {
-      "*": "allow",
-      ".env.local": "deny",
-      "*/.env.local": "deny",
-      ".env.local.*": "deny",
-      "*/.env.local.*": "deny",
-      ".env": "ask",
-      "*/.env": "ask",
-      ".env.*": "ask",
-      "*/.env.*": "ask",
-      ".env.schema": "allow",
-      "*/.env.schema": "allow",
-      ".envrc.private": "deny",
-      "*/.envrc.private": "deny",
-      ".secrets": "deny",
-      "*/.secrets": "deny",
-      ".secrets.*": "deny",
-      "*/.secrets.*": "deny",
-      "*.pem": "deny",
-      "*.key": "deny",
-      "*.p12": "deny",
-      "*.pfx": "deny",
-      "*.jks": "deny",
-      "credentials.json": "deny",
-      "*/credentials.json": "deny",
-      "service-account*.json": "deny",
-      "*/service-account*.json": "deny",
-      "terraform.tfstate": "deny",
-      "*/terraform.tfstate": "deny",
-      "terraform.tfstate.*": "deny",
-      "*/terraform.tfstate.*": "deny",
-      ".terraform/**": "deny",
-      "*/.terraform/**": "deny",
-      "~/.ssh/**": "deny",
-      "~/.aws/credentials": "deny",
-      "~/.config/gcloud/**": "deny",
-      "~/.kube/config": "deny",
-      "~/.docker/config.json": "deny",
-      "~/.npmrc": "deny",
-      "~/.pypirc": "deny",
-      "~/.netrc": "deny",
-      "~/.git-credentials": "deny"
+    {
+      "action": "read",
+      "resource": ".env.local",
+      "effect": "deny"
     },
-    "skill": {
-      "review": "deny"
+    {
+      "action": "read",
+      "resource": "*/.env.local",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": ".env.local.*",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*/.env.local.*",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": ".env",
+      "effect": "ask"
+    },
+    {
+      "action": "read",
+      "resource": "*/.env",
+      "effect": "ask"
+    },
+    {
+      "action": "read",
+      "resource": ".env.*",
+      "effect": "ask"
+    },
+    {
+      "action": "read",
+      "resource": "*/.env.*",
+      "effect": "ask"
+    },
+    {
+      "action": "read",
+      "resource": ".env.schema",
+      "effect": "allow"
+    },
+    {
+      "action": "read",
+      "resource": "*/.env.schema",
+      "effect": "allow"
+    },
+    {
+      "action": "read",
+      "resource": ".envrc.private",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*/.envrc.private",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": ".secrets",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*/.secrets",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": ".secrets.*",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*/.secrets.*",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*.pem",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*.key",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*.p12",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*.pfx",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*.jks",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "credentials.json",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*/credentials.json",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "service-account*.json",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*/service-account*.json",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "terraform.tfstate",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*/terraform.tfstate",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "terraform.tfstate.*",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*/terraform.tfstate.*",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": ".terraform/**",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*/.terraform/**",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.ssh/**",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.aws/credentials",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.config/gcloud/**",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.kube/config",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.docker/config.json",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.npmrc",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.pypirc",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.netrc",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.git-credentials",
+      "effect": "deny"
+    },
+    {
+      "action": "skill",
+      "resource": "review",
+      "effect": "deny"
+    },
+    {
+      "action": "external_directory",
+      "resource": "/**",
+      "effect": "deny"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/.agents/**",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/.config/**",
+      "effect": "ask"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/.config/opencode/**",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/.config/oxlint/**",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/.dotfiles/.agents/**",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/.dotfiles/.config/**",
+      "effect": "ask"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/.local/share/**",
+      "effect": "ask"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/.local/share/opencode/**",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/Source/**",
+      "effect": "ask"
+    },
+    {
+      "action": "external_directory",
+      "resource": "~/source/**",
+      "effect": "ask"
     }
-  },
-  "agent": {
+  ],
+  "agents": {
     "plan": {
-      "prompt": "{file:./prompts/plan.md}",
-      "permission": {
-        "bash": {
-          "*": "deny",
-          "nub run check": "allow",
-          "nub run format:check": "allow",
-          "nub run fmt:check": "allow",
-          "nub run lint": "allow",
-          "nub run lint:check": "allow",
-          "nub run test": "allow",
-          "git log *": "allow",
-          "git diff *": "allow",
-          "git status *": "allow"
+      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}",
+      "system": "{file:./prompts/plan.md}",
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "*",
+          "effect": "deny"
         },
-        "edit": "deny",
-        "mcp_azure_*": "allow",
-        "mcp_azure_*_add": "deny",
-        "mcp_azure_*_append": "deny",
-        "mcp_azure_*_apply": "deny",
-        "mcp_azure_*_cancel": "deny",
-        "mcp_azure_*_changedetection": "deny",
-        "mcp_azure_*_create": "deny",
-        "mcp_azure_*_createorupdate": "deny",
-        "mcp_azure_*_delete": "deny",
-        "mcp_azure_*_deploy": "deny",
-        "mcp_azure_*_drain": "deny",
-        "mcp_azure_*_execute": "deny",
-        "mcp_azure_*_grant": "deny",
-        "mcp_azure_*_import": "deny",
-        "mcp_azure_*_lock": "deny",
-        "mcp_azure_*_orchestrator-next": "deny",
-        "mcp_azure_*_orchestrator-start": "deny",
-        "mcp_azure_*_publish": "deny",
-        "mcp_azure_*_purge": "deny",
-        "mcp_azure_*_recover": "deny",
-        "mcp_azure_*_reimage": "deny",
-        "mcp_azure_*_remove": "deny",
-        "mcp_azure_*_rename": "deny",
-        "mcp_azure_*_request": "deny",
-        "mcp_azure_*_restart": "deny",
-        "mcp_azure_*_restore": "deny",
-        "mcp_azure_*_revoke": "deny",
-        "mcp_azure_*_rotate": "deny",
-        "mcp_azure_*_run": "deny",
-        "mcp_azure_*_scale": "deny",
-        "mcp_azure_*_send": "deny",
-        "mcp_azure_*_send-*": "deny",
-        "mcp_azure_*_set": "deny",
-        "mcp_azure_*_snapshot": "deny",
-        "mcp_azure_*_start": "deny",
-        "mcp_azure_*_stop": "deny",
-        "mcp_azure_*_swap": "deny",
-        "mcp_azure_*_sync": "deny",
-        "mcp_azure_*_synthesize": "deny",
-        "mcp_azure_*_trigger": "deny",
-        "mcp_azure_*_unlock": "deny",
-        "mcp_azure_*_unregister": "deny",
-        "mcp_azure_*_update": "deny",
-        "mcp_azure_*_update-appsettings": "deny",
-        "mcp_azure_*_upload": "deny",
-        "mcp_chrome-devtools_*": "ask",
-        "task": {
-          "*": "deny",
-          "explore": "allow",
-          "researcher": "allow",
-          "debugger": "allow",
-          "reviewer": "allow",
-          "documenter": "allow"
+        {
+          "action": "shell",
+          "resource": "nub run check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run format:check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run fmt:check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run lint",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run lint:check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run test",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "git log *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "git status *",
+          "effect": "allow"
+        },
+        {
+          "action": "edit",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "azure_*_add",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_append",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_apply",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_cancel",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_changedetection",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_create",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_createorupdate",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_delete",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_deploy",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_drain",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_execute",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_grant",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_import",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_lock",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_orchestrator-next",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_orchestrator-start",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_publish",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_purge",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_recover",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_reimage",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_remove",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_rename",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_request",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_restart",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_restore",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_revoke",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_rotate",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_run",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_scale",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_send",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_send-*",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_set",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_snapshot",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_start",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_stop",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_swap",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_sync",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_synthesize",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_trigger",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_unlock",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_unregister",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_update",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_update-appsettings",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_upload",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "chrome-devtools_*",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "subagent",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "subagent",
+          "resource": "explore",
+          "effect": "allow"
+        },
+        {
+          "action": "subagent",
+          "resource": "researcher",
+          "effect": "allow"
+        },
+        {
+          "action": "subagent",
+          "resource": "debugger",
+          "effect": "allow"
+        },
+        {
+          "action": "subagent",
+          "resource": "reviewer",
+          "effect": "allow"
+        },
+        {
+          "action": "subagent",
+          "resource": "documenter",
+          "effect": "allow"
         }
-      }
+      ]
     },
     "build": {
-      "prompt": "{file:./prompts/build.md}",
-      "permission": {
-        "bash": {
-          "*": "ask",
-          "nub run build": "ask",
-          "nub run check": "allow",
-          "nub run fmt": "allow",
-          "nub run fmt:check": "allow",
-          "nub run format": "allow",
-          "nub run format:check": "allow",
-          "nub run lint": "allow",
-          "nub run lint:check": "allow",
-          "nub run lint:fix": "allow",
-          "nub run test": "allow",
-          "git log *": "allow",
-          "git diff *": "allow",
-          "git status *": "allow"
+      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}",
+      "system": "{file:./prompts/build.md}",
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "*",
+          "effect": "ask"
         },
-        "edit": "allow",
-        "mcp_azure_*": "allow",
-        "mcp_azure_*_add": "ask",
-        "mcp_azure_*_append": "ask",
-        "mcp_azure_*_apply": "ask",
-        "mcp_azure_*_cancel": "ask",
-        "mcp_azure_*_changedetection": "ask",
-        "mcp_azure_*_create": "ask",
-        "mcp_azure_*_createorupdate": "ask",
-        "mcp_azure_*_delete": "ask",
-        "mcp_azure_*_deploy": "ask",
-        "mcp_azure_*_drain": "ask",
-        "mcp_azure_*_execute": "ask",
-        "mcp_azure_*_grant": "ask",
-        "mcp_azure_*_import": "ask",
-        "mcp_azure_*_lock": "ask",
-        "mcp_azure_*_orchestrator-next": "ask",
-        "mcp_azure_*_orchestrator-start": "ask",
-        "mcp_azure_*_publish": "ask",
-        "mcp_azure_*_purge": "ask",
-        "mcp_azure_*_recover": "ask",
-        "mcp_azure_*_reimage": "ask",
-        "mcp_azure_*_remove": "ask",
-        "mcp_azure_*_rename": "ask",
-        "mcp_azure_*_request": "ask",
-        "mcp_azure_*_restart": "ask",
-        "mcp_azure_*_restore": "ask",
-        "mcp_azure_*_revoke": "ask",
-        "mcp_azure_*_rotate": "ask",
-        "mcp_azure_*_run": "ask",
-        "mcp_azure_*_scale": "ask",
-        "mcp_azure_*_send": "ask",
-        "mcp_azure_*_send-*": "ask",
-        "mcp_azure_*_set": "ask",
-        "mcp_azure_*_snapshot": "ask",
-        "mcp_azure_*_start": "ask",
-        "mcp_azure_*_stop": "ask",
-        "mcp_azure_*_swap": "ask",
-        "mcp_azure_*_sync": "ask",
-        "mcp_azure_*_synthesize": "ask",
-        "mcp_azure_*_trigger": "ask",
-        "mcp_azure_*_unlock": "ask",
-        "mcp_azure_*_unregister": "ask",
-        "mcp_azure_*_update": "ask",
-        "mcp_azure_*_update-appsettings": "ask",
-        "mcp_azure_*_upload": "ask",
-        "mcp_chrome-devtools_*": "ask",
-        "task": {
-          "*": "deny",
-          "explore": "allow",
-          "researcher": "allow",
-          "implementer": "allow",
-          "debugger": "allow",
-          "reviewer": "allow",
-          "documenter": "allow"
+        {
+          "action": "shell",
+          "resource": "nub run build",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run fmt",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run fmt:check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run format",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run format:check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run lint",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run lint:check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run lint:fix",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run test",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "git log *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "git status *",
+          "effect": "allow"
+        },
+        {
+          "action": "edit",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "azure_*",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "azure_*_add",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_append",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_apply",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_cancel",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_changedetection",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_create",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_createorupdate",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_delete",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_deploy",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_drain",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_execute",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_grant",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_import",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_lock",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_orchestrator-next",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_orchestrator-start",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_publish",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_purge",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_recover",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_reimage",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_remove",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_rename",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_request",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_restart",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_restore",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_revoke",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_rotate",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_run",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_scale",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_send",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_send-*",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_set",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_snapshot",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_start",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_stop",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_swap",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_sync",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_synthesize",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_trigger",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_unlock",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_unregister",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_update",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_update-appsettings",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "azure_*_upload",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "chrome-devtools_*",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
+          "action": "subagent",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "subagent",
+          "resource": "explore",
+          "effect": "allow"
+        },
+        {
+          "action": "subagent",
+          "resource": "researcher",
+          "effect": "allow"
+        },
+        {
+          "action": "subagent",
+          "resource": "implementer",
+          "effect": "allow"
+        },
+        {
+          "action": "subagent",
+          "resource": "debugger",
+          "effect": "allow"
+        },
+        {
+          "action": "subagent",
+          "resource": "reviewer",
+          "effect": "allow"
+        },
+        {
+          "action": "subagent",
+          "resource": "documenter",
+          "effect": "allow"
         }
-      }
+      ]
     },
     "explore": {
+      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}",
       "description": "Performs bounded local repository discovery and dependency tracing.",
       "hidden": true,
       "mode": "subagent",
-      "permission": {
-        "bash": "deny",
-        "edit": "deny",
-        "glob": "allow",
-        "grep": "allow",
-        "task": "deny"
-      },
-      "prompt": "{file:./prompts/explorer.md}"
+      "system": "{file:./prompts/explorer.md}",
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "edit",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "glob",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "grep",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "subagent",
+          "resource": "*",
+          "effect": "deny"
+        }
+      ]
     },
-    "general": {},
-    "title": {},
-    "summary": {},
-    "compaction": {},
+    "general": {
+      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}"
+    },
+    "title": {
+      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}"
+    },
+    "summary": {
+      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}"
+    },
+    "compaction": {
+      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}"
+    },
     "researcher": {
+      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}",
       "description": "Performs bounded external and version-specific research using authoritative sources.",
       "hidden": true,
       "mode": "subagent",
-      "permission": {
-        "bash": "deny",
-        "edit": "deny",
-        "webfetch": "allow",
-        "task": "deny"
-      },
-      "prompt": "{file:./prompts/researcher.md}"
+      "system": "{file:./prompts/researcher.md}",
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "edit",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "webfetch",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "subagent",
+          "resource": "*",
+          "effect": "deny"
+        }
+      ]
     },
     "implementer": {
+      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}",
       "description": "Performs bounded implementation work within explicit caller-owned files or subsystems.",
       "hidden": true,
       "mode": "subagent",
-      "permission": {
-        "bash": {
-          "*": "ask",
-          "nub run build": "allow",
-          "nub run check": "allow",
-          "nub run fmt": "allow",
-          "nub run fmt:check": "allow",
-          "nub run format": "allow",
-          "nub run format:check": "allow",
-          "nub run lint": "allow",
-          "nub run lint:check": "allow",
-          "nub run lint:fix": "allow",
-          "nub run test": "allow",
-          "git log *": "allow",
-          "git diff *": "allow",
-          "git status *": "allow"
+      "system": "{file:./prompts/implementer.md}",
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "*",
+          "effect": "ask"
         },
-        "edit": "allow",
-        "glob": "allow",
-        "grep": "allow",
-        "task": "deny",
-        "mcp_azure_*": "allow",
-        "mcp_azure_*_add": "deny",
-        "mcp_azure_*_append": "deny",
-        "mcp_azure_*_apply": "deny",
-        "mcp_azure_*_cancel": "deny",
-        "mcp_azure_*_changedetection": "deny",
-        "mcp_azure_*_create": "deny",
-        "mcp_azure_*_createorupdate": "deny",
-        "mcp_azure_*_delete": "deny",
-        "mcp_azure_*_deploy": "deny",
-        "mcp_azure_*_drain": "deny",
-        "mcp_azure_*_execute": "deny",
-        "mcp_azure_*_grant": "deny",
-        "mcp_azure_*_import": "deny",
-        "mcp_azure_*_lock": "deny",
-        "mcp_azure_*_orchestrator-next": "deny",
-        "mcp_azure_*_orchestrator-start": "deny",
-        "mcp_azure_*_publish": "deny",
-        "mcp_azure_*_purge": "deny",
-        "mcp_azure_*_recover": "deny",
-        "mcp_azure_*_reimage": "deny",
-        "mcp_azure_*_remove": "deny",
-        "mcp_azure_*_rename": "deny",
-        "mcp_azure_*_request": "deny",
-        "mcp_azure_*_restart": "deny",
-        "mcp_azure_*_restore": "deny",
-        "mcp_azure_*_revoke": "deny",
-        "mcp_azure_*_rotate": "deny",
-        "mcp_azure_*_run": "deny",
-        "mcp_azure_*_scale": "deny",
-        "mcp_azure_*_send": "deny",
-        "mcp_azure_*_send-*": "deny",
-        "mcp_azure_*_set": "deny",
-        "mcp_azure_*_snapshot": "deny",
-        "mcp_azure_*_start": "deny",
-        "mcp_azure_*_stop": "deny",
-        "mcp_azure_*_swap": "deny",
-        "mcp_azure_*_sync": "deny",
-        "mcp_azure_*_synthesize": "deny",
-        "mcp_azure_*_trigger": "deny",
-        "mcp_azure_*_unlock": "deny",
-        "mcp_azure_*_unregister": "deny",
-        "mcp_azure_*_update": "deny",
-        "mcp_azure_*_update-appsettings": "deny",
-        "mcp_azure_*_upload": "deny",
-        "mcp_chrome-devtools_*": "ask"
-      },
-      "prompt": "{file:./prompts/implementer.md}"
+        {
+          "action": "shell",
+          "resource": "nub run build",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run fmt",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run fmt:check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run format",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run format:check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run lint",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run lint:check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run lint:fix",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run test",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "git log *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "git status *",
+          "effect": "allow"
+        },
+        {
+          "action": "edit",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "glob",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "grep",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "subagent",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "azure_*_add",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_append",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_apply",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_cancel",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_changedetection",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_create",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_createorupdate",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_delete",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_deploy",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_drain",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_execute",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_grant",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_import",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_lock",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_orchestrator-next",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_orchestrator-start",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_publish",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_purge",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_recover",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_reimage",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_remove",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_rename",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_request",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_restart",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_restore",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_revoke",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_rotate",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_run",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_scale",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_send",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_send-*",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_set",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_snapshot",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_start",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_stop",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_swap",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_sync",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_synthesize",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_trigger",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_unlock",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_unregister",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_update",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_update-appsettings",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "azure_*_upload",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "chrome-devtools_*",
+          "resource": "*",
+          "effect": "ask"
+        }
+      ]
     },
     "debugger": {
+      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}",
       "description": "Investigates failures and returns evidence-based root cause analyses and resolution guidance.",
       "mode": "subagent",
-      "permission": {
-        "bash": {
-          "*": "deny",
-          "npm test": "allow",
-          "npm run format:check": "allow",
-          "npm run lint": "allow",
-          "npm run lint:check": "allow",
-          "npm run check": "allow"
+      "system": "{file:./prompts/debugger.md}",
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "*",
+          "effect": "deny"
         },
-        "edit": "deny",
-        "glob": "allow",
-        "grep": "allow",
-        "task": "deny"
-      },
-      "prompt": "{file:./prompts/debugger.md}"
+        {
+          "action": "shell",
+          "resource": "npm test",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "npm run format:check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "npm run lint",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "npm run lint:check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "npm run check",
+          "effect": "allow"
+        },
+        {
+          "action": "edit",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "glob",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "grep",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "subagent",
+          "resource": "*",
+          "effect": "deny"
+        }
+      ]
     },
     "documenter": {
+      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}",
       "description": "Drafts ready-to-apply technical documentation and returns it to the calling agent.",
       "mode": "subagent",
-      "permission": {
-        "bash": "deny",
-        "edit": "deny",
-        "glob": "allow",
-        "grep": "allow",
-        "task": "deny"
-      },
-      "prompt": "{file:./prompts/documenter.md}"
+      "system": "{file:./prompts/documenter.md}",
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "edit",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "glob",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "grep",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "subagent",
+          "resource": "*",
+          "effect": "deny"
+        }
+      ]
     },
     "reviewer": {
+      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}",
       "description": "Independently reviews changes for correctness, regressions, convention compliance, and readiness.",
       "mode": "subagent",
-      "permission": {
-        "bash": {
-          "*": "deny",
-          "nub run check": "allow",
-          "nub run fmt:check": "allow",
-          "nub run format:check": "allow",
-          "nub run lint": "allow",
-          "nub run lint:check": "allow",
-          "nub run test": "allow",
-          "git log *": "allow",
-          "git diff *": "allow",
-          "git status *": "allow"
+      "system": "{file:./prompts/reviewer.md}",
+      "permissions": [
+        {
+          "action": "shell",
+          "resource": "*",
+          "effect": "deny"
         },
-        "edit": "deny",
-        "glob": "allow",
-        "grep": "allow",
-        "task": "deny",
-        "skill": {
-          "review": "allow"
+        {
+          "action": "shell",
+          "resource": "nub run check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run fmt:check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run format:check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run lint",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run lint:check",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub run test",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "git log *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "git status *",
+          "effect": "allow"
+        },
+        {
+          "action": "edit",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "glob",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "grep",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "subagent",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "skill",
+          "resource": "review",
+          "effect": "allow"
         }
-      },
-      "prompt": "{file:./prompts/reviewer.md}"
+      ]
     }
   },
   "default_agent": "plan",
   "formatter": {},
   "lsp": {},
   "mcp": {
-    "azure": {
-      "type": "local",
-      "command": [
-        "dnx",
-        "Azure.Mcp",
-        "--source",
-        "https://api.nuget.org/v3/index.json",
-        "--yes",
-        "--",
-        "azmcp",
-        "server",
-        "start"
-      ],
-      "enabled": false
-    },
-    "chrome-devtools": {
-      "type": "local",
-      "command": [
-        "nubx",
-        "-y",
-        "chrome-devtools-mcp@latest"
-      ],
-      "enabled": false
-    },
-    "github": {
-      "type": "remote",
-      "url": "https://api.githubcopilot.com/mcp/",
-      "enabled": false,
-      "oauth": false,
-      "headers": {
-        "Authorization": "Bearer {env:GITHUB_PAT}"
+    "servers": {
+      "azure": {
+        "type": "local",
+        "command": [
+          "dnx",
+          "Azure.Mcp",
+          "--source",
+          "https://api.nuget.org/v3/index.json",
+          "--yes",
+          "--",
+          "azmcp",
+          "server",
+          "start"
+        ],
+        "disabled": true
+      },
+      "chrome-devtools": {
+        "type": "local",
+        "command": [
+          "nubx",
+          "-y",
+          "chrome-devtools-mcp@latest"
+        ],
+        "disabled": true
+      },
+      "github": {
+        "type": "remote",
+        "url": "https://api.githubcopilot.com/mcp/",
+        "disabled": true,
+        "oauth": false,
+        "headers": {
+          "Authorization": "Bearer {env:GITHUB_PAT}"
+        }
+      },
+      "system-one-mcp": {
+        "disabled": true,
+        "type": "local",
+        "cwd": "~/source/ferrousaurus/system-one-mcp",
+        "command": [
+          "/opt/homebrew/bin/mise",
+          "exec",
+          "--",
+          "nub",
+          "run",
+          "start"
+        ],
+        "environment": {}
       }
     }
   },
-  "plugin": [
+  "plugins": [
     "@slkiser/opencode-quota@latest"
   ],
   "share": "disabled",
-  "provider": {
+  "providers": {
+    "github-copilot": {},
     "openai": {},
     "copilot": {},
     "opencode-go": {}

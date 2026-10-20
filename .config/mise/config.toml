@@ -13,12 +13,14 @@ package_manager = "aube"
 
 [env]
 _.file = { path = "~/.config/mise/.secrets.toml", redact = true }
+
 OPENCODE_EXPERIMENTAL_OXFMT = true
 OPENCODE_EXPERIMENTAL_DISABLE_COPY_ON_SELECT = true
 OPENCODE_EXPERIMENTAL_SCOUT = true
 
 [bootstrap.repos]
 #"~/.dotfiles" = { url = "git@github.com:ferrousaurus/dotfiles.git", ref = "main" }
+"~/source/ferrousaurus/system-one-mcp" = { url = "git@github.com:ferrousaurus/system-one-mcp.git", ref = "main" }
 
 [dotfiles]
 "~/.agents/.skill-lock.json" = {}

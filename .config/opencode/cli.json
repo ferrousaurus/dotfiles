@@ -25,6 +25,6 @@
   },
   "terminal": {
     "title": true,
-    "copy_on_select": false
+    "copy": "manual"
   }
 }
