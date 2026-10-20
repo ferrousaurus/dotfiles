@@ -50,6 +50,7 @@ herdr = "latest" # harness-friendly multiplexer
 neovim = "latest"
 node = "26"
 nub = { version = "latest", allow_builds = ["@nubjs/nub"] }
+"opencode" = { version = "latest", postinstall = "cd $HOME/.config/opencode && mise exec -- nub i" }
 oxker = "latest" # Containerization TUI
 oxlint = { version = "latest", postinstall = "cd $HOME/.config/oxlint && mise exec -- nub i" }
 ripgrep = "latest" # grep replacement
@@ -64,4 +65,3 @@ zoxide = "latest" # cd replacement
 
 "npm:skills" = "latest"
 
-"npm:@opencode-ai/cli" = { version = "latest", postinstall = "cd $HOME/.config/opencode && mise exec -- nub i" }

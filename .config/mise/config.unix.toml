@@ -34,7 +34,6 @@ jq -M --arg home "$HOME" --arg platform "$platform" --arg mise_compose_dir "$mis
 ''' }
 
 [shell_alias]
-cat = "bat --color=always"
 cd = "z"
 fzf = "fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 grep = "batgrep"
