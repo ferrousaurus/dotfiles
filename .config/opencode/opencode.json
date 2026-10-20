@@ -269,7 +269,7 @@
   ],
   "agents": {
     "plan": {
-      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}",
+      "model": "{env:OPENCODE_AGENTS_PLAN_MODEL}",
       "system": "{file:./prompts/plan.md}",
       "permissions": [
         {
@@ -590,7 +590,7 @@
       ]
     },
     "build": {
-      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}",
+      "model": "{env:OPENCODE_AGENTS_BUILD_MODEL}",
       "system": "{file:./prompts/build.md}",
       "permissions": [
         {
@@ -936,7 +936,7 @@
       ]
     },
     "explore": {
-      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}",
+      "model": "{env:OPENCODE_AGENTS_EXPLORE_MODEL}",
       "description": "Performs bounded local repository discovery and dependency tracing.",
       "hidden": true,
       "mode": "subagent",
@@ -970,19 +970,19 @@
       ]
     },
     "general": {
-      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}"
+      "model": "{env:OPENCODE_AGENTS_GENERAL_MODEL}"
     },
     "title": {
-      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}"
+      "model": "{env:OPENCODE_AGENTS_TITLE_MODEL}"
     },
     "summary": {
-      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}"
+      "model": "{env:OPENCODE_AGENTS_SUMMARY_MODEL}"
     },
     "compaction": {
-      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}"
+      "model": "{env:OPENCODE_AGENTS_COMPACTION_MODEL}"
     },
     "researcher": {
-      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}",
+      "model": "{env:OPENCODE_AGENTS_RESEARCHER_MODEL}",
       "description": "Performs bounded external and version-specific research using authoritative sources.",
       "hidden": true,
       "mode": "subagent",
@@ -1011,7 +1011,7 @@
       ]
     },
     "implementer": {
-      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}",
+      "model": "{env:OPENCODE_AGENTS_IMPLEMENTER_MODEL}",
       "description": "Performs bounded implementation work within explicit caller-owned files or subsystems.",
       "hidden": true,
       "mode": "subagent",
@@ -1340,7 +1340,7 @@
       ]
     },
     "debugger": {
-      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}",
+      "model": "{env:OPENCODE_AGENTS_DEBUGGER_MODEL}",
       "description": "Investigates failures and returns evidence-based root cause analyses and resolution guidance.",
       "mode": "subagent",
       "system": "{file:./prompts/debugger.md}",
@@ -1398,7 +1398,7 @@
       ]
     },
     "documenter": {
-      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}",
+      "model": "{env:OPENCODE_AGENTS_DOCUMENTER_MODEL}",
       "description": "Drafts ready-to-apply technical documentation and returns it to the calling agent.",
       "mode": "subagent",
       "system": "{file:./prompts/documenter.md}",
@@ -1431,7 +1431,7 @@
       ]
     },
     "reviewer": {
-      "model": "{env:OPENCODE_AGENTS_SIMPLE_MODEL}",
+      "model": "{env:OPENCODE_AGENTS_REVIEWER_MODEL}",
       "description": "Independently reviews changes for correctness, regressions, convention compliance, and readiness.",
       "mode": "subagent",
       "system": "{file:./prompts/reviewer.md}",
