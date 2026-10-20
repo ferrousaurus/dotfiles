@@ -56,7 +56,7 @@ rust = { version = "1" }
 "aqua:cli/cli" = { version = "latest" } # GitHub CLI
 "aqua:docker/cli" = { version = "latest" }
 "aqua:herdrdev/herdr" = { version = "latest" } # harness-friendly multiplexer
-"aqua:getsops/sops" = { depends = ["asdf:threkk/asdf-age"], version = "latest" }
+"aqua:getsops/sops" = { version = "latest" }
 "aqua:jesseduffield/lazydocker" = { depends = ["aqua:docker/cli"], version = "latest" }
 "aqua:jesseduffield/lazygit" = { version = "latest" }
 "aqua:junegunn/fzf" = { version = "latest" }
@@ -87,3 +87,8 @@ rust = { version = "1" }
 "npm:@opencode/cli" = { depends = ["github:nubjs/nub"], version = "latest", allow_builds = ["@opencode/cli"], postinstall = "cd $HOME/.config/opencode && nub i" }
 
 "npm:skills" = { version = "latest", postinstall = "skills experimental_install -g" }
+
+[tasks.bootstrap]
+run = '''
+cd ~/source/ferrousaurus/system-one-mcp && nub i
+'''
