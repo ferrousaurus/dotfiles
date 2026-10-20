@@ -32,36 +32,43 @@ OPENCODE_EXPERIMENTAL_SCOUT = true
 "~/.config/starship.toml" = {}
 
 [tools]
-age = "latest"
-ast-grep = "latest"
-atuin = "latest"
-aube = "latest"
-bat = "latest"
-bottom = "latest" # Process TUI
-docker-cli = "latest"
-docker-compose = "latest"
-dotnet = "10"
-eza = "latest" # ls replacement
-fd = "latest" # find replacement
-fzf = "latest"
-github-cli = "latest"
-lazygit = "latest"
-herdr = "latest" # harness-friendly multiplexer
-neovim = "latest"
-node = "26"
-nub = { version = "latest", allow_builds = ["@nubjs/nub"] }
-"opencode" = { version = "latest", postinstall = "cd $HOME/.config/opencode && mise exec -- nub i" }
-oxker = "latest" # Containerization TUI
-oxlint = { version = "latest", postinstall = "cd $HOME/.config/oxlint && mise exec -- nub i" }
-ripgrep = "latest" # grep replacement
-sops = "latest"
-starship = "latest"
-usage = "latest"
-yq = "latest" # jq replacement
-zoxide = "latest" # cd replacement
+bun = { version = "1.4" }
+dotnet = { version = "10" }
+node = { version = "26" }
+rust = { version = "1" }
 
-"dotnet:Aspire.Cli" = "13"
-"dotnet:csharp-ls" = "latest"
+"aqua:cli/cli" = { version = "latest" } # GitHub CLI
+"aqua:docker/cli" = { version = "latest" }
+"aqua:herdrdev/herdr" = { version = "latest" } # harness-friendly multiplexer
+"aqua:getsops/sops" = { depends = ["asdf:threkk/asdf-age"], version = "latest" }
+"aqua:jesseduffield/lazydocker" = { depends = "aqua:docker/cli", version = "latest" }
+"aqua:jesseduffield/lazygit" = { version = "latest" }
+"aqua:junegunn/fzf" = { version = "latest" }
+"aqua:mikefarah/yq" = { version = "latest" } # jq replacement
+"aqua:neovim/neovim" = { version = "latest" }
 
-"npm:skills" = "latest"
+"asdf:threkk/asdf-age" = { version = "latest" }
 
+"cargo:ast-grep" = { depends = ["rust"], version = "latest" }
+"cargo:atuin" = { depends = ["rust"], version = "latest" }
+"cargo:aube" = { depends = ["rust"], version = "latest" }
+"cargo:bat" = { depends = ["rust"], version = "latest" }
+"cargo:bottom" = { depends = ["rust"], version = "latest" } # Process TUI
+"cargo:eza" = { depends = ["rust"], version = "latest" } # ls replacement
+"cargo:fd-find" = { depends = ["rust"], version = "latest" } # find replacement
+"cargo:oxker" = {depends = ["rust"], version = "latest" } # Containerization TUI
+"cargo:ripgrep" = {depends = ["rust"], version = "latest" } # grep replacement
+"cargo:starship" = { depends = ["rust"], version = "latest" }
+"cargo:usage-cli" = { depends = ["rust"], version = "latest" }
+"cargo:zoxide" = { depends = ["rust"], version = "latest" } # cd replacement
+
+"github:docker/compose" = { depends = ["aqua:docker/cli"], version = "latest" }
+"github:nubjs/nub" = { depends = ["node"], version = "latest", allow_builds = ["@nubjs/nub"] }
+
+"dotnet:Aspire.Cli" = { depends = ["dotnet"], version = "13" }
+"dotnet:csharp-ls" = { depends = ["dotnet"], version = "latest" }
+
+"npm:@opencode/cli" = { depends = ["node"], version = "latest", postinstall = "cd $HOME/.config/opencode && mise exec -- nub i" }
+
+"npm:oxlint" = { depends = ["github:nubjs/nub"], version = "latest", postinstall = "cd $HOME/.config/oxlint && mise exec -- nub i" }
+"npm:skills" = { depends = ["github:nubjs/nub"], version = "latest", postinstall = "nubx skills experimental_install -g" }

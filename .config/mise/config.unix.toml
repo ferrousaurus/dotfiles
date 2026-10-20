@@ -18,8 +18,8 @@ jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.confi
 "~/.zshrc" = {}
 
 [tools]
-bat-extras = "latest"
-docker-cli = { version = "latest", postinstall = '''#!/usr/bin/env zsh
+"aqua:eth-p/bat-extras" = { version = "latest" }
+"aqua:docker/cli" = { version = "latest", postinstall = '''#!/usr/bin/env zsh
 # Configure Docker CLI plugins
 f="$HOME/.docker/config.json"
 mkdir -p "$HOME/.docker"

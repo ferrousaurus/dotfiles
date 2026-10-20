@@ -51,7 +51,7 @@ run = "killall Dock || true"
 login_shell = "/bin/zsh"
 
 [tools]
-colima = "latest" # Docker-compatible Container VM
+colima = { depends = ["aqua:docker/cli", "github:docker/compose"], version = "latest" } # Docker-compatible Container VM
 
 [shell_alias]
 brew86 = "arch -x86_64 /usr/local/bin/brew"
