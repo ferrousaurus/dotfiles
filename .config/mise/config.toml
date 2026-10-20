@@ -37,6 +37,7 @@ dotnet = { version = "10" }
 node = { version = "26" }
 rust = { version = "1" }
 
+"aqua:aubepkg/aube" = { depends = ["rust"], version = "latest" }
 "aqua:cli/cli" = { version = "latest" } # GitHub CLI
 "aqua:docker/cli" = { version = "latest" }
 "aqua:herdrdev/herdr" = { version = "latest" } # harness-friendly multiplexer
@@ -46,12 +47,12 @@ rust = { version = "1" }
 "aqua:junegunn/fzf" = { version = "latest" }
 "aqua:mikefarah/yq" = { version = "latest" } # jq replacement
 "aqua:neovim/neovim" = { version = "latest" }
+"aqua:oxc-project/oxc/oxlint" = { depends = ["github:nubjs/nub"], version = "latest", postinstall = "cd $HOME/.config/oxlint && nub i" }
 
 "asdf:threkk/asdf-age" = { version = "latest" }
 
 "cargo:ast-grep" = { depends = ["rust"], version = "latest" }
 "cargo:atuin" = { depends = ["rust"], version = "latest" }
-"cargo:aube" = { depends = ["rust"], version = "latest" }
 "cargo:bat" = { depends = ["rust"], version = "latest" }
 "cargo:bottom" = { depends = ["rust"], version = "latest" } # Process TUI
 "cargo:eza" = { depends = ["rust"], version = "latest" } # ls replacement
@@ -68,7 +69,6 @@ rust = { version = "1" }
 "dotnet:Aspire.Cli" = { depends = ["dotnet"], version = "13" }
 "dotnet:csharp-ls" = { depends = ["dotnet"], version = "latest" }
 
-"npm:@opencode/cli" = { depends = ["node"], version = "latest", postinstall = "cd $HOME/.config/opencode && mise exec -- nub i" }
+"npm:@opencode/cli" = { depends = ["node", "github:nubjs/nub"], version = "latest", allow_builds = ["@opencode/cli"], postinstall = "cd $HOME/.config/opencode && nub i" }
 
-"npm:oxlint" = { depends = ["github:nubjs/nub"], version = "latest", postinstall = "cd $HOME/.config/oxlint && mise exec -- nub i" }
 "npm:skills" = { depends = ["github:nubjs/nub"], version = "latest", postinstall = "nubx skills experimental_install -g" }
