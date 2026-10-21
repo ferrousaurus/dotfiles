@@ -212,6 +212,96 @@
       "effect": "deny"
     },
     {
+      "action": "skill",
+      "resource": "cloudflare",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_CLOUDFLARE_EFFECT}"
+    },
+    {
+      "action": "skill",
+      "resource": "basin",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_BASIN_EFFECT}"
+    },
+    {
+      "action": "skill",
+      "resource": "k2",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_K2_EFFECT}"
+    },
+    {
+      "action": "skill",
+      "resource": "nextjs-on-cloudflare",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_NEXTJS_ON_CLOUDFLARE_EFFECT}"
+    },
+    {
+      "action": "skill",
+      "resource": "agents-sdk",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_AGENTS_SDK_EFFECT}"
+    },
+    {
+      "action": "skill",
+      "resource": "durable-objects",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_DURABLE_OBJECTS_EFFECT}"
+    },
+    {
+      "action": "skill",
+      "resource": "sandbox-next",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_SANDBOX_NEXT_EFFECT}"
+    },
+    {
+      "action": "skill",
+      "resource": "sandbox-stable",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_SANDBOX_STABLE_EFFECT}"
+    },
+    {
+      "action": "skill",
+      "resource": "sandbox-migrate-to-next",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_SANDBOX_MIGRATE_TO_NEXT_EFFECT}"
+    },
+    {
+      "action": "skill",
+      "resource": "cf-cli",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_CF_CLI_EFFECT}"
+    },
+    {
+      "action": "skill",
+      "resource": "wrangler",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_WRANGLER_EFFECT}"
+    },
+    {
+      "action": "skill",
+      "resource": "workers-profiling",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_WORKERS_PROFILING_EFFECT}"
+    },
+    {
+      "action": "skill",
+      "resource": "cloudflare-email-service",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_CLOUDFLARE_EMAIL_SERVICE_EFFECT}"
+    },
+    {
+      "action": "skill",
+      "resource": "turnstile-spin",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_TURNSTILE_SPIN_EFFECT}"
+    },
+    {
+      "action": "skill",
+      "resource": "web-perf",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_WEB_PERF_EFFECT}"
+    },
+    {
+      "action": "skill",
+      "resource": "cloudflare-one",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_CLOUDFLARE_ONE_EFFECT}"
+    },
+    {
+      "action": "skill",
+      "resource": "cloudflare-one-migrations",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_CLOUDFLARE_ONE_MIGRATIONS_EFFECT}"
+    },
+    {
+      "action": "skill",
+      "resource": "gateway-workers",
+      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_GATEWAY_WORKERS_EFFECT}"
+    },
+    {
       "action": "external_directory",
       "resource": "/**",
       "effect": "deny"
@@ -650,6 +740,11 @@
         },
         {
           "action": "shell",
+          "resource": "dotnet build",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
           "resource": "git log *",
           "effect": "allow"
         },
@@ -1070,6 +1165,11 @@
         {
           "action": "shell",
           "resource": "nub run test",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "dotnet build",
           "effect": "allow"
         },
         {
