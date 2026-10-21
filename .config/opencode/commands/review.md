@@ -1,5 +1,5 @@
 ---
-agent: chat
+agent: plan
 description: Review all current changes against origin/develop.
 ---
 
