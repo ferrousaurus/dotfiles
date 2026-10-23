@@ -17,6 +17,13 @@ jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.confi
 
 "~/.zshrc" = {}
 
+[hooks]
+cd = '''
+if test -e skills-lock.json && test ! -e .agents/skills; then
+  mise run global:skills:install:project
+fi
+'''
+
 [tools]
 "aqua:eth-p/bat-extras" = { version = "latest" }
 "aqua:docker/cli" = { version = "latest", postinstall = '''#!/usr/bin/env zsh
