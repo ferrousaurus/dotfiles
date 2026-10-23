@@ -111,24 +111,3 @@ rust = { version = "1" }
 run = '''
 cd ~/source/ferrousaurus/system-one-mcp && nub i
 '''
-
-[tasks."global:skills:install:global"]
-description = "Restore skills when skills-lock.json exists"
-tools = { node = "26", "npm:skills" = "1.7.2" }
-run = 'skills experimental_install -g'
-sources = ["~/.agents/.skill-lock.json"]
-outputs = ["~/.agents/skills"]
-interactive = true
-raw = true
-quiet = true
-
-[tasks."global:skills:install:project"]
-description = "Restore skills when skills-lock.json exists"
-dir = "{{ cwd }}"
-tools = { node = "26", "npm:skills" = "1.7.4" }
-run = 'skills experimental_install'
-sources = ["skills-lock.json"]
-outputs = [".agents/skills"]
-interactive = true
-raw = true
-quiet = true
