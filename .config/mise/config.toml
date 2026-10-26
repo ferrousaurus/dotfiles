@@ -50,8 +50,6 @@ OPENCODE_PERMISSIONS_SKILL_CLOUDFLARE_ONE_EFFECT = "deny"
 OPENCODE_PERMISSIONS_SKILL_CLOUDFLARE_ONE_MIGRATIONS_EFFECT = "deny"
 OPENCODE_PERMISSIONS_SKILL_GATEWAY_WORKERS_EFFECT = "deny"
 
-TERM_MUX='tuios'
-
 [bootstrap.repos]
 #"~/.dotfiles" = { url = "git@github.com:ferrousaurus/dotfiles.git", ref = "main" }
 "~/source/ferrousaurus/system-one-mcp" = { url = "git@github.com:ferrousaurus/system-one-mcp.git", ref = "main" }

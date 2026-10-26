@@ -28,12 +28,3 @@ if [[ -n "$KITTY_INSTALLATION_DIR" ]]; then
     kitty-integration
     unfunction kitty-integration
 fi
-
-if [[ ( "$TERM" == "xterm-ghostty" || "$TERM" == "xterm-kitty" ) && -n "$TERM_MUX" ]]; then
-    if [[ "${TUI_ENV:-0}" == "1" || "$TUIOS_SESSION" != "" || "$TUIOS_SOCKET" != "" || "$HERDR_ENV" != "" || "$TMUX" != "" || "$ZELLIJ" != "" ]]; then
-        return 0
-    fi
-
-    export TUIOS_ENV="1"
-    exec $TERM_MUX
-fi
