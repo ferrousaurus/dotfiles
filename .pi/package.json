@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@earendil-works/pi-coding-agent": "^1.4.0",
-    "es-toolkit": "^1.53.0",
+    "es-toolkit": "1.52.0",
     "zod": "^4.6.7"
   },
   "devEngines": {

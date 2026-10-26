@@ -12,8 +12,8 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0(zod@4.6.7)
       es-toolkit:
-        specifier: ^1.53.0
-        version: 1.53.0
+        specifier: 1.52.0
+        version: 1.52.0
       zod:
         specifier: ^4.6.7
         version: 4.6.7
@@ -428,8 +428,8 @@ packages:
   ecdsa-sig-formatter@1.0.11:
     resolution: {integrity: sha512-nagl3RYrbNv6kQkeJIpt6NJZy8twLB/2vtz6yN9Z4vRKHN4/QZJIEbqohALSgwKdnksuY3k5Addp5lg8sVoVcQ==}
 
-  es-toolkit@1.53.0:
-    resolution: {integrity: sha512-3+AYXp9fmJ/UhHBMYj2/U+RaUouMD90SzoItyDOB2Za7W6dB7fQApFGnZPl2MF6K8/Tv1koh1JyirSx/kju6Pw==}
+  es-toolkit@1.52.0:
+    resolution: {integrity: sha512-XTNEJQh1tY1ZJVcf6ayP/2n4ZPyaHlW2FWs7xvw5ddPuhUVjLD3olQVQS7kf58JbAB48iL0uL/jerTrjtV3lDA==}
 
   extend@3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
@@ -1166,7 +1166,7 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
-  es-toolkit@1.53.0: {}
+  es-toolkit@1.52.0: {}
 
   extend@3.0.2: {}
 
