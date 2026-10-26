@@ -14,9 +14,10 @@
   },
   "animations": true,
   "tabs": {
-    "enabled": true,
-    "scope": "global",
-    "vertical": false
+    "mode": "auto",
+    "scope": "cwd",
+    "layout": "horizontal",
+    "indicators": "status"
   },
   "attention": {
     "enabled": true,

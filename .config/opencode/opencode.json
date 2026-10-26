@@ -1671,11 +1671,11 @@
   "plugins": [
     "@slkiser/opencode-quota@5"
   ],
-  "share": "disabled",
   "providers": {
     "github-copilot": {},
     "openai": {},
     "copilot": {},
     "opencode-go": {}
-  }
+  },
+  "share": "disabled"
 }

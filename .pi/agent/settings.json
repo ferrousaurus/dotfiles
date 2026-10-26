@@ -1,0 +1,15 @@
+{
+  "lastChangelogVersion": "1.4.0",
+  "packages": [
+    "git:https://github.com/hasit/pi-community-themes"
+  ],
+  "theme": "catppuccin-macchiato",
+  "enableInstallTelemetry": false,
+  "showCacheMissNotices": true,
+  "markdown": {
+    "mermaid": "streaming"
+  },
+  "terminal": {
+    "showTerminalProgress": true
+  }
+}

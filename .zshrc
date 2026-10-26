@@ -29,4 +29,6 @@ if [[ -n "$KITTY_INSTALLATION_DIR" ]]; then
     unfunction kitty-integration
 fi
 
-[[ "${HERDR_ENV:-0}" != "1" && ( "$TERM" == "xterm-ghostty" || "$TERM" == "xterm-kitty" ) ]] && herdr
+if [[ ( "$TERM" == "xterm-ghostty" || "$TERM" == "xterm-kitty" ) && -n "$TERM_MUX" && "${TUIOS_ENV:-0}" != "1" && "${HERDR_ENV:-0}" != "1" ]]; then
+    exec $TERM_MUX
+fi

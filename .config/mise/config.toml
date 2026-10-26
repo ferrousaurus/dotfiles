@@ -50,20 +50,28 @@ OPENCODE_PERMISSIONS_SKILL_CLOUDFLARE_ONE_EFFECT = "deny"
 OPENCODE_PERMISSIONS_SKILL_CLOUDFLARE_ONE_MIGRATIONS_EFFECT = "deny"
 OPENCODE_PERMISSIONS_SKILL_GATEWAY_WORKERS_EFFECT = "deny"
 
+TERM_MUX='tuios'
+
 [bootstrap.repos]
 #"~/.dotfiles" = { url = "git@github.com:ferrousaurus/dotfiles.git", ref = "main" }
 "~/source/ferrousaurus/system-one-mcp" = { url = "git@github.com:ferrousaurus/system-one-mcp.git", ref = "main" }
 
 [dotfiles]
-"~/.agents/.skill-lock.json" = {}
 "~/.agents/skills" = {}
+
+"~/.agents/.skill-lock.json" = {}
+
 "~/.config/atuin" = {}
 "~/.config/git" = {}
 "~/.config/mise" = {}
 "~/.config/nvim" = {}
 "~/.config/opencode" = {}
 "~/.config/oxlint" = {}
+"~/.config/tuios" = {}
+
 "~/.config/starship.toml" = {}
+
+"~/.pi" = {}
 
 [tools]
 bun = { version = "1.4" }
@@ -74,6 +82,7 @@ rust = { version = "1" }
 "aqua:aubepkg/aube" = { version = "latest" }
 "aqua:cli/cli" = { version = "latest" } # GitHub CLI
 "aqua:docker/cli" = { version = "latest" }
+"aqua:earendil-works/pi" = { version = "1.4.0", postinstall = "cd $HOME/.pi && nub ci" }
 "aqua:herdrdev/herdr" = { version = "latest" } # harness-friendly multiplexer
 "aqua:getsops/sops" = { version = "latest" }
 "aqua:jesseduffield/lazydocker" = { depends = ["aqua:docker/cli"], version = "latest" }
@@ -81,7 +90,7 @@ rust = { version = "1" }
 "aqua:junegunn/fzf" = { version = "latest" }
 "aqua:mikefarah/yq" = { version = "latest" } # jq replacement
 "aqua:neovim/neovim" = { version = "latest" }
-"aqua:oxc-project/oxc/oxlint" = { depends = ["github:nubjs/nub"], version = "latest", postinstall = "cd $HOME/.config/oxlint && nub i" }
+"aqua:oxc-project/oxc/oxlint" = { depends = ["github:nubjs/nub"], version = "latest", postinstall = "cd $HOME/.config/oxlint && nub ci" }
 
 "asdf:threkk/asdf-age" = { version = "latest" }
 
@@ -98,12 +107,13 @@ rust = { version = "1" }
 "cargo:zoxide" = { version = "latest" } # cd replacement
 
 "github:docker/compose" = { depends = ["aqua:docker/cli"], version = "latest" }
+"github:Gaurav-Gosain/tuios" = { version = "v0.11.1" }
 "github:nubjs/nub" = { allow_builds = ["@nubjs/nub"], version = "latest" }
 
 "dotnet:Aspire.Cli" = { version = "13" }
 "dotnet:csharp-ls" = { version = "latest" }
 
-"npm:@opencode/cli" = { depends = ["github:nubjs/nub"], version = "latest", allow_builds = ["@opencode/cli"], postinstall = "cd $HOME/.config/opencode && nub i" }
+"npm:@opencode/cli" = { depends = ["github:nubjs/nub"], version = "latest", allow_builds = ["@opencode/cli"], postinstall = "cd $HOME/.config/opencode && nub ci" }
 
 "npm:skills" = { version = "1.7.2", postinstall = "skills experimental_install -g" }
 
