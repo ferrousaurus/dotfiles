@@ -30,7 +30,7 @@ if [[ -n "$KITTY_INSTALLATION_DIR" ]]; then
 fi
 
 if [[ ( "$TERM" == "xterm-ghostty" || "$TERM" == "xterm-kitty" ) && -n "$TERM_MUX" ]]; then
-    if [[ -n "$TUIOS_SESSION" || -n "$HERDR_ENV" || -n "$TMUX" || -n "$ZELLIJ" ]]; then
+    if [[ "$TUIOS_SESSION" != "" || "$TUIOS_SOCKET" != "" || "$HERDR_ENV" != "" || "$TMUX" != "" || "$ZELLIJ" != "" ]]; then
         return 0
     fi
 
