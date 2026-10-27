@@ -38,7 +38,7 @@ preferred_view_style = "column"
 #key_repeat = 2
 #initial_key_repeat = 15
 #press_and_hold = true
-fn_state = false
+fn_state = true
 
 [bootstrap.macos.trackpad]
 tap_to_click = true
