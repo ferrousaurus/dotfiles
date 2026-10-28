@@ -1,0 +1,13 @@
+{
+  "openaiUseCodexUsage": false,
+  "codexFastMode": false,
+  "codexStatusResetCountdown": true,
+  "codexStatusPercentage": "remaining",
+  "selectedTargets": {},
+  "statuslineDisplay": {
+    "template": "{provider} {windows}",
+    "window": "{window}:{value}",
+    "countdown": "{value} ↻ {reset}",
+    "separator": " · "
+  }
+}

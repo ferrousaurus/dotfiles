@@ -1,0 +1,27 @@
+{
+  "name": "pi-presets",
+  "version": "0.0.1",
+  "type": "module",
+  "packageManager": "nub@0.9.7",
+  "devEngines": {
+    "packageManager": {
+      "name": "nub",
+      "version": "^0.9.7",
+      "onFail": "ignore"
+    }
+  },
+  "scripts": {
+    "start": "nub index.ts"
+  },
+  "devDependencies": {
+    "@nubjs/types": ">=0.4.13 <=0.9.7",
+    "@types/node": "^26",
+    "typescript": "^7"
+  },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "1.4.0",
+    "pi-custom-system-prompt": "0.1.1",
+    "pi-loadout": "0.0.37",
+    "zod": "^4.6.7"
+  }
+}

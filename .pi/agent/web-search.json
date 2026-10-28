@@ -1,0 +1,94 @@
+{
+  "provider": "auto",
+  "workflow": "none",
+  "toolActivation": "auto",
+  "toolExposure": "direct",
+  "toolNames": {
+    "webSearch": "web_search",
+    "sourceCheck": "source_check",
+    "fetchContent": "fetch_content",
+    "getSearchContent": "get_search_content"
+  },
+  "webSearch": {
+    "enabled": true
+  },
+  "tools": {
+    "webSearch": { "enabled": true },
+    "sourceCheck": { "enabled": true },
+    "fetchContent": { "enabled": true },
+    "getSearchContent": { "enabled": true }
+  },
+  "commands": {
+    "websearch": { "enabled": true },
+    "curator": { "enabled": true },
+    "search": { "enabled": true },
+    "google-account": { "enabled": true }
+  },
+  "fetch": {
+    "timeout": 30,
+    "defaultMode": "readable",
+    "allowedModes": ["readable", "raw", "answer"]
+  },
+  "fetchRouting": {
+    "providers": [
+      "http",
+      "firecrawl",
+      "crawl4ai",
+      "jina",
+      "tinyfish",
+      "search1api",
+      "querit",
+      "kagi",
+      "ollama",
+      "parallel",
+      "brightdata",
+      "gemini"
+    ],
+    "allowRemoteHostedProviders": false
+  },
+  "maxInlineContentChars": 30000,
+  "summaryGenerationDeadlineMs": 30000,
+  "curatorTimeoutSeconds": 20,
+  "allowBrowserCookies": false,
+  "openaiUseProviderBaseUrl": false,
+  "openaiUseAlphaSearch": false,
+  "xaiSearchTools": ["web_search"],
+  "mistralSearchModel": "mistral-small-latest",
+  "mistralSearchTool": "web_search",
+  "linkupDepth": "fast",
+  "searchModel": "gemini-3.6-flash",
+  "image": {
+    "enabled": true
+  },
+  "youtube": {
+    "enabled": true,
+    "preferredModel": "gemini-3.6-flash"
+  },
+  "video": {
+    "enabled": true,
+    "preferredModel": "gemini-3.6-flash",
+    "maxSizeMB": 50
+  },
+  "pdf": {
+    "enabled": true,
+    "maxSizeMB": 20,
+    "maxPages": 100,
+    "provider": "auto"
+  },
+  "githubClone": {
+    "enabled": true,
+    "maxRepoSizeMB": 350,
+    "cloneTimeoutSeconds": 30
+  },
+  "githubPrIssue": {
+    "enabled": true
+  },
+  "shortcuts": {
+    "curate": "ctrl+shift+s",
+    "activity": "ctrl+shift+w"
+  },
+  "ssrf": {
+    "allowRanges": [],
+    "trustEnvProxy": false
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "initialPreset": "Plan",
+  "providerPriority": [
+    "openai-codex",
+    "github-copilot"
+  ],
+  "presets": [
+    {
+      "name": "Build",
+      "thinking": "xhigh",
+      "loadout": "build",
+      "system-prompt": "build"
+    },
+    {
+      "name": "Plan",
+      "thinking": "medium",
+      "loadout": "plan",
+      "system-prompt": "plan"
+    }
+  ],
+  "presetOverridesByProvider": {
+    "openai-codex": {
+      "Build": {
+        "model": "openai-codex/gpt-5.6-luna"
+      },
+      "Plan": {
+        "model": "openai-codex/gpt-5.6-sol"
+      }
+    },
+    "github-copilot": {
+      "Build": {
+        "model": "github-copilot/gpt-6-luna"
+      },
+      "Plan": {
+        "model": "github-copilot/gpt-6.1-sol"
+      }
+    }
+  }
+}

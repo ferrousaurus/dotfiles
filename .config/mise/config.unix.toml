@@ -1,13 +1,33 @@
 [env]
 
-[bootstrap.hooks.pre-dotfiles]
-run = [
-  '''#!/usr/bin/env zsh
+[tasks."merge-config:zed"]
+run = '''#!/usr/bin/env zsh
 # Merge Zed configs
 [ -f ~/.dotfiles/.config/zed/settings.local.json ] || echo "{}" > ~/.dotfiles/.config/zed/settings.local.json
 jq -s '.[0] * .[1]' ~/.dotfiles/.config/zed/settings.git.json ~/.dotfiles/.config/zed/settings.local.json > ~/.dotfiles/.config/zed/settings.json
-''',
-]
+'''
+
+[tasks."refresh:zsh-completions"]
+run = '''#!/usr/bin/env zsh
+# Regenerate the completion dump outside interactive shell startup.
+umask 077
+
+zcompdump="${ZDOTDIR:-$HOME}/.zcompdump-${ZSH_VERSION}"
+
+autoload -Uz compinit
+compinit -d "$zcompdump"
+'''
+
+[bootstrap.hooks.pre-dotfiles]
+run = ["mise run merge-config:zed", "mise run refresh:zsh-completions"]
+
+[[watch_files]]
+patterns = ["~/.dotfiles/.config/zed/settings.local.json", "~/.dotfiles/.config/zed/settings.json"]
+run = "mise run merge-config:zed"
+
+[[watch_files]]
+patterns = ["~/.dotfiles/.pi/agent/settings.local.json", "~/.dotfiles/.pi/agent/settings.json"]
+run = "mise run merge-config:pi"
 
 [dotfiles]
 "~/.config/ghostty" = {}

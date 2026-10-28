@@ -20,10 +20,6 @@ export default defineConfig({
   env: {
     browser: true
   },
-  options: {
-    typeAware: true,
-    typeCheck: true
-  },
   rules: {
     curly: ["error", 'all'],
     "no-unused-vars": ['error', {

@@ -1,7 +1,15 @@
 {
   "lastChangelogVersion": "1.4.0",
   "packages": [
-    "git:https://github.com/hasit/pi-community-themes"
+    "git:https://github.com/hasit/pi-community-themes",
+    "npm:pi-web-access",
+    "npm:pi-subagents",
+    "npm:cc-safety-net",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:@narumitw/pi-usage",
+    "npm:@narumitw/pi-starship",
+    "npm:pi-notify",
+    "npm:pi-lens"
   ],
   "theme": "catppuccin-macchiato",
   "enableInstallTelemetry": false,
@@ -11,5 +19,94 @@
   },
   "terminal": {
     "showTerminalProgress": true
+  },
+  "subagents": {
+    "agentOverrides": {
+      "debugger": {
+        "thinking": "medium"
+      },
+      "documenter": {
+        "thinking": "xhigh"
+      },
+      "auditor": {
+        "thinking": "high"
+      },
+      "scout": {
+        "advertise": true,
+        "thinking": "medium"
+      },
+      "researcher": {
+        "advertise": true,
+        "thinking": "medium"
+      },
+      "worker": {
+        "advertise": true,
+        "inheritSkills": true,
+        "thinking": "xhigh"
+      },
+      "reviewer": {
+        "advertise": true,
+        "defaultContext": "fresh",
+        "description": "Reviews in-progress changes for concrete correctness, regression, test, and simplicity findings. Use auditor for the final readiness verdict.",
+        "thinking": "high"
+      },
+      "evidence-auditor": {
+        "advertise": true
+      },
+      "oracle": {
+        "advertise": true
+      },
+      "delegate": {
+        "advertise": true
+      }
+    },
+    "agentOverridesByProvider": {
+      "openai-codex": {
+        "debugger": {
+          "model": "openai-codex/gpt-5.6-sol"
+        },
+        "documenter": {
+          "model": "openai-codex/gpt-5.6-luna"
+        },
+        "auditor": {
+          "model": "openai-codex/gpt-5.6-sol"
+        },
+        "scout": {
+          "model": "openai-codex/gpt-5.6-luna"
+        },
+        "researcher": {
+          "model": "openai-codex/gpt-5.6-luna"
+        },
+        "worker": {
+          "model": "openai-codex/gpt-5.6-luna"
+        },
+        "reviewer": {
+          "model": "openai-codex/gpt-5.6-sol"
+        }
+      },
+      "github-copilot": {
+        "debugger": {
+          "model": "github-copilot/gpt-6.1-sol"
+        },
+        "documenter": {
+          "model": "github-copilot/gpt-6-luna"
+        },
+        "auditor": {
+          "model": "github-copilot/gpt-6.1-sol"
+        },
+        "scout": {
+          "model": "github-copilot/gpt-6-luna"
+        },
+        "researcher": {
+          "model": "github-copilot/gpt-6-luna"
+        },
+        "worker": {
+          "model": "github-copilot/gpt-6-luna"
+        },
+        "reviewer": {
+          "model": "github-copilot/gpt-6.1-sol"
+        }
+      }
+    }
   }
 }

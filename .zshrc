@@ -2,7 +2,14 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
 # Load completions
 autoload -Uz compinit
-compinit
+zcompdump="${ZDOTDIR:-$HOME}/.zcompdump-${ZSH_VERSION}"
+if [[ -r "$zcompdump" ]]; then
+    compinit -C -d "$zcompdump"
+else
+    # Safe fallback for machines that have not run bootstrap yet.
+    compinit -d "$zcompdump"
+fi
+unset zcompdump
 
 # Auto-expand things such as "!!"
 bindkey ' ' magic-space

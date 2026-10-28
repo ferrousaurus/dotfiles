@@ -1,0 +1,67 @@
+{
+  "toolActivation": "eager",
+  "toolDescriptionMode": "full",
+  "pinToolDeclarations": true,
+  "inlineToolDisplay": "rich",
+  "enableSlashCommands": true,
+  "asyncByDefault": true,
+  "fleetView": true,
+  "fleetViewPlacement": "belowEditor",
+  "asyncWidget": true,
+  "asyncWidgetCollapsed": false,
+  "asyncWidgetLayout": "adaptive",
+  "programStatus": true,
+  "activeRunsPrompt": true,
+  "resultScanLogging": "activity",
+  "globalConcurrencyLimit": 8,
+  "maxSubagentSpawnsPerSession": 32,
+  "maxSubagentSpawnsPerRun": 64,
+  "maxActiveAsyncRunsPerSession": 4,
+  "capacity": {
+    "abandonedSlotReleaseAfterMs": 1200000
+  },
+  "scheduledRuns": {
+    "enabled": true,
+    "maxPending": 20
+  },
+  "parallel": {
+    "maxTasks": 8,
+    "concurrency": 4
+  },
+  "maxSubagentDepth": 2,
+  "waitTool": {
+    "enabled": true,
+    "defaultTimeoutMs": 1800000
+  },
+  "worktree": false,
+  "worktreeProvider": "auto",
+  "worktreeBranchPrefix": "pi-subagents/",
+  "missions": {
+    "enabled": true,
+    "globalIndex": true,
+    "retainTerminal": 200
+  },
+  "authorityPolicy": {
+    "discardWorktree": "confirm",
+    "destructiveCleanup": "confirm",
+    "spawnBudgetGrant": "confirm",
+    "scheduleCreate": "auto",
+    "stopRun": "auto",
+    "steerRun": "auto",
+    "inspectorOpen": "auto",
+    "projectOpen": "confirm"
+  },
+  "artifactDir": "session",
+  "completionBatch": {
+    "enabled": true,
+    "debounceMs": 150,
+    "maxWaitMs": 1000,
+    "stragglerDebounceMs": 75,
+    "stragglerMaxWaitMs": 400,
+    "stragglerWindowMs": 2000
+  },
+  "intercomBridge": {
+    "mode": "always",
+    "resultDelivery": false
+  }
+}

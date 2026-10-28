@@ -369,6 +369,476 @@
         },
         {
           "action": "shell",
+          "resource": "bun --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "node --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "node --check *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "dotnet --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "dotnet --info",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "dotnet --list-sdks",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "dotnet --list-runtimes",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "rustc --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "rustc -Vv",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "rustc --print *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "cargo --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "cargo metadata --no-deps *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "cargo tree *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "cargo locate-project *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh auth status",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh repo view *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh issue list *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh issue view *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh issue status *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh pr list *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh pr view *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh pr diff *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh pr checks *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh pr status *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh run list *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh run view *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh workflow list *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh workflow view *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh release list *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh release view *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker info",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker ps *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker container ls *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker image ls *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker images *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker inspect *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker logs *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker stats *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker top *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker history *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker system df *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker network ls *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker network inspect *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker volume ls *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker volume inspect *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker context ls *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker context show",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose version *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose config *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose ps *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose logs *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose images *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose top *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise doctor",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise ls *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise current *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise where *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise which *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "oxlint",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "oxlint *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "ast-grep scan *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "sg scan *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "aube --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "sops --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "age --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "atuin --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "bat --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "btm --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "eza --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "fd --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "fzf --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "rg --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "starship --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "yq --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "zoxide --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nvim --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "aspire --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "csharp-ls --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "skills --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "opencode --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "oxlint *--fix*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "ast-grep *--rewrite*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "ast-grep *--update-all*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "sg *--rewrite*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "sg *--update-all*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "ast-grep *-U*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "sg *-U*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "ast-grep *-i*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "sg *-i*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
           "resource": "nub run check",
           "effect": "allow"
         },
@@ -390,11 +860,6 @@
         {
           "action": "shell",
           "resource": "nub run lint:check",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "nub run test",
           "effect": "allow"
         },
         {
@@ -758,6 +1223,111 @@
           "effect": "allow"
         },
         {
+          "action": "shell",
+          "resource": "git diff *--output*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-files *--output*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-index *--output*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-tree *--output*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git show *--output*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose config *--output*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose config -o*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose config * -o*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git *--output*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff -o*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff * -o*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-files -o*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-files * -o*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-index -o*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-index * -o*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-tree -o*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-tree * -o*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git show -o*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git show * -o*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash show -o*",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash show * -o*",
+          "effect": "deny"
+        },
+        {
           "action": "edit",
           "resource": "*",
           "effect": "deny"
@@ -1035,8 +1605,468 @@
         },
         {
           "action": "shell",
+          "resource": "bun --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "node --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "node --check *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "dotnet --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "dotnet --info",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "dotnet --list-sdks",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "dotnet --list-runtimes",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "rustc --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "rustc -Vv",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "rustc --print *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "cargo --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "cargo metadata --no-deps *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "cargo tree *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "cargo locate-project *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh auth status",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh repo view *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh issue list *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh issue view *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh issue status *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh pr list *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh pr view *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh pr diff *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh pr checks *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh pr status *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh run list *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh run view *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh workflow list *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh workflow view *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh release list *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "gh release view *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker info",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker ps *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker container ls *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker image ls *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker images *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker inspect *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker logs *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker stats *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker top *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker history *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker system df *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker network ls *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker network inspect *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker volume ls *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker volume inspect *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker context ls *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker context show",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose version *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose config *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose ps *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose logs *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose images *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose top *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise doctor",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise ls *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise current *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise where *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise which *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "oxlint",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "oxlint *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "ast-grep scan *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "sg scan *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "aube --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nub --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "sops --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "age --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "atuin --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "bat --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "btm --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "eza --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "fd --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "fzf --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "rg --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "starship --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "yq --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "zoxide --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "nvim --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "aspire --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "csharp-ls --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "skills --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "opencode --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "oxlint *--fix*",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "ast-grep *--rewrite*",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "ast-grep *--update-all*",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "sg *--rewrite*",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "sg *--update-all*",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "ast-grep *-U*",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "sg *-U*",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
           "resource": "nub run build",
-          "effect": "ask"
+          "effect": "allow"
         },
         {
           "action": "shell",
@@ -1452,6 +2482,111 @@
           "action": "shell",
           "resource": "git notes show *",
           "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff *--output*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-files *--output*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-index *--output*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-tree *--output*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "git show *--output*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose config *--output*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose config -o*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "docker compose config * -o*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "git *--output*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff -o*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff * -o*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-files -o*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-files * -o*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-index -o*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-index * -o*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-tree -o*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "git diff-tree * -o*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "git show -o*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "git show * -o*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash show -o*",
+          "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "git stash show * -o*",
+          "effect": "ask"
         },
         {
           "action": "edit",

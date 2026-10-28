@@ -4,6 +4,7 @@ experimental = true
 lockfile = false
 minimum_release_age = "3d"
 pin = true
+prefer_offline = true
 
 [settings.github]
 credential_command = 'gh auth token --hostname "$MISE_CREDENTIAL_HOST"'
@@ -59,17 +60,21 @@ OPENCODE_PERMISSIONS_SKILL_GATEWAY_WORKERS_EFFECT = "deny"
 
 "~/.agents/.skill-lock.json" = {}
 
+"~/.cc-safety-net" = {}
+
 "~/.config/atuin" = {}
 "~/.config/git" = {}
 "~/.config/mise" = {}
 "~/.config/nvim" = {}
 "~/.config/opencode" = {}
 "~/.config/oxlint" = {}
+"~/.config/rpiv-ask-user-question" = {}
 "~/.config/tuios" = {}
 
 "~/.config/starship.toml" = {}
 
 "~/.pi" = {}
+"~/.pi-lens" = {}
 
 [tools]
 bun = { version = "1.4" }
@@ -80,7 +85,7 @@ rust = { version = "1" }
 "aqua:aubepkg/aube" = { version = "latest" }
 "aqua:cli/cli" = { version = "latest" } # GitHub CLI
 "aqua:docker/cli" = { version = "latest" }
-"aqua:earendil-works/pi" = { version = "1.4.0", postinstall = "cd $HOME/.pi && nub ci" }
+"aqua:earendil-works/pi" = { depends = ["github:nubjs/nub"], version = "1.4.0", postinstall = "pi update --extensions && cd \"$HOME/.pi/agent/extensions\" && for dir in */; do [ ! -f \"${dir}package.json\" ] || (cd \"$dir\" && nub ci) || exit 1; done" }
 "aqua:herdrdev/herdr" = { version = "latest" } # harness-friendly multiplexer
 "aqua:getsops/sops" = { version = "latest" }
 "aqua:jesseduffield/lazydocker" = { depends = ["aqua:docker/cli"], version = "latest" }
@@ -107,6 +112,7 @@ rust = { version = "1" }
 "github:docker/compose" = { depends = ["aqua:docker/cli"], version = "latest" }
 "github:Gaurav-Gosain/tuios" = { version = "v0.11.1" }
 "github:nubjs/nub" = { allow_builds = ["@nubjs/nub"], version = "latest" }
+"github:getnf/getnf" = { version = "0.4.0", postinstall = "getnf -i FiraCode" }
 
 "dotnet:Aspire.Cli" = { version = "13" }
 "dotnet:csharp-ls" = { version = "latest" }

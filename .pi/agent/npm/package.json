@@ -1,0 +1,23 @@
+{
+  "name": "pi-extensions",
+  "private": true,
+  "dependencies": {
+    "@juicesharp/rpiv-ask-user-question": "^2.13.9",
+    "@narumitw/pi-starship": "^0.60.1",
+    "@narumitw/pi-usage": "^0.68.0",
+    "cc-safety-net": "^2.6.17",
+    "pi-custom-system-prompt": "^0.1.1",
+    "pi-lens": "^4.4.4",
+    "pi-loadout": "^0.0.37",
+    "pi-notify": "^1.4.0",
+    "pi-subagents": "^0.81.0",
+    "pi-web-access": "^0.44.0"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "npm",
+      "version": "^12.2.1",
+      "onFail": "ignore"
+    }
+  }
+}

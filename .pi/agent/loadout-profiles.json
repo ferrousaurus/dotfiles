@@ -1,0 +1,92 @@
+{
+  "profiles": {
+    "plan": {
+      "enabledTools": [
+        "ask_user_question",
+        "ast_grep_outline",
+        "ast_grep_replace",
+        "ast_grep_search",
+        "bg_wait",
+        "contact_supervisor",
+        "effective_config",
+        "fetch_content",
+        "find",
+        "get_search_content",
+        "grep",
+        "lens_diagnostic_mark",
+        "lens_diagnostics",
+        "ls",
+        "lsp_navigation",
+        "module_report",
+        "pi_lens_activate_tools",
+        "project_report",
+        "read",
+        "read_enclosing",
+        "read_symbol",
+        "source_check",
+        "subagent",
+        "subagent_supervisor",
+        "subagents_enable",
+        "symbol_search",
+        "tool_search",
+        "web_enable",
+        "web_search"
+      ],
+      "enabledSkills": [
+        "council-mode",
+        "iso-24495",
+        "pi-lens-ast-grep",
+        "pi-lens-lsp-navigation",
+        "pi-lens-write-ast-grep-rule",
+        "pi-lens-write-tree-sitter-rule",
+        "pi-subagents"
+      ]
+    },
+    "build": {
+      "enabledTools": [
+        "ask_user_question",
+        "ast_grep_outline",
+        "ast_grep_replace",
+        "ast_grep_search",
+        "bash",
+        "bg_wait",
+        "codemode",
+        "contact_supervisor",
+        "edit",
+        "effective_config",
+        "fetch_content",
+        "find",
+        "get_search_content",
+        "grep",
+        "lens_diagnostic_mark",
+        "lens_diagnostics",
+        "ls",
+        "lsp_navigation",
+        "module_report",
+        "pi_lens_activate_tools",
+        "project_report",
+        "read",
+        "read_enclosing",
+        "read_symbol",
+        "source_check",
+        "subagent",
+        "subagent_supervisor",
+        "subagents_enable",
+        "symbol_search",
+        "tool_search",
+        "web_enable",
+        "web_search",
+        "write"
+      ],
+      "enabledSkills": [
+        "council-mode",
+        "iso-24495",
+        "pi-lens-ast-grep",
+        "pi-lens-lsp-navigation",
+        "pi-lens-write-ast-grep-rule",
+        "pi-lens-write-tree-sitter-rule",
+        "pi-subagents"
+      ]
+    }
+  }
+}
