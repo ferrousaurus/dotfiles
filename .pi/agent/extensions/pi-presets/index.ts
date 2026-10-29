@@ -3,15 +3,17 @@ import { homedir } from "node:os";
 import { join } from "node:path";
 
 import type {
-  ExtensionAPI,
-  ExtensionCommandContext,
-  ExtensionContext,
-  ExtensionFactory,
+    ExtensionAPI,
+    ExtensionCommandContext,
+    ExtensionContext,
+    ExtensionFactory,
 } from "@earendil-works/pi-coding-agent";
 import { z } from "zod";
 
 type ThinkingLevel = ReturnType<ExtensionAPI["getThinkingLevel"]>;
+
 type CommandOptions = Parameters<ExtensionAPI["registerCommand"]>[1];
+
 type CapturedCommand = {
   handler: (args: string, ctx: ExtensionContext) => Promise<void>;
 };
@@ -45,23 +47,30 @@ type PresetConfig = {
 };
 
 const AGENT_DIR = join(homedir(), ".pi", "agent");
+
 const PRESETS_PATH = join(AGENT_DIR, "pi-presets.json");
+
 const LOADOUT_PROFILES_PATH = join(AGENT_DIR, "loadout-profiles.json");
+
 const GLOBAL_LOADOUT_PATH = join(AGENT_DIR, "loadout.json");
+
 const SYSTEM_PROMPT_STATE_PATH = join(AGENT_DIR, "state", "system-prompt.json");
+
 const SYSTEM_PROMPT_DIR =
   process.env.PI_SYSTEM_PROMPT_DIR?.trim() || join(AGENT_DIR, "system-prompts");
 
 const LOADOUT_COMMAND = "loadout";
+
 const SYSTEM_PROMPT_SELECT_COMMAND = "system-prompt-select";
+
 const SYSTEM_PROMPT_TOGGLE_COMMAND = "system-prompt-toggle";
+
 const LOADOUT_STATE_ENTRY = "pi-loadout:selection";
 
-const functionSchema = z.function();
-const extensionFactorySchema = z.function();
 const nonEmptyStringSchema = z.string().min(1);
+
 const safeNameSchema = z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._-]*$/);
-const stringArraySchema = z.array(z.string());
+
 const thinkingLevelSchema = z.enum(["off", "minimal", "low", "medium", "high", "xhigh", "max"]);
 
 const presetFieldInputSchema = z.object({
@@ -70,8 +79,11 @@ const presetFieldInputSchema = z.object({
   loadout: safeNameSchema.optional(),
   "system-prompt": safeNameSchema.optional(),
 });
+
 const presetOverrideInputSchema = presetFieldInputSchema.strict();
+
 const presetEntryInputSchema = presetFieldInputSchema.extend({ name: nonEmptyStringSchema });
+
 const presetConfigInputSchema = z
   .object({
     initialPreset: nonEmptyStringSchema,
@@ -136,27 +148,31 @@ const resolvedPresetSchema = z.object({
 });
 
 const loadoutProfileSchema = z.object({
-  enabledTools: stringArraySchema,
-  enabledSkills: stringArraySchema,
+  enabledTools: z.array(z.string()),
+  enabledSkills: z.array(z.string()),
   codemodeTools: z.unknown().optional().transform((value) => {
-    const parsed = stringArraySchema.safeParse(value);
+    const parsed = z.array(z.string()).safeParse(value);
     return parsed.success ? parsed.data : [];
   }),
 });
+
 const loadoutProfilesFileSchema = z.object({
   profiles: z.record(z.string(), loadoutProfileSchema),
 });
+
 const systemPromptStateSchema = z
   .object({
     enabled: z.boolean().catch(() => true),
     selectedFile: z.string().catch(() => ""),
   })
   .catch(() => ({ enabled: true, selectedFile: "" }));
+
 const loadoutStateEntrySchema = z.object({
   type: z.literal("custom"),
   customType: z.literal(LOADOUT_STATE_ENTRY),
   data: z.unknown(),
 });
+
 const modelReferenceSchema = z
   .string()
   .refine((value) => {
@@ -167,34 +183,29 @@ const modelReferenceSchema = z
     const separator = value.indexOf("/");
     return { provider: value.slice(0, separator), id: value.slice(separator + 1) };
   });
+
 const commandContextSchema = z.object({
-  getSystemPromptOptions: functionSchema,
-  waitForIdle: functionSchema,
-  newSession: functionSchema,
-  fork: functionSchema,
-  navigateTree: functionSchema,
-  switchSession: functionSchema,
-  reload: functionSchema,
+  getSystemPromptOptions: z.function(),
+  waitForIdle: z.function(),
+  newSession: z.function(),
+  fork: z.function(),
+  navigateTree: z.function(),
+  switchSession: z.function(),
+  reload: z.function(),
 });
 
 type PresetFieldInput = z.infer<typeof presetFieldInputSchema>;
 
-function formatZodError(error: z.ZodError) {
-  return error.issues
-    .map((issue) => {
-      const path = issue.path.length > 0 ? ` at ${issue.path.map(String).join(".")}` : "";
-      return `${issue.message}${path}`;
-    })
-    .join("; ");
-}
+const formatZodError = (error: z.ZodError) => error.issues
+  .map((issue) => {
+    const path = issue.path.length > 0 ? ` at ${issue.path.map(String).join(".")}` : "";
+    return `${issue.message}${path}`;
+  })
+  .join("; ");
 
-function parseSchema<T>(schema: z.ZodType<T>, value: unknown, label: string): T {
-  const result = schema.safeParse(value);
-  if (!result.success) throw new Error(`Invalid ${label}: ${formatZodError(result.error)}`);
-  return result.data;
-}
+const parseSchema = <T>(schema: z.ZodType<T>, value: unknown, label: string) => schema.parse(value);
 
-function toPresetFields(value: PresetFieldInput): PresetFields {
+function toPresetFields(value: PresetFieldInput) {
   const fields: PresetFields = {};
   if (value.model !== undefined) fields.model = value.model;
   if (value.thinking !== undefined) fields.thinking = value.thinking;
@@ -204,7 +215,7 @@ function toPresetFields(value: PresetFieldInput): PresetFields {
 }
 
 const isExtensionFactory = (value: unknown): value is ExtensionFactory =>
-  extensionFactorySchema.safeParse(value).success;
+  z.function().safeParse(value).success;
 
 const isCommandContext = (value: ExtensionContext): value is ExtensionCommandContext =>
   commandContextSchema.safeParse(value).success;
@@ -217,8 +228,8 @@ function readJson(path: string) {
   }
 }
 
-function parsePresetConfig(value: unknown): PresetConfig {
-  const config = parseSchema(presetConfigInputSchema, value, PRESETS_PATH);
+function parsePresetConfig(value: unknown) {
+  const config = presetConfigInputSchema.parse(value);
   const basePresets = new Map<string, PresetFields>(
     config.presets.map(({ name, ...fields }) => [name, toPresetFields(fields)]),
   );
@@ -254,26 +265,21 @@ function resolvePresets(config: PresetConfig, provider?: string) {
   return presets;
 }
 
-function parseLoadoutProfile(value: unknown): LoadoutProfile | undefined {
+function parseLoadoutProfile(value: unknown) {
   const result = loadoutProfileSchema.safeParse(value);
   return result.success ? result.data : undefined;
 }
 
-function readLoadoutProfiles() {
-  const { profiles } = parseSchema(
-    loadoutProfilesFileSchema,
-    readJson(LOADOUT_PROFILES_PATH),
-    LOADOUT_PROFILES_PATH,
-  );
-  return new Map<string, LoadoutProfile>(Object.entries(profiles));
-}
+const readLoadoutProfiles = () => new Map<string, LoadoutProfile>(Object.entries(loadoutProfilesFileSchema.parse(
+  readJson(LOADOUT_PROFILES_PATH),
+).profiles));
 
 function readSystemPromptState() {
   const state = systemPromptStateSchema.parse(readJson(SYSTEM_PROMPT_STATE_PATH));
   return { enabled: state.enabled, selectedFile: state.selectedFile || listSystemPromptFiles()[0] || "" };
 }
 
-function listSystemPromptFiles(): string[] {
+function listSystemPromptFiles() {
   try {
     return readdirSync(SYSTEM_PROMPT_DIR, { withFileTypes: true })
       .filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
@@ -284,13 +290,11 @@ function listSystemPromptFiles(): string[] {
   }
 }
 
-function sorted(values: readonly string[]) {
-  return [...new Set(values)].sort();
-}
+const uniq = <T>(values: readonly T[]) => [...new Set(values)];
 
 function sameValues(left: readonly string[], right: readonly string[]) {
-  const leftSorted = sorted(left);
-  const rightSorted = sorted(right);
+  const leftSorted = uniq(left).toSorted();
+  const rightSorted = uniq(right).toSorted();
   return leftSorted.length === rightSorted.length && leftSorted.every((value, index) => value === rightSorted[index]);
 }
 
@@ -299,7 +303,7 @@ function modelReference(value: string) {
   return result.success ? result.data : undefined;
 }
 
-function currentLoadout(ctx: ExtensionContext, pi: ExtensionAPI): LoadoutProfile {
+function currentLoadout(ctx: ExtensionContext, pi: ExtensionAPI) {
   let latest: LoadoutProfile | undefined;
   for (const entry of ctx.sessionManager.getBranch()) {
     const stateEntry = loadoutStateEntrySchema.safeParse(entry);
@@ -357,12 +361,12 @@ function toCommandContext(ctx: ExtensionContext) {
   return {
     ...ctx,
     getSystemPromptOptions: unsupported,
-    waitForIdle: async (): Promise<void> => undefined,
+    waitForIdle: async () => undefined,
     newSession: unsupported,
     fork: unsupported,
     navigateTree: unsupported,
     switchSession: unsupported,
-    reload: async (): Promise<void> => undefined,
+    reload: async () => undefined,
   };
 }
 
@@ -370,7 +374,7 @@ function commandProxy(pi: ExtensionAPI, commands: Map<string, CapturedCommand>) 
   return new Proxy(pi, {
     get(target, property, receiver) {
       if (property === "registerCommand") {
-        return (name: string, options: CommandOptions): void => {
+        return (name: string, options: CommandOptions) => {
           commands.set(name, {
             handler: async (args, ctx) => options.handler(args, toCommandContext(ctx)),
           });
@@ -388,7 +392,7 @@ function selectionContext(ctx: ExtensionContext, targetFile: string) {
   const ui = new Proxy(ctx.ui, {
     get(target, property, receiver) {
       if (property === "select") {
-        return async (_title: string, options: string[]): Promise<string | undefined> =>
+        return async (_title: string, options: string[]) =>
           options.find((option) => option.replace(/\s+✓$/, "") === targetFile);
       }
 
@@ -493,7 +497,6 @@ async function applyPreset(
     return false;
   }
 
-  ctx.ui.setStatus("pi-presets", `preset: ${preset.name}`);
   ctx.ui.notify(`Preset activated: ${preset.name}`, "info");
   return true;
 }
@@ -568,9 +571,7 @@ export default async function piPresetsExtension(pi: ExtensionAPI) {
       }
 
       const applied = await applyPreset(initial, currentModel, ctx, pi, commands);
-      if (!applied) ctx.ui.setStatus("pi-presets", "preset: unavailable");
     } catch (error) {
-      ctx.ui.setStatus("pi-presets", "preset: unavailable");
       if (ctx.hasUI) ctx.ui.notify(error instanceof Error ? error.message : String(error), "warning");
     }
   });
@@ -580,6 +581,5 @@ export default async function piPresetsExtension(pi: ExtensionAPI) {
   });
 
   pi.on("session_shutdown", async (_event, ctx) => {
-    if (ctx.hasUI) ctx.ui.setStatus("pi-presets", undefined);
   });
 }

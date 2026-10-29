@@ -6,10 +6,11 @@
     "npm:pi-subagents",
     "npm:cc-safety-net",
     "npm:@juicesharp/rpiv-ask-user-question",
-    "npm:@narumitw/pi-usage",
     "npm:@narumitw/pi-starship",
     "npm:pi-notify",
-    "npm:pi-lens"
+    "npm:pi-lens",
+    "npm:@latentminds/pi-quotas",
+    "npm:pi-starline"
   ],
   "theme": "catppuccin-macchiato",
   "enableInstallTelemetry": false,

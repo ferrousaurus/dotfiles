@@ -1,5 +1,5 @@
 # Pi-native Catppuccin Powerline adaptation of ~/.config/starship.toml.
-format = "[](red)$provider$model[](bg:peach fg:red)$directory[](bg:yellow fg:peach)$git_branch$git_status[](fg:yellow bg:green)$thinking$activity[](fg:green bg:sapphire)$context[](fg:sapphire bg:lavender)$time$extension_status[](fg:lavender)"
+format = "[](red)$provider$model$thinking[](bg:peach fg:red)$directory[](bg:yellow fg:peach)$git_branch$git_status[](fg:yellow bg:green)$activity[](fg:green bg:sapphire)$context[](fg:sapphire bg:lavender)$extension_status[](fg:navy)"
 palette = "catppuccin_macchiato"
 
 [provider]
@@ -34,7 +34,7 @@ style = "fg:crust bg:yellow bold"
 [thinking]
 format = "[ $symbol $level ]($style)"
 symbol = "󰔟"
-style = "fg:crust bg:green bold"
+style = "fg:crust bg:red bold"
 
 [activity]
 format = "[ $text ]($style)"
@@ -58,9 +58,9 @@ style = "fg:crust bg:lavender bold"
 [extension_status]
 format = "[$statuses ]($style)"
 style = "fg:crust bg:lavender bold"
-separator = " "
-icons = { "pi-lens-lsp" = "󰒋" }
-styles = { "pi-lens-lsp" = "fg:crust bg:lavender bold" }
+separator = ""
+icons = { "loadout" = "󰦨", "system-prompt" = "󰧑", "pi-quotas" = "󰄦", "pi-lens-lsp" = "󰒋", "pi-quotas-usage" = "%" }
+styles = {"loadout" = "fg:crust bg:lavender", "system-prompt" = "fg:lavender bg:crust", "pi-lens-lsp" = "fg:crust bg:red", "pi-quotas-usage" = "fg:red bg:navy" }
 
 [palettes.catppuccin_mocha]
 red = "#f38ba8"

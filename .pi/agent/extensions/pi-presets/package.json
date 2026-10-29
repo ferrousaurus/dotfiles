@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@earendil-works/pi-coding-agent": "1.4.0",
+    "es-toolkit": "^1.53.0",
     "pi-custom-system-prompt": "0.1.1",
     "pi-loadout": "0.0.37",
     "zod": "^4.6.7"

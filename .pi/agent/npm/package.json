@@ -2,16 +2,21 @@
   "name": "pi-extensions",
   "private": true,
   "dependencies": {
-    "@juicesharp/rpiv-ask-user-question": "^2.13.9",
-    "@narumitw/pi-starship": "^0.60.1",
-    "@narumitw/pi-usage": "^0.68.0",
-    "cc-safety-net": "^2.6.17",
+    "@juicesharp/rpiv-ask-user-question": "^2.15.0",
+    "@latentminds/pi-quotas": "^0.5.0",
+    "@narumitw/pi-starship": "^0.64.0",
+    "@narumitw/pi-usage": "^0.68.1",
+    "cc-safety-net": "^2.7.0",
     "pi-custom-system-prompt": "^0.1.1",
-    "pi-lens": "^4.4.4",
+    "pi-lens": "^4.4.6",
     "pi-loadout": "^0.0.37",
     "pi-notify": "^1.4.0",
-    "pi-subagents": "^0.81.0",
-    "pi-web-access": "^0.44.0"
+    "pi-quota": "^0.1.0",
+    "pi-starline": "^0.8.1",
+    "pi-starship": "^0.1.2",
+    "pi-subagents": "^0.83.1",
+    "pi-usage-meters": "^0.5.0",
+    "pi-web-access": "^0.45.0"
   },
   "devEngines": {
     "packageManager": {
