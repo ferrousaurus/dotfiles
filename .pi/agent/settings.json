@@ -1,4 +1,5 @@
 {
+  "fullscreenExitOutput": "resume-hint",
   "lastChangelogVersion": "1.4.0",
   "packages": [
     "git:https://github.com/hasit/pi-community-themes",
