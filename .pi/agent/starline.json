@@ -1,0 +1,67 @@
+{
+  "footerStyle": "pill",
+  "pill": {
+    "segments": [
+      "cwd",
+      "gitBranch",
+      "gitStatus",
+      "extensionStatus:pi-lens-lsp",
+      "time",
+      "context",
+      "extensionStatus:system-prompt",
+      "extensionStatus"
+    ],
+    "separator": "powerline",
+    "bold": true,
+    "caps": "round"
+  },
+  "editorMetadataFormat": "$provider  $model(  $thinking)",
+  "contextStyle": "text",
+  "segmentOptions": {
+    "context": {
+      "format": "percent"
+    }
+  },
+  "palette": {
+    "red": "#ed8796",
+    "peach": "#f5a97f",
+    "yellow": "#eed49f",
+    "green": "#a6da95",
+    "sapphire": "#7dc4e4",
+    "lavender": "#b7bdf8",
+    "crust": "#181926",
+    "pink": "#f5bde6",
+    "rosewater": "#f4dbd6",
+    "flamingo": "#f0c6c6",
+    "mauve": "#c6a0f6",
+    "maroon": "#ee99a0",
+    "teal": "#8bd5ca",
+    "sky": "#91d7e3",
+    "blue": "#8aadf4"
+  },
+  "colors": {
+    "model": "bold bg:$red fg:$crust",
+    "thinking": "bold bg:$green fg:$crust",
+    "cwd": "bold bg:$peach fg:$crust",
+    "gitBranch": "bold bg:$yellow fg:$crust",
+    "gitStatus": "bold bg:$yellow fg:$crust",
+    "contextNormal": "bold bg:$pink fg:$crust",
+    "contextWarning": "bold bg:$pink fg:$crust",
+    "contextError": "bold bg:$pink fg:$crust",
+    "time": "bold bg:$lavender fg:$crust",
+    "extensionStatus": "bold bg:$pink fg:$crust"
+  },
+  "extensionStatuses": {
+    "colors": {
+      "pi-lens-lsp": "bold bg:$green fg:$crust",
+      "system-prompt": "bold bg:$pink fg:$crust"
+    },
+    "icons": {
+      "loadout": "󰦨",
+      "system-prompt": "󰧑",
+      "pi-quotas": "󰄦",
+      "pi-lens-lsp": "󰒋",
+      "pi-quotas-usage": "%"
+    }
+  }
+}
