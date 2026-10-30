@@ -7,6 +7,16 @@
       "effect": "allow"
     },
     {
+      "action": "github-readonly_*",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "github-mutate_*",
+      "resource": "*",
+      "effect": "deny"
+    },
+    {
       "action": "read",
       "resource": ".env.local",
       "effect": "deny"
@@ -369,6 +379,16 @@
         },
         {
           "action": "shell",
+          "resource": "gh",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "gh *",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
           "resource": "bun --version",
           "effect": "allow"
         },
@@ -435,91 +455,6 @@
         {
           "action": "shell",
           "resource": "cargo locate-project *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh --version",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh auth status",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh repo view *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh issue list *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh issue view *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh issue status *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh pr list *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh pr view *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh pr diff *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh pr checks *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh pr status *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh run list *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh run view *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh workflow list *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh workflow view *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh release list *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh release view *",
           "effect": "allow"
         },
         {
@@ -1563,6 +1498,21 @@
           "effect": "ask"
         },
         {
+          "action": "microsoft-learn_*",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "github-readonly_*",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "github-mutate_*",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
           "action": "subagent",
           "resource": "*",
           "effect": "deny"
@@ -1602,6 +1552,16 @@
           "action": "shell",
           "resource": "*",
           "effect": "ask"
+        },
+        {
+          "action": "shell",
+          "resource": "gh",
+          "effect": "deny"
+        },
+        {
+          "action": "shell",
+          "resource": "gh *",
+          "effect": "deny"
         },
         {
           "action": "shell",
@@ -1671,91 +1631,6 @@
         {
           "action": "shell",
           "resource": "cargo locate-project *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh --version",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh auth status",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh repo view *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh issue list *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh issue view *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh issue status *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh pr list *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh pr view *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh pr diff *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh pr checks *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh pr status *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh run list *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh run view *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh workflow list *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh workflow view *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh release list *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "gh release view *",
           "effect": "allow"
         },
         {
@@ -2824,6 +2699,21 @@
           "effect": "ask"
         },
         {
+          "action": "microsoft-learn_*",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "github-readonly_*",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "github-mutate_*",
+          "resource": "*",
+          "effect": "ask"
+        },
+        {
           "action": "subagent",
           "resource": "*",
           "effect": "deny"
@@ -2925,6 +2815,11 @@
         },
         {
           "action": "webfetch",
+          "resource": "*",
+          "effect": "allow"
+        },
+        {
+          "action": "microsoft-learn_*",
           "resource": "*",
           "effect": "allow"
         },
@@ -3478,14 +3373,33 @@
         ],
         "disabled": true
       },
-      "github": {
+      "github-readonly": {
         "type": "remote",
         "url": "https://api.githubcopilot.com/mcp/",
-        "disabled": true,
         "oauth": false,
         "headers": {
-          "Authorization": "Bearer {env:GITHUB_PAT}"
-        }
+          "Authorization": "Bearer {env:GITHUB_PAT}",
+          "X-MCP-Toolsets": "context,repos,issues,pull_requests,actions",
+          "X-MCP-Readonly": "true"
+        },
+        "disabled": true
+      },
+      "github-mutate": {
+        "type": "remote",
+        "url": "https://api.githubcopilot.com/mcp/",
+        "oauth": false,
+        "headers": {
+          "Authorization": "Bearer {env:GITHUB_PAT}",
+          "X-MCP-Toolsets": "context",
+          "X-MCP-Tools": "add_issue_comment,issue_write,update_issue_comment,create_pull_request,update_pull_request,add_comment_to_pending_review,add_reply_to_pull_request_comment,pull_request_review_write"
+        },
+        "disabled": true
+      },
+      "microsoft-learn": {
+        "type": "remote",
+        "url": "https://learn.microsoft.com/api/mcp",
+        "oauth": false,
+        "disabled": true
       },
       "system-one-mcp": {
         "disabled": true,
