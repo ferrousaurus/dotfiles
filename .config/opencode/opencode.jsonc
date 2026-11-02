@@ -2,11 +2,6 @@
   "$schema": "https://opencode.ai/config.json",
   "permissions": [
     {
-      "action": "read",
-      "resource": "*",
-      "effect": "allow"
-    },
-    {
       "action": "github-readonly_*",
       "resource": "*",
       "effect": "allow"
@@ -222,96 +217,6 @@
       "effect": "deny"
     },
     {
-      "action": "skill",
-      "resource": "cloudflare",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_CLOUDFLARE_EFFECT}"
-    },
-    {
-      "action": "skill",
-      "resource": "basin",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_BASIN_EFFECT}"
-    },
-    {
-      "action": "skill",
-      "resource": "k2",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_K2_EFFECT}"
-    },
-    {
-      "action": "skill",
-      "resource": "nextjs-on-cloudflare",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_NEXTJS_ON_CLOUDFLARE_EFFECT}"
-    },
-    {
-      "action": "skill",
-      "resource": "agents-sdk",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_AGENTS_SDK_EFFECT}"
-    },
-    {
-      "action": "skill",
-      "resource": "durable-objects",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_DURABLE_OBJECTS_EFFECT}"
-    },
-    {
-      "action": "skill",
-      "resource": "sandbox-next",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_SANDBOX_NEXT_EFFECT}"
-    },
-    {
-      "action": "skill",
-      "resource": "sandbox-stable",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_SANDBOX_STABLE_EFFECT}"
-    },
-    {
-      "action": "skill",
-      "resource": "sandbox-migrate-to-next",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_SANDBOX_MIGRATE_TO_NEXT_EFFECT}"
-    },
-    {
-      "action": "skill",
-      "resource": "cf-cli",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_CF_CLI_EFFECT}"
-    },
-    {
-      "action": "skill",
-      "resource": "wrangler",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_WRANGLER_EFFECT}"
-    },
-    {
-      "action": "skill",
-      "resource": "workers-profiling",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_WORKERS_PROFILING_EFFECT}"
-    },
-    {
-      "action": "skill",
-      "resource": "cloudflare-email-service",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_CLOUDFLARE_EMAIL_SERVICE_EFFECT}"
-    },
-    {
-      "action": "skill",
-      "resource": "turnstile-spin",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_TURNSTILE_SPIN_EFFECT}"
-    },
-    {
-      "action": "skill",
-      "resource": "web-perf",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_WEB_PERF_EFFECT}"
-    },
-    {
-      "action": "skill",
-      "resource": "cloudflare-one",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_CLOUDFLARE_ONE_EFFECT}"
-    },
-    {
-      "action": "skill",
-      "resource": "cloudflare-one-migrations",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_CLOUDFLARE_ONE_MIGRATIONS_EFFECT}"
-    },
-    {
-      "action": "skill",
-      "resource": "gateway-workers",
-      "effect": "{env:OPENCODE_PERMISSIONS_SKILL_GATEWAY_WORKERS_EFFECT}"
-    },
-    {
       "action": "external_directory",
       "resource": "/**",
       "effect": "deny"
@@ -369,22 +274,11 @@
   ],
   "agents": {
     "plan": {
-      "model": "{env:OPENCODE_AGENTS_PLAN_MODEL}",
       "system": "{file:./prompts/plan.md}",
       "permissions": [
         {
           "action": "shell",
           "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "shell",
-          "resource": "gh",
-          "effect": "deny"
-        },
-        {
-          "action": "shell",
-          "resource": "gh *",
           "effect": "deny"
         },
         {
@@ -610,11 +504,6 @@
         {
           "action": "shell",
           "resource": "mise which *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "oxlint",
           "effect": "allow"
         },
         {
@@ -799,27 +688,12 @@
         },
         {
           "action": "shell",
-          "resource": "git log",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git log *",
           "effect": "allow"
         },
         {
           "action": "shell",
-          "resource": "git diff",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git diff *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git status",
           "effect": "allow"
         },
         {
@@ -830,11 +704,6 @@
         {
           "action": "shell",
           "resource": "git merge-base *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git show",
           "effect": "allow"
         },
         {
@@ -884,27 +753,12 @@
         },
         {
           "action": "shell",
-          "resource": "git count-objects",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git count-objects *",
           "effect": "allow"
         },
         {
           "action": "shell",
-          "resource": "git describe",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git describe *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git diff-files",
           "effect": "allow"
         },
         {
@@ -924,22 +778,12 @@
         },
         {
           "action": "shell",
-          "resource": "git for-each-ref",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git for-each-ref *",
           "effect": "allow"
         },
         {
           "action": "shell",
           "resource": "git grep *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git ls-files",
           "effect": "allow"
         },
         {
@@ -955,11 +799,6 @@
         {
           "action": "shell",
           "resource": "git name-rev *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git patch-id",
           "effect": "allow"
         },
         {
@@ -984,17 +823,7 @@
         },
         {
           "action": "shell",
-          "resource": "git shortlog",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git shortlog *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git show-ref",
           "effect": "allow"
         },
         {
@@ -1019,17 +848,7 @@
         },
         {
           "action": "shell",
-          "resource": "git version",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git version *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git whatchanged",
           "effect": "allow"
         },
         {
@@ -1044,22 +863,12 @@
         },
         {
           "action": "shell",
-          "resource": "git branch --list",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git branch --list *",
           "effect": "allow"
         },
         {
           "action": "shell",
           "resource": "git branch --show-current",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git tag --list",
           "effect": "allow"
         },
         {
@@ -1084,17 +893,7 @@
         },
         {
           "action": "shell",
-          "resource": "git reflog show",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git reflog show *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git stash list",
           "effect": "allow"
         },
         {
@@ -1104,17 +903,7 @@
         },
         {
           "action": "shell",
-          "resource": "git stash show",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git stash show *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git worktree list",
           "effect": "allow"
         },
         {
@@ -1124,27 +913,12 @@
         },
         {
           "action": "shell",
-          "resource": "git submodule status",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git submodule status *",
           "effect": "allow"
         },
         {
           "action": "shell",
-          "resource": "git submodule summary",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git submodule summary *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git notes list",
           "effect": "allow"
         },
         {
@@ -1156,31 +930,6 @@
           "action": "shell",
           "resource": "git notes show *",
           "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git diff *--output*",
-          "effect": "deny"
-        },
-        {
-          "action": "shell",
-          "resource": "git diff-files *--output*",
-          "effect": "deny"
-        },
-        {
-          "action": "shell",
-          "resource": "git diff-index *--output*",
-          "effect": "deny"
-        },
-        {
-          "action": "shell",
-          "resource": "git diff-tree *--output*",
-          "effect": "deny"
-        },
-        {
-          "action": "shell",
-          "resource": "git show *--output*",
-          "effect": "deny"
         },
         {
           "action": "shell",
@@ -1268,239 +1017,9 @@
           "effect": "deny"
         },
         {
-          "action": "azure_*",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
-          "action": "azure_*_add",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_append",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_apply",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_cancel",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_changedetection",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_create",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_createorupdate",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_delete",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_deploy",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_drain",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_execute",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_grant",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_import",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_lock",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_orchestrator-next",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_orchestrator-start",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_publish",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_purge",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_recover",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_reimage",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_remove",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_rename",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_request",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_restart",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_restore",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_revoke",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_rotate",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_run",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_scale",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_send",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_send-*",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_set",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_snapshot",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_start",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_stop",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_swap",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_sync",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_synthesize",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_trigger",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_unlock",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_unregister",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_update",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_update-appsettings",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_upload",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
           "action": "chrome-devtools_*",
           "resource": "*",
           "effect": "ask"
-        },
-        {
-          "action": "microsoft-learn_*",
-          "resource": "*",
-          "effect": "allow"
         },
         {
           "action": "github-readonly_*",
@@ -1545,18 +1064,12 @@
       ]
     },
     "build": {
-      "model": "{env:OPENCODE_AGENTS_BUILD_MODEL}",
       "system": "{file:./prompts/build.md}",
       "permissions": [
         {
           "action": "shell",
           "resource": "*",
           "effect": "ask"
-        },
-        {
-          "action": "shell",
-          "resource": "gh",
-          "effect": "deny"
         },
         {
           "action": "shell",
@@ -1786,11 +1299,6 @@
         {
           "action": "shell",
           "resource": "mise which *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "oxlint",
           "effect": "allow"
         },
         {
@@ -2025,26 +1533,6 @@
         },
         {
           "action": "shell",
-          "resource": "git log",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git diff",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git status",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git show",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git annotate *",
           "effect": "allow"
         },
@@ -2085,27 +1573,12 @@
         },
         {
           "action": "shell",
-          "resource": "git count-objects",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git count-objects *",
           "effect": "allow"
         },
         {
           "action": "shell",
-          "resource": "git describe",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git describe *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git diff-files",
           "effect": "allow"
         },
         {
@@ -2125,22 +1598,12 @@
         },
         {
           "action": "shell",
-          "resource": "git for-each-ref",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git for-each-ref *",
           "effect": "allow"
         },
         {
           "action": "shell",
           "resource": "git grep *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git ls-files",
           "effect": "allow"
         },
         {
@@ -2156,11 +1619,6 @@
         {
           "action": "shell",
           "resource": "git name-rev *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git patch-id",
           "effect": "allow"
         },
         {
@@ -2185,17 +1643,7 @@
         },
         {
           "action": "shell",
-          "resource": "git shortlog",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git shortlog *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git show-ref",
           "effect": "allow"
         },
         {
@@ -2220,17 +1668,7 @@
         },
         {
           "action": "shell",
-          "resource": "git version",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git version *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git whatchanged",
           "effect": "allow"
         },
         {
@@ -2245,22 +1683,12 @@
         },
         {
           "action": "shell",
-          "resource": "git branch --list",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git branch --list *",
           "effect": "allow"
         },
         {
           "action": "shell",
           "resource": "git branch --show-current",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git tag --list",
           "effect": "allow"
         },
         {
@@ -2285,17 +1713,7 @@
         },
         {
           "action": "shell",
-          "resource": "git reflog show",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git reflog show *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git stash list",
           "effect": "allow"
         },
         {
@@ -2305,17 +1723,7 @@
         },
         {
           "action": "shell",
-          "resource": "git stash show",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git stash show *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git worktree list",
           "effect": "allow"
         },
         {
@@ -2325,27 +1733,12 @@
         },
         {
           "action": "shell",
-          "resource": "git submodule status",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git submodule status *",
           "effect": "allow"
         },
         {
           "action": "shell",
-          "resource": "git submodule summary",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
           "resource": "git submodule summary *",
-          "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git notes list",
           "effect": "allow"
         },
         {
@@ -2357,31 +1750,6 @@
           "action": "shell",
           "resource": "git notes show *",
           "effect": "allow"
-        },
-        {
-          "action": "shell",
-          "resource": "git diff *--output*",
-          "effect": "ask"
-        },
-        {
-          "action": "shell",
-          "resource": "git diff-files *--output*",
-          "effect": "ask"
-        },
-        {
-          "action": "shell",
-          "resource": "git diff-index *--output*",
-          "effect": "ask"
-        },
-        {
-          "action": "shell",
-          "resource": "git diff-tree *--output*",
-          "effect": "ask"
-        },
-        {
-          "action": "shell",
-          "resource": "git show *--output*",
-          "effect": "ask"
         },
         {
           "action": "shell",
@@ -2464,244 +1832,9 @@
           "effect": "ask"
         },
         {
-          "action": "edit",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
-          "action": "azure_*",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
-          "action": "azure_*_add",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_append",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_apply",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_cancel",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_changedetection",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_create",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_createorupdate",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_delete",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_deploy",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_drain",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_execute",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_grant",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_import",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_lock",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_orchestrator-next",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_orchestrator-start",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_publish",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_purge",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_recover",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_reimage",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_remove",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_rename",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_request",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_restart",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_restore",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_revoke",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_rotate",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_run",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_scale",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_send",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_send-*",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_set",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_snapshot",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_start",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_stop",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_swap",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_sync",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_synthesize",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_trigger",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_unlock",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_unregister",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_update",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_update-appsettings",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
-          "action": "azure_*_upload",
-          "resource": "*",
-          "effect": "ask"
-        },
-        {
           "action": "chrome-devtools_*",
           "resource": "*",
           "effect": "ask"
-        },
-        {
-          "action": "microsoft-learn_*",
-          "resource": "*",
-          "effect": "allow"
         },
         {
           "action": "github-readonly_*",
@@ -2751,7 +1884,6 @@
       ]
     },
     "explore": {
-      "model": "{env:OPENCODE_AGENTS_EXPLORE_MODEL}",
       "description": "Performs bounded local repository discovery and dependency tracing.",
       "hidden": true,
       "mode": "subagent",
@@ -2761,43 +1893,16 @@
           "action": "shell",
           "resource": "*",
           "effect": "deny"
-        },
-        {
-          "action": "edit",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "glob",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
-          "action": "grep",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
-          "action": "subagent",
-          "resource": "*",
-          "effect": "deny"
         }
       ]
     },
     "general": {
       "model": "{env:OPENCODE_AGENTS_GENERAL_MODEL}"
     },
-    "title": {
-      "model": "{env:OPENCODE_AGENTS_TITLE_MODEL}"
-    },
-    "summary": {
-      "model": "{env:OPENCODE_AGENTS_SUMMARY_MODEL}"
-    },
-    "compaction": {
-      "model": "{env:OPENCODE_AGENTS_COMPACTION_MODEL}"
-    },
+    "title": {},
+    "summary": {},
+    "compaction": {},
     "researcher": {
-      "model": "{env:OPENCODE_AGENTS_RESEARCHER_MODEL}",
       "description": "Performs bounded external and version-specific research using authoritative sources.",
       "hidden": true,
       "mode": "subagent",
@@ -2814,16 +1919,6 @@
           "effect": "deny"
         },
         {
-          "action": "webfetch",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
-          "action": "microsoft-learn_*",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
           "action": "subagent",
           "resource": "*",
           "effect": "deny"
@@ -2831,7 +1926,6 @@
       ]
     },
     "implementer": {
-      "model": "{env:OPENCODE_AGENTS_IMPLEMENTER_MODEL}",
       "description": "Performs bounded implementation work within explicit caller-owned files or subsystems.",
       "hidden": true,
       "mode": "subagent",
@@ -2918,247 +2012,7 @@
           "effect": "allow"
         },
         {
-          "action": "edit",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
-          "action": "glob",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
-          "action": "grep",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
           "action": "subagent",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
-          "action": "azure_*_add",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_append",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_apply",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_cancel",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_changedetection",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_create",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_createorupdate",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_delete",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_deploy",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_drain",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_execute",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_grant",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_import",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_lock",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_orchestrator-next",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_orchestrator-start",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_publish",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_purge",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_recover",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_reimage",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_remove",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_rename",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_request",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_restart",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_restore",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_revoke",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_rotate",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_run",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_scale",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_send",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_send-*",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_set",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_snapshot",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_start",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_stop",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_swap",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_sync",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_synthesize",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_trigger",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_unlock",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_unregister",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_update",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_update-appsettings",
-          "resource": "*",
-          "effect": "deny"
-        },
-        {
-          "action": "azure_*_upload",
           "resource": "*",
           "effect": "deny"
         },
@@ -3170,7 +2024,6 @@
       ]
     },
     "debugger": {
-      "model": "{env:OPENCODE_AGENTS_DEBUGGER_MODEL}",
       "description": "Investigates failures and returns evidence-based root cause analyses and resolution guidance.",
       "mode": "subagent",
       "system": "{file:./prompts/debugger.md}",
@@ -3211,16 +2064,6 @@
           "effect": "deny"
         },
         {
-          "action": "glob",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
-          "action": "grep",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
           "action": "subagent",
           "resource": "*",
           "effect": "deny"
@@ -3228,7 +2071,6 @@
       ]
     },
     "documenter": {
-      "model": "{env:OPENCODE_AGENTS_DOCUMENTER_MODEL}",
       "description": "Drafts ready-to-apply technical documentation and returns it to the calling agent.",
       "mode": "subagent",
       "system": "{file:./prompts/documenter.md}",
@@ -3244,16 +2086,6 @@
           "effect": "deny"
         },
         {
-          "action": "glob",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
-          "action": "grep",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
           "action": "subagent",
           "resource": "*",
           "effect": "deny"
@@ -3261,7 +2093,6 @@
       ]
     },
     "reviewer": {
-      "model": "{env:OPENCODE_AGENTS_REVIEWER_MODEL}",
       "description": "Independently reviews changes for correctness, regressions, convention compliance, and readiness.",
       "mode": "subagent",
       "system": "{file:./prompts/reviewer.md}",
@@ -3322,16 +2153,6 @@
           "effect": "deny"
         },
         {
-          "action": "glob",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
-          "action": "grep",
-          "resource": "*",
-          "effect": "allow"
-        },
-        {
           "action": "subagent",
           "resource": "*",
           "effect": "deny"
@@ -3349,21 +2170,6 @@
   "lsp": {},
   "mcp": {
     "servers": {
-      "azure": {
-        "type": "local",
-        "command": [
-          "dnx",
-          "Azure.Mcp",
-          "--source",
-          "https://api.nuget.org/v3/index.json",
-          "--yes",
-          "--",
-          "azmcp",
-          "server",
-          "start"
-        ],
-        "disabled": true
-      },
       "chrome-devtools": {
         "type": "local",
         "command": [
@@ -3394,37 +2200,32 @@
           "X-MCP-Tools": "add_issue_comment,issue_write,update_issue_comment,create_pull_request,update_pull_request,add_comment_to_pending_review,add_reply_to_pull_request_comment,pull_request_review_write"
         },
         "disabled": true
-      },
-      "microsoft-learn": {
-        "type": "remote",
-        "url": "https://learn.microsoft.com/api/mcp",
-        "oauth": false,
-        "disabled": true
-      },
-      "system-one-mcp": {
-        "disabled": true,
-        "type": "local",
-        "cwd": "~/source/ferrousaurus/system-one-mcp",
-        "command": [
-          "/opt/homebrew/bin/mise",
-          "exec",
-          "--",
-          "nub",
-          "run",
-          "start"
-        ],
-        "environment": {}
       }
+      //,"system-one-mcp": {
+      //  "disabled": true,
+      //  "type": "local",
+      //  "cwd": "~/source/ferrousaurus/system-one-mcp",
+      //  "command": [
+      //    "/opt/homebrew/bin/mise",
+      //    "exec",
+      //    "--",
+      //    "nub",
+      //    "run",
+      //    "start"
+      //  ],
+      //  "environment": {}
+      //}
     }
   },
-  "plugins": [
-    "@slkiser/opencode-quota@5"
-  ],
+  "plugins": [],
   "providers": {
     "github-copilot": {},
     "openai": {},
     "copilot": {},
     "opencode-go": {}
   },
-  "share": "disabled"
+  "share": "disabled",
+  "skills": [
+    "~/source/.agents/skills"
+  ]
 }
