@@ -2201,20 +2201,6 @@
         },
         "disabled": true
       }
-      //,"system-one-mcp": {
-      //  "disabled": true,
-      //  "type": "local",
-      //  "cwd": "~/source/ferrousaurus/system-one-mcp",
-      //  "command": [
-      //    "/opt/homebrew/bin/mise",
-      //    "exec",
-      //    "--",
-      //    "nub",
-      //    "run",
-      //    "start"
-      //  ],
-      //  "environment": {}
-      //}
     }
   },
   "plugins": [],
