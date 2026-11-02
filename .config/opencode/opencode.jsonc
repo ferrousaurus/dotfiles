@@ -1896,9 +1896,7 @@
         }
       ]
     },
-    "general": {
-      "model": "{env:OPENCODE_AGENTS_GENERAL_MODEL}"
-    },
+    "general": {},
     "title": {},
     "summary": {},
     "compaction": {},
