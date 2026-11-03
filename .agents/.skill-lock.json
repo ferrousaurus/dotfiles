@@ -1,15 +1,6 @@
 {
   "version": 3,
   "skills": {
-    "iso-24495": {
-      "source": "danyuchn/iso-24495-skill",
-      "sourceType": "github",
-      "sourceUrl": "https://github.com/danyuchn/iso-24495-skill.git",
-      "skillPath": "SKILL.md",
-      "skillFolderHash": "113656b0a6a6cbeb3b3c2bb7cf3bc29349cb05cf",
-      "installedAt": "2026-08-26T13:45:09.298Z",
-      "updatedAt": "2026-08-26T13:45:09.298Z"
-    },
     "typesafe-ai": {
       "source": "typesafe-ai/skills",
       "sourceType": "github",
@@ -253,6 +244,33 @@
       "skillFolderHash": "3116f3e62dbd02b44a598b1aa690d2a8938e8f89",
       "installedAt": "2026-11-02T15:56:42.116Z",
       "updatedAt": "2026-11-02T15:56:42.116Z"
+    },
+    "iso-24495-1": {
+      "source": "GaZmagik/iso-24495",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/GaZmagik/iso-24495.git",
+      "skillPath": "skills/iso-24495-1/SKILL.md",
+      "skillFolderHash": "dfa92a2b3b472dd6474a5df948dadcb5786dbd42",
+      "installedAt": "2026-11-03T15:01:03.602Z",
+      "updatedAt": "2026-11-03T15:01:03.602Z"
+    },
+    "iso-24495-code": {
+      "source": "GaZmagik/iso-24495",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/GaZmagik/iso-24495.git",
+      "skillPath": "skills/iso-24495-code/SKILL.md",
+      "skillFolderHash": "e844365ea1f3bbf30e86c7ff1f740b9ff729486a",
+      "installedAt": "2026-11-03T15:01:03.619Z",
+      "updatedAt": "2026-11-03T15:01:03.619Z"
+    },
+    "iso-24495-5": {
+      "source": "GaZmagik/iso-24495",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/GaZmagik/iso-24495.git",
+      "skillPath": "skills/iso-24495-5/SKILL.md",
+      "skillFolderHash": "048222a84fb20b92f49b0136e7e22e1325163506",
+      "installedAt": "2026-11-03T15:01:03.637Z",
+      "updatedAt": "2026-11-03T15:01:03.637Z"
     }
   },
   "dismissed": {
