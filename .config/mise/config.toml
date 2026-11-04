@@ -24,10 +24,6 @@ OPENCODE_EXPERIMENTAL_SCOUT = true
 "~/source/ferrousaurus/system-one-mcp" = { url = "git@github.com:ferrousaurus/system-one-mcp.git", ref = "main" }
 
 [dotfiles]
-"~/.agents/skills" = {}
-
-"~/.agents/.skill-lock.json" = {}
-
 "~/.cc-safety-net" = {}
 
 "~/.config/atuin" = {}
