@@ -2201,7 +2201,9 @@
       }
     }
   },
-  "plugins": [],
+  "plugins": [
+    "@slkiser/opencode-quota"
+  ],
   "providers": {
     "github-copilot": {},
     "openai": {},
