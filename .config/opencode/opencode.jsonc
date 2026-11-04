@@ -2182,7 +2182,7 @@
         "url": "https://api.githubcopilot.com/mcp/",
         "oauth": false,
         "headers": {
-          "Authorization": "Bearer {env:GITHUB_PAT}",
+          "Authorization": "Bearer {env:MISE_GIT_TOKEN}",
           "X-MCP-Toolsets": "context,repos,issues,pull_requests,actions",
           "X-MCP-Readonly": "true"
         },
@@ -2193,7 +2193,7 @@
         "url": "https://api.githubcopilot.com/mcp/",
         "oauth": false,
         "headers": {
-          "Authorization": "Bearer {env:GITHUB_PAT}",
+          "Authorization": "Bearer {env:MISE_GIT_TOKEN}",
           "X-MCP-Toolsets": "context",
           "X-MCP-Tools": "add_issue_comment,issue_write,update_issue_comment,create_pull_request,update_pull_request,add_comment_to_pending_review,add_reply_to_pull_request_comment,pull_request_review_write"
         },
