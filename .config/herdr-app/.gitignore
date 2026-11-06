@@ -1,0 +1,8 @@
+**
+!/.gitignore
+!layouts/
+!layouts/**
+!mods/
+!mods/**
+!themes/
+!themes/**

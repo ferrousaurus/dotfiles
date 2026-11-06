@@ -28,6 +28,7 @@ OPENCODE_EXPERIMENTAL_SCOUT = true
 
 "~/.config/atuin" = {}
 "~/.config/git" = {}
+"~/.config/herdr-app" = {}
 "~/.config/mise" = {}
 "~/.config/nvim" = {}
 "~/.config/opencode" = {}
