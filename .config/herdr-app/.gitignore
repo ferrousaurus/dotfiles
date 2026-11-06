@@ -3,7 +3,6 @@
 !layouts/
 !layouts/**
 layouts/.state
-layouts/.state/**
 !mods/
 !mods/**
 !themes/
