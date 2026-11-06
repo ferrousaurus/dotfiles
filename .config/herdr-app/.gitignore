@@ -7,3 +7,5 @@ layouts/.state
 !mods/**
 !themes/
 !themes/**
+!keys.json
+!settings.json
