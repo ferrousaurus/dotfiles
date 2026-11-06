@@ -1,4 +1,9 @@
 {
+  "nodes": {
+    "panel": {
+      "hidden": false
+    }
+  },
   "theme": {
     "light": "paper",
     "dark": "catppuccin-macchiato"
