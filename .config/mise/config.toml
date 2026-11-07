@@ -75,12 +75,12 @@ rust = { version = "1" }
 
 "github:docker/compose" = { depends = ["aqua:docker/cli"], version = "latest" }
 "github:Gaurav-Gosain/tuios" = { version = "v0.11.1" }
-"github:nubjs/nub" = { allow_builds = ["@nubjs/nub"], version = "latest" }
 "github:getnf/getnf" = { version = "0.4.0", postinstall = "getnf -i FiraCode" }
 
 "dotnet:Aspire.Cli" = { version = "13" }
 "dotnet:csharp-ls" = { version = "latest" }
 
+"npm:@nubjs/nub" = { allow_builds = ["@nubjs/nub"], version = "latest" }
 "npm:@opencode/cli" = { depends = ["github:nubjs/nub"], version = "latest", allow_builds = ["@opencode/cli"], postinstall = "cd $HOME/.config/opencode && nub ci" }
 
 "npm:skills" = { version = "1.7.2", postinstall = "skills experimental_install -g" }
