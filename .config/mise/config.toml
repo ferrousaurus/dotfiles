@@ -6,8 +6,8 @@ minimum_release_age = "3d"
 pin = true
 prefer_offline = true
 
-[settings.github]
-credential_command = 'gh auth token --hostname "$MISE_CREDENTIAL_HOST"'
+#[settings.github]
+#credential_command = 'gh auth token --hostname "$MISE_CREDENTIAL_HOST"'
 
 [settings.npm]
 package_manager = "aube"
