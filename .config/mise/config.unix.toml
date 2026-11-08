@@ -25,10 +25,6 @@ run = ["mise run merge-config:zed", "mise run refresh:zsh-completions"]
 patterns = ["~/.dotfiles/.config/zed/settings.local.json", "~/.dotfiles/.config/zed/settings.json"]
 run = "mise run merge-config:zed"
 
-[[watch_files]]
-patterns = ["~/.dotfiles/.pi/agent/settings.local.json", "~/.dotfiles/.pi/agent/settings.json"]
-run = "mise run merge-config:pi"
-
 [dotfiles]
 "~/.config/ghostty" = {}
 "~/.config/herdr/config.toml" = {}

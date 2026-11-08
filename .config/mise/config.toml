@@ -37,9 +37,6 @@ OPENCODE_EXPERIMENTAL_SCOUT = true
 
 "~/.config/starship.toml" = {}
 
-"~/.pi" = {}
-"~/.pi-lens" = {}
-
 [tools]
 bun = { version = "1.4" }
 dotnet = { version = "10" }
@@ -49,7 +46,6 @@ rust = { version = "1" }
 "aqua:aubepkg/aube" = { version = "latest" }
 "aqua:cli/cli" = { version = "latest" } # GitHub CLI
 "aqua:docker/cli" = { version = "latest" }
-"aqua:earendil-works/pi" = { depends = ["github:nubjs/nub"], version = "1.4.0", postinstall = "pi update --extensions && cd \"$HOME/.pi/agent/extensions\" && for dir in */; do [ ! -f \"${dir}package.json\" ] || (cd \"$dir\" && nub ci) || exit 1; done" }
 "aqua:herdrdev/herdr" = { version = "latest" } # harness-friendly multiplexer
 "aqua:getsops/sops" = { version = "latest" }
 "aqua:jesseduffield/lazydocker" = { depends = ["aqua:docker/cli"], version = "latest" }
@@ -74,7 +70,6 @@ rust = { version = "1" }
 "cargo:zoxide" = { version = "latest" } # cd replacement
 
 "github:docker/compose" = { depends = ["aqua:docker/cli"], version = "latest" }
-"github:Gaurav-Gosain/tuios" = { version = "v0.11.1" }
 "github:getnf/getnf" = { version = "0.4.0", postinstall = "getnf -i FiraCode" }
 
 "dotnet:Aspire.Cli" = { version = "13" }
