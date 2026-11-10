@@ -1885,12 +1885,21 @@
     },
     "explore": {
       "description": "Performs bounded local repository discovery and dependency tracing.",
-      "hidden": true,
       "mode": "subagent",
       "system": "{file:./prompts/explorer.md}",
       "permissions": [
         {
           "action": "shell",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "edit",
+          "resource": "*",
+          "effect": "deny"
+        },
+        {
+          "action": "subagent",
           "resource": "*",
           "effect": "deny"
         }
@@ -1902,7 +1911,6 @@
     "compaction": {},
     "researcher": {
       "description": "Performs bounded external and version-specific research using authoritative sources.",
-      "hidden": true,
       "mode": "subagent",
       "system": "{file:./prompts/researcher.md}",
       "permissions": [
@@ -1925,7 +1933,6 @@
     },
     "implementer": {
       "description": "Performs bounded implementation work within explicit caller-owned files or subsystems.",
-      "hidden": true,
       "mode": "subagent",
       "system": "{file:./prompts/implementer.md}",
       "permissions": [
