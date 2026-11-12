@@ -508,6 +508,51 @@
         },
         {
           "action": "shell",
+          "resource": "mise config",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise config ls *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise config get *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise config explain *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise tool *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise tasks",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise tasks info *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise tasks deps *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise tasks graph *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
           "resource": "oxlint *",
           "effect": "allow"
         },
@@ -584,6 +629,11 @@
         {
           "action": "shell",
           "resource": "yq --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "jq --version",
           "effect": "allow"
         },
         {
@@ -1303,6 +1353,51 @@
         },
         {
           "action": "shell",
+          "resource": "mise config",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise config ls *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise config get *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise config explain *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise tool *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise tasks",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise tasks info *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise tasks deps *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "mise tasks graph *",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
           "resource": "oxlint *",
           "effect": "allow"
         },
@@ -1379,6 +1474,16 @@
         {
           "action": "shell",
           "resource": "yq --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "jq --version",
+          "effect": "allow"
+        },
+        {
+          "action": "shell",
+          "resource": "jq *",
           "effect": "allow"
         },
         {
