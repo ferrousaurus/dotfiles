@@ -9,7 +9,7 @@ importers:
   .:
     devDependencies:
       '@oxlint/plugins':
-        specifier: ~1.93.0
+        specifier: 1.93.0
         version: 1.93.0
       '@types/node':
         specifier: ~26.6.6
@@ -18,7 +18,7 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0(eslint@10.14.0)
       oxlint:
-        specifier: ~1.93.0
+        specifier: 1.93.0
         version: 1.93.0(oxlint-tsgolint@7.0.2006)
       oxlint-tsgolint:
         specifier: ^7.0.2006
