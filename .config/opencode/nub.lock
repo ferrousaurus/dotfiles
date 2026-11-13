@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@opencode/plugin':
-        specifier: 2.2.6
-        version: 2.2.6(@opentelemetry/semantic-conventions@1.45.0)(redis@6.3.1)
+        specifier: ~2.2
+        version: 2.2.6(@opentelemetry/semantic-conventions@1.45.0)(@opentui/core@0.8.1(web-tree-sitter@0.25.10))(redis@6.3.1)(typescript@5.9.3)
       '@opencode/sdk':
-        specifier: 2.2.6
-        version: 2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(graphql@16.15.0)(redis@6.3.1)(typescript@5.9.3)(web-tree-sitter@0.25.10)(ws@8.22.2)
+        specifier: ~2.2
+        version: 2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(@opentui/core@0.8.1(web-tree-sitter@0.25.10))(graphql@16.15.0)(redis@6.3.1)(typescript@5.9.3)(web-tree-sitter@0.25.10)(ws@8.22.2)
       es-toolkit:
         specifier: ~1.53.2
         version: 1.53.2
@@ -2673,7 +2673,7 @@ snapshots:
       acorn: 8.15.0
       effect: 4.1.0
 
-  '@opencode/core@2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(graphql@16.15.0)(redis@6.3.1)(ws@8.22.2)':
+  '@opencode/core@2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(@opentui/core@0.8.1(web-tree-sitter@0.25.10))(graphql@16.15.0)(redis@6.3.1)(typescript@5.9.3)(ws@8.22.2)':
     dependencies:
       '@ai-sdk/provider': 3.0.19
       '@ai-sdk/provider-utils': 4.0.62(zod@4.6.7)
@@ -2689,8 +2689,8 @@ snapshots:
       '@modelcontextprotocol/server': 2.3.1
       '@opencode/ai': 2.2.6
       '@opencode/codemode': 2.2.6
-      '@opencode/plugin': 2.2.6(@opentelemetry/semantic-conventions@1.45.0)(redis@6.3.1)
-      '@opencode/plugin-browser': 2.2.6(@opentelemetry/semantic-conventions@1.45.0)(redis@6.3.1)
+      '@opencode/plugin': 2.2.6(@opentelemetry/semantic-conventions@1.45.0)(@opentui/core@0.8.1(web-tree-sitter@0.25.10))(redis@6.3.1)(typescript@5.9.3)
+      '@opencode/plugin-browser': 2.2.6(@opentelemetry/semantic-conventions@1.45.0)(@opentui/core@0.8.1(web-tree-sitter@0.25.10))(redis@6.3.1)(typescript@5.9.3)
       '@opencode/pty': 0.4.0
       '@opencode/schema': 2.2.6
       '@opencode/util': 2.2.6(@opentelemetry/semantic-conventions@1.45.0)(redis@6.3.1)
@@ -2734,7 +2734,6 @@ snapshots:
       - '@opencode/theme'
       - '@opentelemetry/api'
       - '@opentelemetry/sdk-trace-web'
-      - '@opentui/core'
       - '@opentui/solid'
       - '@planetscale/database'
       - '@sigstore/rekor-types'
@@ -2786,15 +2785,14 @@ snapshots:
       - vite-plugin-solid
       - ws
 
-  '@opencode/plugin-browser@2.2.6(@opentelemetry/semantic-conventions@1.45.0)(redis@6.3.1)':
+  '@opencode/plugin-browser@2.2.6(@opentelemetry/semantic-conventions@1.45.0)(@opentui/core@0.8.1(web-tree-sitter@0.25.10))(redis@6.3.1)(typescript@5.9.3)':
     dependencies:
-      '@opencode/plugin': 2.2.6(@opentelemetry/semantic-conventions@1.45.0)(redis@6.3.1)
+      '@opencode/plugin': 2.2.6(@opentelemetry/semantic-conventions@1.45.0)(@opentui/core@0.8.1(web-tree-sitter@0.25.10))(redis@6.3.1)(typescript@5.9.3)
       '@opencode/schema': 2.2.6
       effect: 4.1.0
     transitivePeerDependencies:
       - '@opencode/theme'
       - '@opentelemetry/sdk-trace-web'
-      - '@opentui/core'
       - '@opentui/solid'
       - '@sigstore/rekor-types'
       - bufferutil
@@ -2820,27 +2818,6 @@ snapshots:
       effect: 4.1.0
     optionalDependencies:
       '@opentui/core': 0.8.1(typescript@5.9.3)(web-tree-sitter@0.25.10)
-    transitivePeerDependencies:
-      - '@opentelemetry/sdk-trace-web'
-      - '@sigstore/rekor-types'
-      - bufferutil
-      - make-fetch-happen
-      - node-gyp
-      - retry
-      - solid-js
-      - supports-color
-      - undici-types
-      - utf-8-validate
-
-  '@opencode/plugin@2.2.6(@opentelemetry/semantic-conventions@1.45.0)(redis@6.3.1)':
-    dependencies:
-      '@ai-sdk/provider': 3.0.8
-      '@opencode/ai': 2.2.6
-      '@opencode/client': 2.2.6(effect@4.1.0)
-      '@opencode/protocol': 2.2.6
-      '@opencode/schema': 2.2.6
-      '@opencode/util': 2.2.6(@opentelemetry/semantic-conventions@1.45.0)(redis@6.3.1)
-      effect: 4.1.0
     transitivePeerDependencies:
       - '@opentelemetry/sdk-trace-web'
       - '@sigstore/rekor-types'
@@ -2898,13 +2875,13 @@ snapshots:
       '@standard-schema/spec': 1.1.0
       effect: 4.1.0
 
-  '@opencode/sdk@2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(graphql@16.15.0)(redis@6.3.1)(typescript@5.9.3)(web-tree-sitter@0.25.10)(ws@8.22.2)':
+  '@opencode/sdk@2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(@opentui/core@0.8.1(web-tree-sitter@0.25.10))(graphql@16.15.0)(redis@6.3.1)(typescript@5.9.3)(web-tree-sitter@0.25.10)(ws@8.22.2)':
     dependencies:
       '@opencode/client': 2.2.6(effect@4.1.0)
-      '@opencode/core': 2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(graphql@16.15.0)(redis@6.3.1)(ws@8.22.2)
-      '@opencode/plugin': 2.2.6(@opentelemetry/semantic-conventions@1.45.0)(redis@6.3.1)
+      '@opencode/core': 2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(@opentui/core@0.8.1(web-tree-sitter@0.25.10))(graphql@16.15.0)(redis@6.3.1)(typescript@5.9.3)(ws@8.22.2)
+      '@opencode/plugin': 2.2.6(@opentelemetry/semantic-conventions@1.45.0)(@opentui/core@0.8.1(web-tree-sitter@0.25.10))(redis@6.3.1)(typescript@5.9.3)
       '@opencode/schema': 2.2.6
-      '@opencode/server': 2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(graphql@16.15.0)(redis@6.3.1)(typescript@5.9.3)(web-tree-sitter@0.25.10)(ws@8.22.2)
+      '@opencode/server': 2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(@opentui/core@0.8.1(web-tree-sitter@0.25.10))(graphql@16.15.0)(redis@6.3.1)(typescript@5.9.3)(web-tree-sitter@0.25.10)(ws@8.22.2)
       '@opencode/util': 2.2.6(@opentelemetry/semantic-conventions@1.45.0)(redis@6.3.1)
       effect: 4.1.0
     transitivePeerDependencies:
@@ -2929,7 +2906,6 @@ snapshots:
       - '@opencode/theme'
       - '@opentelemetry/api'
       - '@opentelemetry/sdk-trace-web'
-      - '@opentui/core'
       - '@opentui/solid'
       - '@planetscale/database'
       - '@sigstore/rekor-types'
@@ -2981,11 +2957,11 @@ snapshots:
       - vite-plugin-solid
       - ws
 
-  '@opencode/server@2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(graphql@16.15.0)(redis@6.3.1)(typescript@5.9.3)(web-tree-sitter@0.25.10)(ws@8.22.2)':
+  '@opencode/server@2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(@opentui/core@0.8.1(web-tree-sitter@0.25.10))(graphql@16.15.0)(redis@6.3.1)(typescript@5.9.3)(web-tree-sitter@0.25.10)(ws@8.22.2)':
     dependencies:
       '@effect/platform-node': 4.1.0(@opentelemetry/api@1.9.0)(effect@4.1.0)(redis@6.3.1)
       '@effect/platform-node-shared': 4.1.0(effect@4.1.0)
-      '@opencode/core': 2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(graphql@16.15.0)(redis@6.3.1)(ws@8.22.2)
+      '@opencode/core': 2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(@opentui/core@0.8.1(web-tree-sitter@0.25.10))(graphql@16.15.0)(redis@6.3.1)(typescript@5.9.3)(ws@8.22.2)
       '@opencode/protocol': 2.2.6
       '@opencode/schema': 2.2.6
       '@opencode/simulation': 2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(graphql@16.15.0)(redis@6.3.1)(typescript@5.9.3)(web-tree-sitter@0.25.10)
@@ -3013,7 +2989,6 @@ snapshots:
       - '@opencode/theme'
       - '@opentelemetry/api'
       - '@opentelemetry/sdk-trace-web'
-      - '@opentui/core'
       - '@opentui/solid'
       - '@planetscale/database'
       - '@sigstore/rekor-types'
@@ -3068,7 +3043,7 @@ snapshots:
   '@opencode/simulation@2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(graphql@16.15.0)(redis@6.3.1)(typescript@5.9.3)(web-tree-sitter@0.25.10)':
     dependencies:
       '@opencode/ai': 2.2.6
-      '@opencode/core': 2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(graphql@16.15.0)(redis@6.3.1)(ws@8.22.2)
+      '@opencode/core': 2.2.6(@opentelemetry/api@1.9.0)(@opentelemetry/semantic-conventions@1.45.0)(@opentui/core@0.8.1(web-tree-sitter@0.25.10))(graphql@16.15.0)(redis@6.3.1)(typescript@5.9.3)(ws@8.22.2)
       '@opencode/plugin': 2.2.6(@opentelemetry/semantic-conventions@1.45.0)(@opentui/core@0.8.1(web-tree-sitter@0.25.10))(redis@6.3.1)(typescript@5.9.3)
       '@opencode/protocol': 2.2.6
       '@opencode/util': 2.2.6(@opentelemetry/semantic-conventions@1.45.0)(redis@6.3.1)
@@ -3097,7 +3072,6 @@ snapshots:
       - '@opencode/theme'
       - '@opentelemetry/api'
       - '@opentelemetry/sdk-trace-web'
-      - '@opentui/core'
       - '@opentui/solid'
       - '@planetscale/database'
       - '@sigstore/rekor-types'
