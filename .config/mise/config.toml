@@ -23,8 +23,6 @@ OPENCODE_EXPERIMENTAL_SCOUT = true
 #"~/.dotfiles" = { url = "git@github.com:ferrousaurus/dotfiles.git", ref = "main" }
 
 [dotfiles]
-"~/.cc-safety-net" = {}
-
 "~/.config/git" = {}
 "~/.config/mise" = {}
 "~/.config/nvim" = {}
@@ -34,43 +32,36 @@ OPENCODE_EXPERIMENTAL_SCOUT = true
 "~/.config/starship.toml" = {}
 
 [tools]
+age = { version = "1.3" }
+aspire = { version = "13.6" }
+atuin = { version = "18.24" }
+aube = { version = "2.10" }
+bottom = { version = "0.15" } # Process TUI
 bun = { version = "1.4" }
+docker-cli = { version = "29.9" }
 dotnet = { version = "10" }
+fzf = { version = "0.75" }
+github-cli = { version = "2.103" }
+lazygit = { version = "0.66" }
+neovim = { version = "0.12" }
 node = { version = "26" }
+nub = { version = "0.10" }
+ripgrep = { version = "0.10" } # grep replacement
 rust = { version = "1" }
+sops = { version = "3.13" }
+starship = { version = "1.27" }
+usage = { version = "7.3" }
+yq = { version = "4.54" }
+zoxide = { version = "0.10" } # cd replacement
 
-"aqua:aubepkg/aube" = { version = "latest" }
-"aqua:cli/cli" = { version = "latest" } # GitHub CLI
-"aqua:docker/cli" = { version = "latest" }
-"aqua:getsops/sops" = { version = "latest" }
-"aqua:jesseduffield/lazydocker" = { depends = ["aqua:docker/cli"], version = "latest" }
-"aqua:jesseduffield/lazygit" = { version = "latest" }
-"aqua:junegunn/fzf" = { version = "latest" }
-"aqua:mikefarah/yq" = { version = "latest" } # jq replacement
-"aqua:neovim/neovim" = { version = "latest" }
-"aqua:oxc-project/oxc/oxlint" = { depends = ["github:nubjs/nub"], version = "latest", postinstall = "cd $HOME/.config/oxlint && nub ci" }
+docker-compose = { depends = ["docker-cli"], version = "5.7" }
+lazydocker = { depends = ["docker-cli"], version = "0.25" }
 
-"asdf:threkk/asdf-age" = { version = "latest" }
+opencode = { depends = ["nub"], version = "2.3", postinstall = "cd $HOME/.config/opencode && nub ci" }
+oxlint = { depends = ["nub"], version = "1.93", postinstall = "cd $HOME/.config/oxlint && nub ci" }
 
-"cargo:ast-grep" = { version = "latest" }
-"cargo:atuin" = { version = "latest" }
-"cargo:bat" = { version = "latest" }
-"cargo:bottom" = { version = "latest" } # Process TUI
-"cargo:eza" = { version = "latest" } # ls replacement
-"cargo:fd-find" = { version = "latest" } # find replacement
-"cargo:oxker" = {version = "latest" } # Containerization TUI
-"cargo:ripgrep" = {version = "latest" } # grep replacement
-"cargo:starship" = { version = "latest" }
-"cargo:usage-cli" = { version = "latest" }
-"cargo:zoxide" = { version = "latest" } # cd replacement
-
-"github:docker/compose" = { depends = ["aqua:docker/cli"], version = "latest" }
 "github:getnf/getnf" = { version = "0.4.0", postinstall = "getnf -i FiraCode" }
 
-"dotnet:Aspire.Cli" = { version = "13" }
-"dotnet:csharp-ls" = { version = "latest" }
-
-"npm:@nubjs/nub" = { allow_builds = ["@nubjs/nub"], version = "latest" }
-"npm:@opencode/cli" = { depends = ["github:nubjs/nub"], version = "latest", allow_builds = ["@opencode/cli"], postinstall = "cd $HOME/.config/opencode && nub ci" }
+"dotnet:csharp-ls" = { version = "0.28" }
 
 "npm:skills" = { version = "1.7.2", postinstall = "skills experimental_install -g" }
