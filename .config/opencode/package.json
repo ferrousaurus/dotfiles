@@ -1,19 +1,18 @@
 {
   "dependencies": {
-    "@opencode-ai/plugin": "~1.15.13",
-    "@opencode-ai/sdk": "^0.0.0-windows-fix-202511131842",
-    "@opencode/plugin": "^2.2.7",
-    "es-toolkit": "~1.51.0",
+    "@opencode/plugin": "^2.2",
+    "@opencode/sdk": "^2.2",
+    "es-toolkit": "~1.53.2",
     "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "~26.6.6"
   },
   "devEngines": {
     "packageManager": {
-      "name": "npm",
-      "version": "^11.19.0",
+      "name": "nub",
+      "version": "^0.10",
       "onFail": "ignore"
     }
-  },
-  "devDependencies": {
-    "@types/node": "~26.3.0"
   }
 }

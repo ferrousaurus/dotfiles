@@ -2,19 +2,18 @@
   "name": "ferrousaurus-dotfiles-oxlint",
   "version": "0.0.1",
   "type": "module",
-  "packageManager": "nub@0.7.5",
   "devEngines": {
     "packageManager": {
       "name": "nub",
-      "version": "^0.7.5",
+      "version": "^0.10",
       "onFail": "ignore"
     }
   },
   "devDependencies": {
-    "@oxlint/plugins": "~1.79.0",
-    "@types/node": "~26.2.0",
+    "@oxlint/plugins": "~1.93.0",
+    "@types/node": "~26.6.6",
     "eslint-plugin-react-you-might-not-need-an-effect": "^1.2.0",
-    "oxlint": "~1.79.0",
+    "oxlint": "~1.93.0",
     "oxlint-tsgolint": "^7.0.2006",
     "typescript": "^7.0.2"
   }
