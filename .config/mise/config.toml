@@ -57,11 +57,11 @@ zoxide = { version = "0.10" } # cd replacement
 docker-compose = { depends = ["docker-cli"], version = "5.7" }
 lazydocker = { depends = ["docker-cli"], version = "0.25" }
 
-opencode = { depends = ["nub"], version = "2.2", postinstall = "cd $HOME/.config/opencode && nub ci" }
 oxlint = { depends = ["nub"], version = "1.93", postinstall = "cd $HOME/.config/oxlint && nub ci" }
 
 "github:getnf/getnf" = { version = "0.4.0", postinstall = "getnf -i FiraCode" }
 
 "dotnet:csharp-ls" = { version = "0.28" }
 
+"npm:@opencode/cli" = { depends = ["nub"], version = "2.2", allow_builds = ["@opencode/cli"], postinstall = "cd $HOME/.config/opencode && nub ci" }
 "npm:skills" = { version = "1.7.2", postinstall = "skills experimental_install -g" }
