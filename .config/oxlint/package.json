@@ -10,10 +10,10 @@
     }
   },
   "devDependencies": {
-    "@oxlint/plugins": "^1.93",
+    "@oxlint/plugins": "^1.92",
     "@types/node": "~26.6.6",
     "eslint-plugin-react-you-might-not-need-an-effect": "^1.2.0",
-    "oxlint": "^1.93",
+    "oxlint": "^1.92",
     "oxlint-tsgolint": "^7.0.2006",
     "typescript": "^7.0.2"
   }
