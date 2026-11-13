@@ -28,10 +28,3 @@ if [[ "$(uname)" == "Darwin" ]] && command -v brew >/dev/null 2>&1; then
 fi
 
 export PATH="$HOME/.local/bin:$PATH"
-
-if [[ -n "$KITTY_INSTALLATION_DIR" ]]; then
-    export KITTY_SHELL_INTEGRATION="enabled"
-    autoload -Uz -- "$KITTY_INSTALLATION_DIR/shell-integration/zsh/kitty-integration"
-    kitty-integration
-    unfunction kitty-integration
-fi

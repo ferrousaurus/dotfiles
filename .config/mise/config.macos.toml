@@ -16,7 +16,6 @@ test -d /usr/libexec/rosetta || softwareupdate --install-rosetta --agree-to-lice
 # "brew:docker-buildx" = "latest"
 # "brew:lima" = "latest"
 # "brew:luarocks" = "latest"
-# "brew-cask:herdr-app" = "latest"
 
 [bootstrap.macos.defaults]
 "com.app.finder" = { AppleShowAllFiles = true }
