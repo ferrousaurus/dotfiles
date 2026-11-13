@@ -57,7 +57,7 @@ zoxide = { version = "0.10" } # cd replacement
 docker-compose = { depends = ["docker-cli"], version = "5.7" }
 lazydocker = { depends = ["docker-cli"], version = "0.25" }
 
-opencode = { depends = ["nub"], version = "2.3", postinstall = "cd $HOME/.config/opencode && nub ci" }
+opencode = { depends = ["nub"], version = "2.2", postinstall = "cd $HOME/.config/opencode && nub ci" }
 oxlint = { depends = ["nub"], version = "1.93", postinstall = "cd $HOME/.config/oxlint && nub ci" }
 
 "github:getnf/getnf" = { version = "0.4.0", postinstall = "getnf -i FiraCode" }
