@@ -4,8 +4,8 @@
   "type": "module",
   "devEngines": {
     "packageManager": {
-      "name": "nub",
-      "version": "^0.10",
+      "name": "npm",
+      "version": "^11.19.0",
       "onFail": "ignore"
     }
   },
