@@ -23,6 +23,8 @@ OPENCODE_EXPERIMENTAL_SCOUT = true
 #"~/.dotfiles" = { url = "git@github.com:ferrousaurus/dotfiles.git", ref = "main" }
 
 [dotfiles]
+"~/.agents/skills/*" = {}
+
 "~/.config/git" = {}
 "~/.config/mise" = {}
 "~/.config/nvim" = {}
@@ -64,4 +66,4 @@ lazydocker = { depends = ["docker-cli"], version = "0.25" }
 
 "npm:@opencode/cli" = { depends = ["nub"], version = "2.2", allow_builds = ["@opencode/cli"], postinstall = "cd $HOME/.config/opencode && nub ci" }
 "npm:oxlint" = { depends = ["nub"], version = "1.92", postinstall = "cd $HOME/.config/oxlint && nub ci" }
-"npm:skills" = { version = "1.7.2", postinstall = "skills experimental_install -g" }
+"npm:skills" = { version = "1.7.2", postinstall = "cd $HOME/.dotfiles/.agents && skills experimental_install" }
